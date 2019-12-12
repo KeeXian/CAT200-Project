@@ -12,6 +12,6 @@ public class TowerIcon extends Pane {
 
     public TowerIcon(Color color) {
 
-        getChildren().add(new Rectangle(80, 80, color));
+        getChildren().add(new Rectangle(40, 40, color));
     }
 }

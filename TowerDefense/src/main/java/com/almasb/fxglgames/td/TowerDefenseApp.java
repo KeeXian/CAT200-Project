@@ -4,9 +4,16 @@ import com.almasb.fxgl.app.ApplicationMode;
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.app.GameView;
+import com.almasb.fxgl.audio.Audio;
+import com.almasb.fxgl.audio.AudioPlayer;
+import com.almasb.fxgl.audio.Music;
+import com.almasb.fxgl.audio.Sound;
 import com.almasb.fxgl.core.math.FXGLMath;
+import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.SpawnData;
+import com.almasb.fxgl.entity.level.Level;
+import com.almasb.fxgl.entity.level.tiled.TMXLevelLoader;
 import com.almasb.fxgl.input.Input;
 import com.almasb.fxgl.input.UserAction;
 import com.almasb.fxglgames.td.collision.BulletEnemyHandler;
@@ -23,6 +30,8 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
+import java.io.File;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -57,16 +66,21 @@ public class TowerDefenseApp extends GameApplication {
         return new ArrayList<>(waypoints);
     }
 
+    private Music BGM;
+
+    private Music LoseMusic;
+
+
     @Override
     protected void initSettings(GameSettings settings) {
         settings.setTitle("Tower Defense");
         settings.setVersion("0.2");
-        settings.setWidth(800);
+        settings.setWidth(768);
         settings.setHeight(600);
         settings.setIntroEnabled(false);
-        settings.setMenuEnabled(false);
+        settings.setMenuEnabled(true);
         settings.setProfilingEnabled(false);
-        settings.setCloseConfirmation(false);
+        settings.setCloseConfirmation(true);
         settings.setApplicationMode(ApplicationMode.DEVELOPER);
     }
 
@@ -75,11 +89,12 @@ public class TowerDefenseApp extends GameApplication {
         Input input = getInput();
 
         input.addAction(new UserAction("Place Tower") {
-            private Rectangle2D worldBounds = new Rectangle2D(0, 0, getAppWidth(), getAppHeight() - 100 - 40);
+            private Rectangle2D worldBounds = new Rectangle2D(32, 96, 544, 128);
+            private Rectangle2D worldBounds_alt=new Rectangle2D(128, 368, 464, 48);
 
             @Override
             protected void onActionBegin() {
-                if (worldBounds.contains(input.getMousePositionWorld())) {
+                if (worldBounds.contains(input.getMousePositionWorld())||worldBounds_alt.contains(input.getMousePositionWorld())) {
                     placeTower();
                 }
             }
@@ -93,7 +108,17 @@ public class TowerDefenseApp extends GameApplication {
 
     @Override
     protected void initGame() {
+        Level level;
+        var levelFile=new File("untitled.tmx");
         getGameWorld().addEntityFactory(new TowerDefenseFactory());
+        try {
+            level = new TMXLevelLoader().load(levelFile.toURI().toURL(), getGameWorld());
+            getGameWorld().setLevel(level);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        BGM=getAssetLoader().loadMusic("Epic Battle.mp3");
+        getAudioPlayer().loopMusic(BGM);
 
         // TODO: read this from external level data
         waypoints.addAll(Arrays.asList(
@@ -124,8 +149,8 @@ public class TowerDefenseApp extends GameApplication {
 
     @Override
     protected void initUI() {
-        Rectangle uiBG = new Rectangle(getAppWidth(), 100);
-        uiBG.setTranslateY(500);
+        Rectangle uiBG = new Rectangle(getAppWidth(), 50);
+        uiBG.setTranslateY(550);
 
         getGameScene().addUINode(uiBG);
 
@@ -134,8 +159,8 @@ public class TowerDefenseApp extends GameApplication {
 
             Color color = FXGLMath.randomColor();
             TowerIcon icon = new TowerIcon(color);
-            icon.setTranslateX(10 + i * 100);
-            icon.setTranslateY(500);
+            icon.setTranslateX(10 + i * 120);
+            icon.setTranslateY(555);
             icon.setOnMouseClicked(e -> {
                 selectedColor = color;
                 selectedIndex = index;
@@ -177,6 +202,9 @@ public class TowerDefenseApp extends GameApplication {
     }
 
     private void gameOver() {
+        LoseMusic=getAssetLoader().loadMusic("game-lose.mp3");
+        getAudioPlayer().stopMusic(BGM);
+        getAudioPlayer().playMusic(LoseMusic);
         getDisplay().showMessageBox("Demo Over. Thanks for playing!", getGameController()::exit);
     }
 

@@ -59,4 +59,5 @@ public class TowerDefenseFactory implements EntityFactory {
                 .with(new OffscreenCleanComponent())
                 .build();
     }
+
 }
