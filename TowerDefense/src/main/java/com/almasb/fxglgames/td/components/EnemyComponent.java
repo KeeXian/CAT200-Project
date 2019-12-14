@@ -4,7 +4,6 @@ import com.almasb.fxgl.app.AssetLoader;
 import com.almasb.fxgl.core.View;
 import com.almasb.fxgl.core.math.FXGLMath;
 import com.almasb.fxgl.dsl.FXGL;
-import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.component.Component;
 import com.almasb.fxgl.entity.components.ViewComponent;
 import com.almasb.fxgl.texture.AnimatedTexture;
@@ -29,6 +28,7 @@ public class EnemyComponent extends Component{
     private AnimatedTexture texture;
     private AnimationChannel animidle,animwalk,animidle_left,animwalk_left;
 
+
     private double speed;
 
     public EnemyComponent(){
@@ -46,9 +46,12 @@ public class EnemyComponent extends Component{
         nextWaypoint = waypoints.remove(0);
     }
 
+    public EnemyComponent(double speed){
+        this.speed=speed*60*2;
+    }
+
     @Override
     public void onUpdate(double tpf) {
-        speed = tpf * 60 * 2;
 
         if(nextWaypoint.equals(new Point2D(700,300))){
             texture.loopAnimationChannel(animwalk_left);
@@ -81,4 +84,5 @@ public class EnemyComponent extends Component{
             }
         }
     }
+
 }
