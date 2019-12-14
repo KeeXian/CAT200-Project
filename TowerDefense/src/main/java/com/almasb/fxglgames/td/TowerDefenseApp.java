@@ -54,7 +54,7 @@ public class TowerDefenseApp extends GameApplication {
 
     // TODO: read from level data
     private int levelEnemies = 30;
-    private double player_gold = 0;
+    private double player_gold = 4000;
 
     private Point2D enemySpawnPoint = new Point2D(50, 0);
 
@@ -133,16 +133,17 @@ public class TowerDefenseApp extends GameApplication {
     // TODO: this is the enemy data
     private int selectedLevel = 5;
     private int enemyIndex = 1;
+    private Text gold= new Text("4000.0");
 
     @Override
     protected void initUI() {
         Rectangle uiBG = new Rectangle(getAppWidth(), 100);
         uiBG.setTranslateY(500);
         getGameScene().addUINode(uiBG);
-        Text text = new Text(getGameState().getDouble("playerGold").toString());
-        text.setTranslateX(700);
-        text.setTranslateY(10);
-        getGameScene().addUINode(text);
+        gold.setText(getGameState().getDouble("playerGold").toString());
+        gold.setTranslateX(20);
+        gold.setTranslateY(20);
+        getGameScene().addUINode(gold);
         for (int i = 0; i < 4; i++) {
             int index = i + 1;
 
@@ -191,8 +192,8 @@ public class TowerDefenseApp extends GameApplication {
             if(levelEnemies==0)
                 gameOver();
             }
+            gold.setText(getGameState().getDouble("playerGold").toString());
             Point2D position = enemy.getPosition();
-
             Text xMark = getUIFactory().newText("X", Color.RED, 24);
             xMark.setTranslateX(position.getX() + 20);
             xMark.setTranslateY(position.getY() + 60);

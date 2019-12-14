@@ -5,6 +5,7 @@ public class FireTowerComponent extends TowerDataComponent {
     public FireTowerComponent(){
         this.damage=4;
         burnDamage=2;
+        this.price=7800;
     }
     public int getBurnDamage(){
         return burnDamage;

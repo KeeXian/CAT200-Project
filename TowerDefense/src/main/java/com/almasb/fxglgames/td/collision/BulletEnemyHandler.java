@@ -11,6 +11,9 @@ import com.almasb.fxglgames.td.enemy.EnemyDataComponent;
 import com.almasb.fxglgames.td.TowerDefenseType;
 import com.almasb.fxglgames.td.event.BulletHitEnemy;
 import com.almasb.fxglgames.td.tower.BulletComponent;
+import javafx.animation.FadeTransition;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 import java.util.TimerTask;
@@ -34,7 +37,16 @@ public class BulletEnemyHandler extends CollisionHandler {
         if(enemy.getComponent(EnemyDataComponent.class).getHp()<=0) {
             enemy.removeFromWorld();
             double money = FXGL.getGameState().getDouble("playerGold");
-            FXGL.getGameState().setValue("playerGold", (money+enemy.getComponent(EnemyDataComponent.class).getGold()));
+            FXGL.getGameState().setValue("playerGold",
+                    (money+enemy.getComponent(EnemyDataComponent.class).getGold()));
+            Text text = FXGL.getUIFactory().
+                    newText("+"+enemy.getComponent(EnemyDataComponent.class).getGold(), Color.BLACK, 24);
+            text.setTranslateX(20);
+            text.setTranslateY(30);
+            FadeTransition fade = new FadeTransition(Duration.millis(3000),text);
+            fade.setFromValue(1.0);
+            fade.setToValue(0);
+            fade.play();
         }
         else {
             enemy.getComponent(EnemyDataComponent.class).updateHp(bullet.getComponent(BulletComponent.class).getDamage());
