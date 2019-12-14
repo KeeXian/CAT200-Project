@@ -1,6 +1,7 @@
 package com.almasb.fxglgames.td;
 
 import com.almasb.fxgl.app.AssetLoader;
+import com.almasb.fxgl.dsl.EntityBuilder;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.dsl.components.OffscreenCleanComponent;
 import com.almasb.fxgl.entity.*;
@@ -12,10 +13,13 @@ import com.almasb.fxglgames.td.components.TowerComponent;
 import com.almasb.fxglgames.td.enemy.EnemyDataComponent;
 import com.almasb.fxglgames.td.tower.BulletComponent;
 import com.almasb.fxglgames.td.tower.TowerDataComponent;
+import javafx.animation.FadeTransition;
 import javafx.geometry.Point2D;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
+import javafx.util.Duration;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
 
@@ -51,13 +55,28 @@ public class TowerDefenseFactory implements EntityFactory {
 //        } catch (Exception e) {
 //            throw new RuntimeException("Failed to parse KV file: " + e);
 //        }
-        return entityBuilder()
-                .type(TowerDefenseType.TOWER)
-                .from(data)
-                .view(new Rectangle(40, 40, data.get("color")))
-                .with(new CollidableComponent(true), towerComponent)
-                .with(new TowerComponent())
-                .build();
+        Entity tower = new Entity();
+        if(FXGL.getGameState().getDouble("playerGold")<towerComponent.getPrice()) {
+            Text text = FXGL.getUIFactory().newText("Insufficient Funds", Color.RED, 24);
+            text.setTranslateX(150);
+            text.setTranslateY(20);
+            FadeTransition fadeTransition = new FadeTransition(Duration.millis(3000), text);
+            fadeTransition.setFromValue(1.0);
+            fadeTransition.setToValue(0);
+            fadeTransition.play();
+            FXGL.getGameScene().addUINode(text);
+        }
+        else {
+            tower = entityBuilder()
+                    .type(TowerDefenseType.TOWER)
+                    .from(data)
+                    .view(new Rectangle(40, 40, data.get("color")))
+                    .with(new CollidableComponent(true), towerComponent)
+                    .with(new TowerComponent())
+                    .build();
+            FXGL.getGameState().increment("playerGold",-(towerComponent.getPrice()));
+        }
+        return tower;
     }
 
     @Spawns("Bullet")
