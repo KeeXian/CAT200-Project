@@ -1,5 +1,6 @@
 package com.almasb.fxglgames.td;
 
+import com.almasb.fxgl.app.AssetLoader;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.dsl.components.OffscreenCleanComponent;
 import com.almasb.fxgl.entity.*;
@@ -7,6 +8,8 @@ import com.almasb.fxgl.entity.components.CollidableComponent;
 import com.almasb.fxglgames.td.components.EnemyComponent;
 import com.almasb.fxglgames.td.components.TowerComponent;
 import com.almasb.fxglgames.td.tower.TowerDataComponent;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
@@ -19,10 +22,12 @@ public class TowerDefenseFactory implements EntityFactory {
 
     @Spawns("Enemy")
     public Entity spawnEnemy(SpawnData data) {
+        Rectangle rect=new Rectangle(40, 40);
+        rect.setFill(Color.rgb(0,0,0,0));
         return entityBuilder()
                 .type(TowerDefenseType.ENEMY)
                 .from(data)
-                .viewWithBBox(new Rectangle(40, 40, Color.RED))
+                .viewWithBBox(rect)
                 .with(new CollidableComponent(true))
                 .with(new EnemyComponent())
                 .build();
