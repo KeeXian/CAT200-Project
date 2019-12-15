@@ -1,0 +1,6 @@
+TowerDefense/.idea/**
+TowerDefense/logs/**
+TowerDefense/.idea/*
+TowerDefense/logs/*
+TowerDefense/.idea/workspace.xml
+TowerDefense/.idea/misc.xml
