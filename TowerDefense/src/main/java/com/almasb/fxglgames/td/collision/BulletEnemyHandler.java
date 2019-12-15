@@ -40,9 +40,6 @@ public class BulletEnemyHandler extends CollisionHandler {
             FXGL.getAudioPlayer().stopMusic(music);
             FXGL.getAudioPlayer().playMusic(music);
             enemy.removeFromWorld();
-            double money = FXGL.getGameState().getDouble("playerGold");
-            FXGL.getGameState().setValue("playerGold",
-                    (money+enemy.getComponent(EnemyDataComponent.class).getGold()));
             Text text = FXGL.getUIFactory().
                     newText("+"+enemy.getComponent(EnemyDataComponent.class).getGold(), Color.BLACK, 10);
             text.setTranslateX(20);

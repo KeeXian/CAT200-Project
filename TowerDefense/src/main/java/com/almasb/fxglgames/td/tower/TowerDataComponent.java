@@ -14,6 +14,7 @@ import static com.almasb.fxgl.dsl.FXGL.getAssetLoader;
  */
 public class TowerDataComponent extends Component {
 
+    private int type;
     private int hp;
     protected int damage;
     protected double attackDelay;
@@ -55,6 +56,9 @@ public class TowerDataComponent extends Component {
     public double getSpeed() {
         return speed;
     }
+    public int getType() {
+        return type;
+    }
 
     public static TowerDataComponent makeTower(int type) {
         TowerDataComponent newTower;
@@ -64,9 +68,10 @@ public class TowerDataComponent extends Component {
         else if (type == 2)  //big rock tower
             newTower = new TowerDataComponent(3, 2000,1.0,5*50);
         else if (type == 3)  //metal ball tower
-            newTower = new TowerDataComponent(6, 6000,1.2,5*40);
+            newTower = new TowerDataComponent(6, 4000,1.2,5*40);
         else  //fire tower
             newTower = new FireTowerComponent();
+        newTower.type=type;
         return newTower;
     }
 }

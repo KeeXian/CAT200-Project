@@ -1,0 +1,1452 @@
+20:47:49.334 [main                     ] DEBUG GameApplication      - Logger initialized
+20:47:49.336 [main                     ] DEBUG GameApplication      - Logging settings
+Title: Tower Defense
+Version: 0.2
+Width: 768
+Height: 600
+Fullscreen: false
+Intro: false
+Menus: true
+Profiling: false
+Single step:false
+App Mode: DEVELOPER
+Menu Key: ESCAPE
+Stage Style: DECORATED
+Scene Factory: class com.almasb.fxgl.app.SceneFactory
+Dialog Factory: class com.almasb.fxgl.ui.FXGLDialogFactory
+UI Factory: class com.almasb.fxgl.ui.FXGLUIFactory
+
+20:47:49.517 [JavaFX Application Thread] DEBUG Engine               - Initializing FXGL
+20:47:49.517 [JavaFX Application Thread] INFO  Engine               - FXGL-11.5 (17.09.2019 20.41) on WINDOWS (J:13 FX:12.0.1)
+20:47:49.518 [JavaFX Application Thread] INFO  Engine               - Source code and latest versions at: https://github.com/AlmasB/FXGL
+20:47:49.518 [JavaFX Application Thread] INFO  Engine               -              Join the FXGL chat at: https://gitter.im/AlmasB/FXGL
+20:47:49.518 [JavaFX Application Thread] DEBUG Engine               - Initializing environment variables
+20:47:49.520 [JavaFX Application Thread] DEBUG Engine               - Logging environment variables
+20:47:49.520 [JavaFX Application Thread] DEBUG Engine               - achievements: []
+20:47:49.520 [JavaFX Application Thread] DEBUG Engine               - sceneStack: com.almasb.fxgl.app.Engine@71b12d9e
+20:47:49.520 [JavaFX Application Thread] DEBUG Engine               - language: ObjectProperty [value: null]
+20:47:49.520 [JavaFX Application Thread] DEBUG Engine               - isCloseConfirmation: true
+20:47:49.520 [JavaFX Application Thread] DEBUG Engine               - isProfilingEnabled: false
+20:47:49.520 [JavaFX Application Thread] DEBUG Engine               - soundNotification: core/notification.wav
+20:47:49.521 [JavaFX Application Thread] DEBUG Engine               - devShowBBoxProperty: BooleanProperty [value: false]
+20:47:49.521 [JavaFX Application Thread] DEBUG Engine               - pixelsPerMeter: 50.0
+20:47:49.521 [JavaFX Application Thread] DEBUG Engine               - overlayRoot: Group@25cb76e0
+20:47:49.521 [JavaFX Application Thread] DEBUG Engine               - appIcon: fxgl_icon.png
+20:47:49.521 [JavaFX Application Thread] DEBUG Engine               - soundMenuBack: menu/back.wav
+20:47:49.521 [JavaFX Application Thread] DEBUG Engine               - isFullScreenAllowed: false
+20:47:49.521 [JavaFX Application Thread] DEBUG Engine               - isIntroEnabled: false
+20:47:49.522 [JavaFX Application Thread] DEBUG Engine               - eventBus: com.almasb.fxgl.event.EventBus@6b0bdc31
+20:47:49.522 [JavaFX Application Thread] DEBUG Engine               - fontMono: lucida_console.ttf
+20:47:49.522 [JavaFX Application Thread] DEBUG Engine               - soundMenuSelect: menu/select.wav
+20:47:49.522 [JavaFX Application Thread] DEBUG Engine               - isWindows: true
+20:47:49.522 [JavaFX Application Thread] DEBUG Engine               - isMobile: false
+20:47:49.522 [JavaFX Application Thread] DEBUG Engine               - height: 600
+20:47:49.522 [JavaFX Application Thread] DEBUG Engine               - isExperimentalNative: false
+20:47:49.522 [JavaFX Application Thread] DEBUG Engine               - isSingleStep: false
+20:47:49.523 [JavaFX Application Thread] DEBUG Engine               - cSSList: [fxgl_dark.css]
+20:47:49.523 [JavaFX Application Thread] DEBUG Engine               - fontGame: Abel-Regular.ttf
+20:47:49.523 [JavaFX Application Thread] DEBUG Engine               - menuKey: ESCAPE
+20:47:49.523 [JavaFX Application Thread] DEBUG Engine               - devShowPositionProperty: BooleanProperty [value: false]
+20:47:49.523 [JavaFX Application Thread] DEBUG Engine               - versionCheckDays: 7
+20:47:49.523 [JavaFX Application Thread] DEBUG Engine               - masterTimer: com.almasb.fxgl.time.Timer@14aac62d
+20:47:49.523 [JavaFX Application Thread] DEBUG Engine               - configClass: Optional.empty
+20:47:49.523 [JavaFX Application Thread] DEBUG Engine               - isFullScreenFromStart: false
+20:47:49.523 [JavaFX Application Thread] DEBUG Engine               - version: 0.2
+20:47:49.524 [JavaFX Application Thread] DEBUG Engine               - fullScreen: BooleanProperty [value: false]
+20:47:49.524 [JavaFX Application Thread] DEBUG Engine               - dialogFactory: com.almasb.fxgl.ui.FXGLDialogFactory@6c0fc4fb
+20:47:49.524 [JavaFX Application Thread] DEBUG Engine               - applicationMode: DEVELOPER
+20:47:49.524 [JavaFX Application Thread] DEBUG Engine               - isMac: false
+20:47:49.524 [JavaFX Application Thread] DEBUG Engine               - urlGoogleForms: https://goo.gl/forms/6wrMnOBxTE1fEpOy2
+20:47:49.524 [JavaFX Application Thread] DEBUG Engine               - isMenuEnabled: true
+20:47:49.524 [JavaFX Application Thread] DEBUG Engine               - urlPOM: https://raw.githubusercontent.com/AlmasB/FXGL/master/pom.xml
+20:47:49.524 [JavaFX Application Thread] DEBUG Engine               - profileName: user.profile
+20:47:49.525 [JavaFX Application Thread] DEBUG Engine               - devSensorColorProperty: ObjectProperty [value: 0xffff00ff]
+20:47:49.525 [JavaFX Application Thread] DEBUG Engine               - notificationViewClass: class com.almasb.fxgl.notification.view.XboxNotificationView
+20:47:49.525 [JavaFX Application Thread] DEBUG Engine               - dataFileExt: .dat
+20:47:49.525 [JavaFX Application Thread] DEBUG Engine               - sceneFactory: com.almasb.fxgl.app.SceneFactory@120dc3ec
+20:47:49.525 [JavaFX Application Thread] DEBUG Engine               - stageStyle: DECORATED
+20:47:49.525 [JavaFX Application Thread] DEBUG Engine               - isManualResizeEnabled: false
+20:47:49.525 [JavaFX Application Thread] DEBUG Engine               - title: Tower Defense
+20:47:49.525 [JavaFX Application Thread] DEBUG Engine               - platform: WINDOWS
+20:47:49.525 [JavaFX Application Thread] DEBUG Engine               - devBBoxColorProperty: ObjectProperty [value: 0xff0000ff]
+20:47:49.525 [JavaFX Application Thread] DEBUG Engine               - isDesktop: true
+20:47:49.526 [JavaFX Application Thread] DEBUG Engine               - globalMusicVolumeProperty: DoubleProperty [value: 0.5]
+20:47:49.526 [JavaFX Application Thread] DEBUG Engine               - credits: []
+20:47:49.526 [JavaFX Application Thread] DEBUG Engine               - uIFactory: com.almasb.fxgl.ui.FXGLUIFactory@27d27fc8
+20:47:49.526 [JavaFX Application Thread] DEBUG Engine               - isPreserveResizeRatio: false
+20:47:49.526 [JavaFX Application Thread] DEBUG Engine               - fontText: Courier-Prime.ttf
+20:47:49.526 [JavaFX Application Thread] DEBUG Engine               - isExperimentalTiledLargeMap: false
+20:47:49.526 [JavaFX Application Thread] DEBUG Engine               - secondsIn24h: 60
+20:47:49.526 [JavaFX Application Thread] DEBUG Engine               - runtimeInfo: RuntimeInfo(platform=WINDOWS, version=11.5, build=17.09.2019 20.41)
+20:47:49.526 [JavaFX Application Thread] DEBUG Engine               - urlGithub: https://github.com/AlmasB/FXGL
+20:47:49.526 [JavaFX Application Thread] DEBUG Engine               - isLinux: false
+20:47:49.526 [JavaFX Application Thread] DEBUG Engine               - soundMenuPress: menu/press.wav
+20:47:49.527 [JavaFX Application Thread] DEBUG Engine               - profileDir: profiles/
+20:47:49.527 [JavaFX Application Thread] DEBUG Engine               - isDeveloperMenuEnabled: false
+20:47:49.527 [JavaFX Application Thread] DEBUG Engine               - globalSoundVolumeProperty: DoubleProperty [value: 0.5]
+20:47:49.527 [JavaFX Application Thread] DEBUG Engine               - urlLeaderboard: http://fxgl-top.herokuapp.com/
+20:47:49.527 [JavaFX Application Thread] DEBUG Engine               - isBrowser: false
+20:47:49.527 [JavaFX Application Thread] DEBUG Engine               - globalSoundVolume: 0.5
+20:47:49.527 [JavaFX Application Thread] DEBUG Engine               - saveDir: saves/
+20:47:49.527 [JavaFX Application Thread] DEBUG Engine               - engineServices: [class com.almasb.fxgl.audio.AudioPlayer, class com.almasb.fxgl.notification.impl.NotificationServiceProvider, class com.almasb.fxgl.achievement.AchievementManager, class com.almasb.fxgl.cutscene.CutsceneService, class com.almasb.fxgl.minigames.MiniGameService]
+20:47:49.527 [JavaFX Application Thread] DEBUG Engine               - globalMusicVolume: 0.5
+20:47:49.527 [JavaFX Application Thread] DEBUG Engine               - width: 768
+20:47:49.527 [JavaFX Application Thread] DEBUG Engine               - saveFileExt: .sav
+20:47:49.527 [JavaFX Application Thread] DEBUG Engine               - isAndroid: false
+20:47:49.528 [JavaFX Application Thread] DEBUG Engine               - fontUI: VarelaRound-Regular.ttf
+20:47:49.528 [JavaFX Application Thread] DEBUG Engine               - isIOS: false
+20:47:49.528 [JavaFX Application Thread] DEBUG Engine               - enabledMenuItems: []
+20:47:49.530 [JavaFX Application Thread] DEBUG Engine               - Adding new engine service: class com.almasb.fxgl.audio.AudioPlayer
+20:47:49.531 [JavaFX Application Thread] DEBUG Engine               - Adding new engine service: class com.almasb.fxgl.notification.impl.NotificationServiceProvider
+20:47:49.531 [JavaFX Application Thread] DEBUG Engine               - Adding new engine service: class com.almasb.fxgl.achievement.AchievementManager
+20:47:49.532 [JavaFX Application Thread] DEBUG Engine               - Adding new engine service: class com.almasb.fxgl.cutscene.CutsceneService
+20:47:49.532 [JavaFX Application Thread] DEBUG Engine               - Adding new engine service: class com.almasb.fxgl.minigames.MiniGameService
+20:47:49.534 [JavaFX Application Thread] DEBUG Engine               - Loading localizations
+20:47:49.550 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/properties/languages/english.properties
+20:47:49.553 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/properties/languages/french.properties
+20:47:49.554 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/properties/languages/german.properties
+20:47:49.555 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/properties/languages/russian.properties
+20:47:49.556 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/properties/languages/hungarian.properties
+20:47:49.557 [JavaFX Application Thread] DEBUG Engine               - Registering font factories
+20:47:49.558 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/ui/fonts/VarelaRound-Regular.ttf
+20:47:49.707 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/ui/fonts/Abel-Regular.ttf
+20:47:49.710 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/ui/fonts/lucida_console.ttf
+20:47:49.714 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/ui/fonts/Courier-Prime.ttf
+20:47:49.717 [JavaFX Application Thread] DEBUG Engine               - Setting UI factory
+20:47:49.785 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/fxgl_logo.png
+20:47:49.838 [JavaFX Application Thread] DEBUG MainWindow           - Creating a JavaFX scene
+20:47:49.869 [JavaFX Application Thread] DEBUG MainWindow           - Target settings size: 768.0 x 600.0
+20:47:49.870 [JavaFX Application Thread] DEBUG MainWindow           - Scaled scene size:    768.0 x 600.0
+20:47:49.870 [JavaFX Application Thread] DEBUG MainWindow           - Scaled ratio: (1.0, 1.0)
+20:47:49.871 [JavaFX Application Thread] DEBUG MainWindow           - Set initial scene to FXGLStartupScene
+20:47:49.877 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/fxgl_icon.png
+20:47:49.887 [JavaFX Application Thread] DEBUG Engine               - Applying CSS: fxgl_dark.css
+20:47:49.887 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/ui/css/fxgl_dark.css
+20:47:49.889 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/ui/cursors/fxgl_default.png
+20:47:49.891 [JavaFX Application Thread] DEBUG MainWindow           - Opening main window
+20:47:50.018 [JavaFX Application Thread] DEBUG MainWindow           - Window border size: (16.0, 39.0)
+20:47:50.018 [JavaFX Application Thread] DEBUG MainWindow           - Scaled size: 768.0 x 600.0
+20:47:50.018 [JavaFX Application Thread] DEBUG MainWindow           - Scaled ratio: (1.0, 1.0)
+20:47:50.018 [JavaFX Application Thread] DEBUG MainWindow           - Scene size: 768.0 x 600.0
+20:47:50.018 [JavaFX Application Thread] DEBUG MainWindow           - Stage size: 784.0 x 639.0
+20:47:50.030 [FXGL Background Thread 1 ] DEBUG FS                   - Loaded FSServiceImpl
+20:47:50.030 [FXGL Background Thread 1 ] DEBUG Engine               - Loading FXGL system data
+20:47:50.039 [FXGL Background Thread 1 ] DEBUG FSServiceImpl        - Reading from: C:\Users\user\IdeaProjects\TowerDefense\system\fxgl.bundle
+20:47:50.048 [FXGL Background Thread 1 ] DEBUG Engine               - Bundle FXGL: {}
+20:47:50.048 [FXGL Background Thread 1 ] DEBUG Engine               - Initializing application scenes
+20:47:50.068 [FXGL Background Thread 1 ] DEBUG GameWorld            - Game world initialized
+20:47:50.121 [FXGL Background Thread 1 ] DEBUG PhysicsWorld         - Physics world initialized: appHeight=600, physics.ppm=50.0
+20:47:50.123 [FXGL Background Thread 1 ] DEBUG GameScene            - Game scene initialized: 768x600
+20:47:50.174 [FXGL Background Thread 1 ] DEBUG AssetLoader          - Loading from file system: /assets/textures/particles/trace_horizontal.png
+20:47:50.198 [FXGL Background Thread 1 ] DEBUG FXGL.DefaultMenu     - createMenuBodyMainMenu()
+20:47:50.213 [FXGL Background Thread 1 ] DEBUG FXGL.DefaultMenu     - createOptionsMenu()
+20:47:50.219 [FXGL Background Thread 1 ] DEBUG AssetLoader          - Loading from file system: /assets/textures/particles/smoke.png
+20:47:50.278 [FXGL Background Thread 1 ] DEBUG AssetLoader          - Loading from cache: /assets/textures/particles/trace_horizontal.png@64.0x64.0
+20:47:50.279 [FXGL Background Thread 1 ] DEBUG FXGL.DefaultMenu     - createMenuBodyGameMenu()
+20:47:50.280 [FXGL Background Thread 1 ] DEBUG FXGL.DefaultMenu     - createOptionsMenu()
+20:47:50.283 [FXGL Background Thread 1 ] DEBUG AssetLoader          - Loading from cache: /assets/textures/particles/smoke.png@128.0x128.0
+20:47:50.295 [FXGL Background Thread 1 ] DEBUG Engine               - Application scenes initialized
+20:47:50.297 [JavaFX Application Thread] DEBUG Engine               - Running preInit()
+20:47:50.300 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Place Tower - LMB
+20:47:50.300 [JavaFX Application Thread] DEBUG Input                - Registered new binding: remove tower - RMB
+20:47:50.304 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Screenshot - P
+20:47:50.305 [JavaFX Application Thread] DEBUG Input                - Registered new binding: System info dump - CTRL+9
+20:47:50.305 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Restart - CTRL+R
+20:47:50.305 [JavaFX Application Thread] DEBUG Engine               - generateDefaultProfile()
+20:47:50.305 [JavaFX Application Thread] DEBUG Engine               - Creating default profile
+20:47:50.305 [JavaFX Application Thread] DEBUG EventBus             - Firing event: SaveEvent
+20:47:50.317 [JavaFX Application Thread] INFO  Engine               - FXGL initialization took: 0.783 sec
+20:47:50.317 [JavaFX Application Thread] DEBUG LoopRunner           - Starting loop
+20:47:50.324 [JavaFX Application Thread] DEBUG FXGLStartupScene     - STARTUP
+20:47:50.327 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+20:47:50.345 [JavaFX Application Thread] DEBUG Engine               - Removing overlay from FXGLStartupScene and adding to FXGLDefaultMenu
+20:47:50.345 [JavaFX Application Thread] DEBUG MainWindow           - FXGLStartupScene -> FXGLDefaultMenu
+20:47:51.996 [JavaFX Application Thread] DEBUG Menu                 - fireNewGame()
+20:47:51.996 [JavaFX Application Thread] DEBUG Engine               - Starting new game
+20:47:52.001 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+20:47:52.001 [FXGL Background Thread 1 ] DEBUG InitAppTask          - Clearing previous game
+20:47:52.001 [FXGL Background Thread 1 ] DEBUG GameWorld            - Clearing game world
+20:47:52.001 [FXGL Background Thread 1 ] DEBUG PhysicsWorld         - Clearing physics world
+20:47:52.001 [FXGL Background Thread 1 ] DEBUG GameScene            - Clearing game scene
+20:47:52.002 [FXGL Background Thread 1 ] DEBUG InitAppTask          - Initializing Game
+20:47:52.012 [JavaFX Application Thread] DEBUG Engine               - Removing overlay from FXGLDefaultMenu and adding to LoadingScene
+20:47:52.012 [JavaFX Application Thread] DEBUG MainWindow           - FXGLDefaultMenu -> LoadingScene
+20:47:52.038 [FXGL Background Thread 1 ] WARN  TMXLevelLoader       - TiledMap generated from 1.3.1. Supported version: 1.2.3. Some features may not be parsed fully.
+20:47:52.052 [FXGL Background Thread 1 ] DEBUG TMXLevelLoader       - Parsed raw map: TiledMap(width=24, height=18, tilewidth=32, tileheight=32, orientation=orthogonal, layers=[Layer(width=24, height=18, name=Tile Layer 2, type=tilelayer, visible=false, x=0, y=0, data=[7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 110, 110, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 110, 110, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 110, 110, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 42, 43, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 76, 77, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7], objects=[], opacity=0.0, draworder=), Layer(width=24, height=18, name=Tile Layer 1, type=tilelayer, visible=false, x=0, y=0, data=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 145, 146, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 179, 180, 11, 12, 13, 12, 13, 12, 13, 12, 13, 12, 13, 12, 13, 12, 13, 12, 13, 14, 15, 16, 0, 0, 0, 0, 45, 46, 47, 46, 47, 48, 46, 47, 48, 46, 47, 46, 47, 48, 46, 47, 46, 47, 48, 50, 143, 144, 0, 0, 79, 80, 81, 82, 83, 80, 81, 80, 81, 82, 80, 81, 80, 81, 82, 83, 81, 82, 83, 50, 177, 178, 0, 0, 79, 80, 81, 82, 83, 82, 83, 80, 81, 82, 83, 83, 82, 83, 82, 83, 81, 82, 83, 84, 0, 0, 0, 0, 113, 114, 115, 116, 117, 116, 117, 114, 115, 116, 117, 117, 116, 117, 116, 117, 115, 116, 117, 118, 211, 212, 0, 0, 147, 80, 81, 82, 80, 81, 80, 81, 80, 81, 80, 81, 82, 80, 81, 80, 80, 81, 82, 220, 245, 246, 0, 0, 249, 250, 251, 252, 251, 251, 252, 251, 252, 251, 252, 251, 251, 252, 251, 252, 251, 252, 253, 254, 0, 0, 0, 0, 211, 212, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 245, 246, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 283, 285, 284, 285, 284, 285, 284, 285, 284, 285, 284, 285, 284, 285, 286, 287, 288, 0, 0, 0, 0, 0, 0, 0, 385, 352, 353, 354, 355, 352, 353, 352, 352, 353, 352, 352, 352, 353, 354, 355, 322, 0, 0, 0, 0, 0, 0, 0, 419, 386, 387, 388, 389, 386, 387, 386, 386, 387, 386, 386, 386, 387, 422, 423, 424, 0, 0, 0, 0, 0, 0, 0, 521, 522, 524, 523, 524, 523, 524, 523, 524, 523, 524, 523, 524, 523, 524, 525, 526, 0, 0, 0, 0, 145, 146, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 427, 428, 179, 180, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 461, 462, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], objects=[], opacity=0.0, draworder=)], tilesets=[Tileset(firstgid=1, image=../../Desktop/Sprites/mapPack_tilesheet.png, name=tile, tilewidth=32, tileheight=32, imagewidth=1088, imageheight=768, margin=0, spacing=0, columns=34, tilecount=816, transparentcolor=)], backgroundcolor=, renderorder=right-down, nextobjectid=1, version=1, tiledversion=1.3.1, type=map, infinite=false, properties={}, propertytypes={})
+20:47:52.053 [FXGL Background Thread 1 ] DEBUG TMXLevelLoader       - Creating tile layer entities
+20:47:52.054 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Loading view for layer Tile Layer 2
+20:47:52.054 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Created buffer with size 768.0x576.0
+20:47:52.091 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,0, w=32,h=32, src=192,0
+20:47:52.091 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,0, w=32,h=32, src=192,0
+20:47:52.091 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,0, w=32,h=32, src=192,0
+20:47:52.092 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,0, w=32,h=32, src=192,0
+20:47:52.092 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,0, w=32,h=32, src=192,0
+20:47:52.092 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,0, w=32,h=32, src=192,0
+20:47:52.092 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,0, w=32,h=32, src=192,0
+20:47:52.092 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,0, w=32,h=32, src=192,0
+20:47:52.092 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,0, w=32,h=32, src=192,0
+20:47:52.092 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,0, w=32,h=32, src=192,0
+20:47:52.092 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,0, w=32,h=32, src=192,0
+20:47:52.092 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,0, w=32,h=32, src=192,0
+20:47:52.092 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,0, w=32,h=32, src=192,0
+20:47:52.092 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,0, w=32,h=32, src=192,0
+20:47:52.092 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,0, w=32,h=32, src=192,0
+20:47:52.092 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,0, w=32,h=32, src=192,0
+20:47:52.092 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,0, w=32,h=32, src=192,0
+20:47:52.092 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,0, w=32,h=32, src=192,0
+20:47:52.092 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,0, w=32,h=32, src=192,0
+20:47:52.092 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,0, w=32,h=32, src=192,0
+20:47:52.092 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=640,0, w=32,h=32, src=192,0
+20:47:52.093 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=672,0, w=32,h=32, src=192,0
+20:47:52.093 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=704,0, w=32,h=32, src=192,0
+20:47:52.093 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=736,0, w=32,h=32, src=192,0
+20:47:52.093 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,32, w=32,h=32, src=192,0
+20:47:52.093 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,32, w=32,h=32, src=192,0
+20:47:52.093 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,32, w=32,h=32, src=192,0
+20:47:52.093 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,32, w=32,h=32, src=192,0
+20:47:52.093 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,32, w=32,h=32, src=192,0
+20:47:52.093 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,32, w=32,h=32, src=192,0
+20:47:52.093 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,32, w=32,h=32, src=192,0
+20:47:52.093 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,32, w=32,h=32, src=192,0
+20:47:52.093 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,32, w=32,h=32, src=192,0
+20:47:52.093 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,32, w=32,h=32, src=192,0
+20:47:52.093 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,32, w=32,h=32, src=192,0
+20:47:52.093 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,32, w=32,h=32, src=192,0
+20:47:52.093 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,32, w=32,h=32, src=192,0
+20:47:52.093 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,32, w=32,h=32, src=192,0
+20:47:52.093 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,32, w=32,h=32, src=192,0
+20:47:52.094 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,32, w=32,h=32, src=192,0
+20:47:52.094 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,32, w=32,h=32, src=192,0
+20:47:52.094 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,32, w=32,h=32, src=192,0
+20:47:52.094 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,32, w=32,h=32, src=192,0
+20:47:52.094 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,32, w=32,h=32, src=192,0
+20:47:52.094 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=640,32, w=32,h=32, src=192,0
+20:47:52.094 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=672,32, w=32,h=32, src=192,0
+20:47:52.094 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=704,32, w=32,h=32, src=224,96
+20:47:52.094 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=736,32, w=32,h=32, src=224,96
+20:47:52.094 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,64, w=32,h=32, src=192,0
+20:47:52.094 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,64, w=32,h=32, src=192,0
+20:47:52.094 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,64, w=32,h=32, src=192,0
+20:47:52.094 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,64, w=32,h=32, src=192,0
+20:47:52.094 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,64, w=32,h=32, src=192,0
+20:47:52.094 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,64, w=32,h=32, src=192,0
+20:47:52.094 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,64, w=32,h=32, src=192,0
+20:47:52.094 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,64, w=32,h=32, src=192,0
+20:47:52.094 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,64, w=32,h=32, src=192,0
+20:47:52.094 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,64, w=32,h=32, src=192,0
+20:47:52.095 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,64, w=32,h=32, src=192,0
+20:47:52.095 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,64, w=32,h=32, src=192,0
+20:47:52.095 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,64, w=32,h=32, src=192,0
+20:47:52.095 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,64, w=32,h=32, src=192,0
+20:47:52.095 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,64, w=32,h=32, src=192,0
+20:47:52.095 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,64, w=32,h=32, src=192,0
+20:47:52.095 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,64, w=32,h=32, src=192,0
+20:47:52.095 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,64, w=32,h=32, src=192,0
+20:47:52.095 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,64, w=32,h=32, src=192,0
+20:47:52.095 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,64, w=32,h=32, src=192,0
+20:47:52.095 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=640,64, w=32,h=32, src=192,0
+20:47:52.095 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=672,64, w=32,h=32, src=192,0
+20:47:52.095 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=704,64, w=32,h=32, src=224,96
+20:47:52.095 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=736,64, w=32,h=32, src=224,96
+20:47:52.095 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,96, w=32,h=32, src=192,0
+20:47:52.095 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,96, w=32,h=32, src=192,0
+20:47:52.095 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,96, w=32,h=32, src=192,0
+20:47:52.095 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,96, w=32,h=32, src=192,0
+20:47:52.095 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,96, w=32,h=32, src=192,0
+20:47:52.095 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,96, w=32,h=32, src=192,0
+20:47:52.096 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,96, w=32,h=32, src=192,0
+20:47:52.096 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,96, w=32,h=32, src=192,0
+20:47:52.096 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,96, w=32,h=32, src=192,0
+20:47:52.096 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,96, w=32,h=32, src=192,0
+20:47:52.096 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,96, w=32,h=32, src=192,0
+20:47:52.096 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,96, w=32,h=32, src=192,0
+20:47:52.096 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,96, w=32,h=32, src=192,0
+20:47:52.096 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,96, w=32,h=32, src=192,0
+20:47:52.096 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,96, w=32,h=32, src=192,0
+20:47:52.096 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,96, w=32,h=32, src=192,0
+20:47:52.096 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,96, w=32,h=32, src=192,0
+20:47:52.096 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,96, w=32,h=32, src=192,0
+20:47:52.096 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,96, w=32,h=32, src=192,0
+20:47:52.096 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,96, w=32,h=32, src=192,0
+20:47:52.096 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=640,96, w=32,h=32, src=192,0
+20:47:52.096 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=672,96, w=32,h=32, src=192,0
+20:47:52.096 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=704,96, w=32,h=32, src=224,96
+20:47:52.096 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=736,96, w=32,h=32, src=224,96
+20:47:52.096 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,128, w=32,h=32, src=192,0
+20:47:52.097 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,128, w=32,h=32, src=192,0
+20:47:52.097 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,128, w=32,h=32, src=192,0
+20:47:52.097 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,128, w=32,h=32, src=192,0
+20:47:52.097 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,128, w=32,h=32, src=192,0
+20:47:52.097 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,128, w=32,h=32, src=192,0
+20:47:52.097 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,128, w=32,h=32, src=192,0
+20:47:52.097 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,128, w=32,h=32, src=192,0
+20:47:52.097 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,128, w=32,h=32, src=192,0
+20:47:52.097 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,128, w=32,h=32, src=192,0
+20:47:52.097 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,128, w=32,h=32, src=192,0
+20:47:52.097 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,128, w=32,h=32, src=192,0
+20:47:52.097 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,128, w=32,h=32, src=192,0
+20:47:52.097 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,128, w=32,h=32, src=192,0
+20:47:52.097 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,128, w=32,h=32, src=192,0
+20:47:52.097 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,128, w=32,h=32, src=192,0
+20:47:52.097 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,128, w=32,h=32, src=192,0
+20:47:52.097 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,128, w=32,h=32, src=192,0
+20:47:52.097 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,128, w=32,h=32, src=192,0
+20:47:52.097 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,128, w=32,h=32, src=192,0
+20:47:52.097 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=640,128, w=32,h=32, src=192,0
+20:47:52.098 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=672,128, w=32,h=32, src=192,0
+20:47:52.098 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=704,128, w=32,h=32, src=192,0
+20:47:52.098 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=736,128, w=32,h=32, src=192,0
+20:47:52.098 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,160, w=32,h=32, src=192,0
+20:47:52.098 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,160, w=32,h=32, src=192,0
+20:47:52.098 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,160, w=32,h=32, src=192,0
+20:47:52.098 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,160, w=32,h=32, src=192,0
+20:47:52.098 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,160, w=32,h=32, src=192,0
+20:47:52.098 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,160, w=32,h=32, src=192,0
+20:47:52.098 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,160, w=32,h=32, src=192,0
+20:47:52.098 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,160, w=32,h=32, src=192,0
+20:47:52.098 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,160, w=32,h=32, src=192,0
+20:47:52.098 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,160, w=32,h=32, src=192,0
+20:47:52.098 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,160, w=32,h=32, src=192,0
+20:47:52.098 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,160, w=32,h=32, src=192,0
+20:47:52.098 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,160, w=32,h=32, src=192,0
+20:47:52.098 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,160, w=32,h=32, src=192,0
+20:47:52.098 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,160, w=32,h=32, src=192,0
+20:47:52.098 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,160, w=32,h=32, src=192,0
+20:47:52.098 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,160, w=32,h=32, src=192,0
+20:47:52.099 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,160, w=32,h=32, src=192,0
+20:47:52.099 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,160, w=32,h=32, src=192,0
+20:47:52.099 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,160, w=32,h=32, src=192,0
+20:47:52.099 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=640,160, w=32,h=32, src=192,0
+20:47:52.099 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=672,160, w=32,h=32, src=192,0
+20:47:52.099 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=704,160, w=32,h=32, src=192,0
+20:47:52.099 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=736,160, w=32,h=32, src=192,0
+20:47:52.099 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,192, w=32,h=32, src=192,0
+20:47:52.099 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,192, w=32,h=32, src=192,0
+20:47:52.099 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,192, w=32,h=32, src=192,0
+20:47:52.099 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,192, w=32,h=32, src=192,0
+20:47:52.099 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,192, w=32,h=32, src=192,0
+20:47:52.099 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,192, w=32,h=32, src=192,0
+20:47:52.099 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,192, w=32,h=32, src=192,0
+20:47:52.099 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,192, w=32,h=32, src=192,0
+20:47:52.099 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,192, w=32,h=32, src=192,0
+20:47:52.099 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,192, w=32,h=32, src=192,0
+20:47:52.099 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,192, w=32,h=32, src=192,0
+20:47:52.099 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,192, w=32,h=32, src=192,0
+20:47:52.099 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,192, w=32,h=32, src=192,0
+20:47:52.099 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,192, w=32,h=32, src=192,0
+20:47:52.100 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,192, w=32,h=32, src=192,0
+20:47:52.100 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,192, w=32,h=32, src=192,0
+20:47:52.100 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,192, w=32,h=32, src=192,0
+20:47:52.100 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,192, w=32,h=32, src=192,0
+20:47:52.100 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,192, w=32,h=32, src=192,0
+20:47:52.100 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,192, w=32,h=32, src=192,0
+20:47:52.100 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=640,192, w=32,h=32, src=192,0
+20:47:52.100 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=672,192, w=32,h=32, src=192,0
+20:47:52.100 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=704,192, w=32,h=32, src=192,0
+20:47:52.100 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=736,192, w=32,h=32, src=192,0
+20:47:52.100 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,224, w=32,h=32, src=192,0
+20:47:52.100 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,224, w=32,h=32, src=192,0
+20:47:52.100 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,224, w=32,h=32, src=192,0
+20:47:52.100 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,224, w=32,h=32, src=192,0
+20:47:52.100 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,224, w=32,h=32, src=192,0
+20:47:52.100 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,224, w=32,h=32, src=192,0
+20:47:52.100 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,224, w=32,h=32, src=192,0
+20:47:52.100 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,224, w=32,h=32, src=192,0
+20:47:52.100 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,224, w=32,h=32, src=192,0
+20:47:52.100 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,224, w=32,h=32, src=192,0
+20:47:52.100 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,224, w=32,h=32, src=192,0
+20:47:52.101 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,224, w=32,h=32, src=192,0
+20:47:52.101 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,224, w=32,h=32, src=192,0
+20:47:52.101 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,224, w=32,h=32, src=192,0
+20:47:52.101 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,224, w=32,h=32, src=192,0
+20:47:52.101 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,224, w=32,h=32, src=192,0
+20:47:52.101 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,224, w=32,h=32, src=192,0
+20:47:52.101 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,224, w=32,h=32, src=192,0
+20:47:52.101 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,224, w=32,h=32, src=192,0
+20:47:52.101 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,224, w=32,h=32, src=192,0
+20:47:52.101 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=640,224, w=32,h=32, src=192,0
+20:47:52.101 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=672,224, w=32,h=32, src=192,0
+20:47:52.101 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=704,224, w=32,h=32, src=192,0
+20:47:52.101 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=736,224, w=32,h=32, src=192,0
+20:47:52.101 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,256, w=32,h=32, src=192,0
+20:47:52.101 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,256, w=32,h=32, src=192,0
+20:47:52.101 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,256, w=32,h=32, src=192,0
+20:47:52.101 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,256, w=32,h=32, src=192,0
+20:47:52.101 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,256, w=32,h=32, src=192,0
+20:47:52.101 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,256, w=32,h=32, src=192,0
+20:47:52.101 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,256, w=32,h=32, src=192,0
+20:47:52.101 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,256, w=32,h=32, src=192,0
+20:47:52.102 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,256, w=32,h=32, src=192,0
+20:47:52.102 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,256, w=32,h=32, src=192,0
+20:47:52.102 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,256, w=32,h=32, src=192,0
+20:47:52.102 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,256, w=32,h=32, src=192,0
+20:47:52.102 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,256, w=32,h=32, src=192,0
+20:47:52.102 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,256, w=32,h=32, src=192,0
+20:47:52.102 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,256, w=32,h=32, src=192,0
+20:47:52.102 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,256, w=32,h=32, src=192,0
+20:47:52.102 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,256, w=32,h=32, src=192,0
+20:47:52.102 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,256, w=32,h=32, src=192,0
+20:47:52.102 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,256, w=32,h=32, src=192,0
+20:47:52.102 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,256, w=32,h=32, src=192,0
+20:47:52.102 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=640,256, w=32,h=32, src=192,0
+20:47:52.102 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=672,256, w=32,h=32, src=192,0
+20:47:52.102 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=704,256, w=32,h=32, src=192,0
+20:47:52.102 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=736,256, w=32,h=32, src=192,0
+20:47:52.102 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,288, w=32,h=32, src=192,0
+20:47:52.102 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,288, w=32,h=32, src=192,0
+20:47:52.102 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,288, w=32,h=32, src=192,0
+20:47:52.102 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,288, w=32,h=32, src=192,0
+20:47:52.102 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,288, w=32,h=32, src=192,0
+20:47:52.103 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,288, w=32,h=32, src=192,0
+20:47:52.103 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,288, w=32,h=32, src=192,0
+20:47:52.103 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,288, w=32,h=32, src=192,0
+20:47:52.103 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,288, w=32,h=32, src=192,0
+20:47:52.103 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,288, w=32,h=32, src=192,0
+20:47:52.103 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,288, w=32,h=32, src=192,0
+20:47:52.103 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,288, w=32,h=32, src=224,32
+20:47:52.103 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,288, w=32,h=32, src=256,32
+20:47:52.103 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,288, w=32,h=32, src=192,0
+20:47:52.103 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,288, w=32,h=32, src=192,0
+20:47:52.103 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,288, w=32,h=32, src=192,0
+20:47:52.103 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,288, w=32,h=32, src=192,0
+20:47:52.103 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,288, w=32,h=32, src=192,0
+20:47:52.103 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,288, w=32,h=32, src=192,0
+20:47:52.103 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,288, w=32,h=32, src=192,0
+20:47:52.103 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=640,288, w=32,h=32, src=192,0
+20:47:52.103 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=672,288, w=32,h=32, src=192,0
+20:47:52.103 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=704,288, w=32,h=32, src=192,0
+20:47:52.103 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=736,288, w=32,h=32, src=192,0
+20:47:52.103 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,320, w=32,h=32, src=192,0
+20:47:52.103 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,320, w=32,h=32, src=192,0
+20:47:52.103 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,320, w=32,h=32, src=192,0
+20:47:52.103 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,320, w=32,h=32, src=192,0
+20:47:52.104 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,320, w=32,h=32, src=192,0
+20:47:52.104 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,320, w=32,h=32, src=192,0
+20:47:52.104 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,320, w=32,h=32, src=192,0
+20:47:52.104 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,320, w=32,h=32, src=192,0
+20:47:52.104 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,320, w=32,h=32, src=192,0
+20:47:52.104 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,320, w=32,h=32, src=192,0
+20:47:52.104 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,320, w=32,h=32, src=192,0
+20:47:52.104 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,320, w=32,h=32, src=224,64
+20:47:52.104 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,320, w=32,h=32, src=256,64
+20:47:52.104 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,320, w=32,h=32, src=192,0
+20:47:52.104 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,320, w=32,h=32, src=192,0
+20:47:52.104 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,320, w=32,h=32, src=192,0
+20:47:52.104 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,320, w=32,h=32, src=192,0
+20:47:52.104 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,320, w=32,h=32, src=192,0
+20:47:52.104 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,320, w=32,h=32, src=192,0
+20:47:52.104 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,320, w=32,h=32, src=192,0
+20:47:52.104 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=640,320, w=32,h=32, src=192,0
+20:47:52.104 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=672,320, w=32,h=32, src=192,0
+20:47:52.104 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=704,320, w=32,h=32, src=192,0
+20:47:52.104 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=736,320, w=32,h=32, src=192,0
+20:47:52.104 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,352, w=32,h=32, src=192,0
+20:47:52.104 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,352, w=32,h=32, src=192,0
+20:47:52.104 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,352, w=32,h=32, src=192,0
+20:47:52.105 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,352, w=32,h=32, src=192,0
+20:47:52.105 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,352, w=32,h=32, src=192,0
+20:47:52.105 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,352, w=32,h=32, src=192,0
+20:47:52.105 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,352, w=32,h=32, src=192,0
+20:47:52.105 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,352, w=32,h=32, src=192,0
+20:47:52.105 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,352, w=32,h=32, src=192,0
+20:47:52.105 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,352, w=32,h=32, src=192,0
+20:47:52.105 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,352, w=32,h=32, src=192,0
+20:47:52.105 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,352, w=32,h=32, src=192,0
+20:47:52.105 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,352, w=32,h=32, src=192,0
+20:47:52.105 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,352, w=32,h=32, src=192,0
+20:47:52.105 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,352, w=32,h=32, src=192,0
+20:47:52.105 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,352, w=32,h=32, src=192,0
+20:47:52.105 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,352, w=32,h=32, src=192,0
+20:47:52.105 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,352, w=32,h=32, src=192,0
+20:47:52.105 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,352, w=32,h=32, src=192,0
+20:47:52.105 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,352, w=32,h=32, src=192,0
+20:47:52.105 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=640,352, w=32,h=32, src=192,0
+20:47:52.105 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=672,352, w=32,h=32, src=192,0
+20:47:52.105 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=704,352, w=32,h=32, src=192,0
+20:47:52.105 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=736,352, w=32,h=32, src=192,0
+20:47:52.106 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,384, w=32,h=32, src=192,0
+20:47:52.106 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,384, w=32,h=32, src=192,0
+20:47:52.106 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,384, w=32,h=32, src=192,0
+20:47:52.106 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,384, w=32,h=32, src=192,0
+20:47:52.106 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,384, w=32,h=32, src=192,0
+20:47:52.106 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,384, w=32,h=32, src=192,0
+20:47:52.106 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,384, w=32,h=32, src=192,0
+20:47:52.106 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,384, w=32,h=32, src=192,0
+20:47:52.106 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,384, w=32,h=32, src=192,0
+20:47:52.106 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,384, w=32,h=32, src=192,0
+20:47:52.106 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,384, w=32,h=32, src=192,0
+20:47:52.106 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,384, w=32,h=32, src=192,0
+20:47:52.106 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,384, w=32,h=32, src=192,0
+20:47:52.106 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,384, w=32,h=32, src=192,0
+20:47:52.106 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,384, w=32,h=32, src=192,0
+20:47:52.106 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,384, w=32,h=32, src=192,0
+20:47:52.106 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,384, w=32,h=32, src=192,0
+20:47:52.106 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,384, w=32,h=32, src=192,0
+20:47:52.106 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,384, w=32,h=32, src=192,0
+20:47:52.106 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,384, w=32,h=32, src=192,0
+20:47:52.106 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=640,384, w=32,h=32, src=192,0
+20:47:52.106 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=672,384, w=32,h=32, src=192,0
+20:47:52.106 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=704,384, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=736,384, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,416, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,416, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,416, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,416, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,416, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,416, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,416, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,416, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,416, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,416, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,416, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,416, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,416, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,416, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,416, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,416, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,416, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,416, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,416, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,416, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=640,416, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=672,416, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=704,416, w=32,h=32, src=192,0
+20:47:52.107 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=736,416, w=32,h=32, src=192,0
+20:47:52.108 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,448, w=32,h=32, src=192,0
+20:47:52.108 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,448, w=32,h=32, src=192,0
+20:47:52.108 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,448, w=32,h=32, src=192,0
+20:47:52.108 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,448, w=32,h=32, src=192,0
+20:47:52.108 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,448, w=32,h=32, src=192,0
+20:47:52.108 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,448, w=32,h=32, src=192,0
+20:47:52.108 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,448, w=32,h=32, src=192,0
+20:47:52.108 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,448, w=32,h=32, src=192,0
+20:47:52.108 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,448, w=32,h=32, src=192,0
+20:47:52.108 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,448, w=32,h=32, src=192,0
+20:47:52.108 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,448, w=32,h=32, src=192,0
+20:47:52.108 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,448, w=32,h=32, src=192,0
+20:47:52.108 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,448, w=32,h=32, src=192,0
+20:47:52.108 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,448, w=32,h=32, src=192,0
+20:47:52.108 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,448, w=32,h=32, src=192,0
+20:47:52.108 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,448, w=32,h=32, src=192,0
+20:47:52.108 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,448, w=32,h=32, src=192,0
+20:47:52.109 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,448, w=32,h=32, src=192,0
+20:47:52.109 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,448, w=32,h=32, src=192,0
+20:47:52.109 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,448, w=32,h=32, src=192,0
+20:47:52.109 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=640,448, w=32,h=32, src=192,0
+20:47:52.109 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=672,448, w=32,h=32, src=192,0
+20:47:52.109 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=704,448, w=32,h=32, src=192,0
+20:47:52.109 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=736,448, w=32,h=32, src=192,0
+20:47:52.109 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,480, w=32,h=32, src=192,0
+20:47:52.109 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,480, w=32,h=32, src=192,0
+20:47:52.109 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,480, w=32,h=32, src=192,0
+20:47:52.109 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,480, w=32,h=32, src=192,0
+20:47:52.109 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,480, w=32,h=32, src=192,0
+20:47:52.109 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,480, w=32,h=32, src=192,0
+20:47:52.109 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,480, w=32,h=32, src=192,0
+20:47:52.109 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,480, w=32,h=32, src=192,0
+20:47:52.109 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,480, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,480, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,480, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,480, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,480, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,480, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,480, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,480, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,480, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,480, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,480, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,480, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=640,480, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=672,480, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=704,480, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=736,480, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,512, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,512, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,512, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,512, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,512, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,512, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,512, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,512, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,512, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,512, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,512, w=32,h=32, src=192,0
+20:47:52.110 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,512, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,512, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,512, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,512, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,512, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,512, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,512, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,512, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,512, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=640,512, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=672,512, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=704,512, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=736,512, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,544, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,544, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,544, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,544, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,544, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,544, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,544, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,544, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,544, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,544, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,544, w=32,h=32, src=192,0
+20:47:52.111 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,544, w=32,h=32, src=192,0
+20:47:52.112 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,544, w=32,h=32, src=192,0
+20:47:52.112 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,544, w=32,h=32, src=192,0
+20:47:52.112 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,544, w=32,h=32, src=192,0
+20:47:52.112 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,544, w=32,h=32, src=192,0
+20:47:52.112 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,544, w=32,h=32, src=192,0
+20:47:52.112 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,544, w=32,h=32, src=192,0
+20:47:52.112 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,544, w=32,h=32, src=192,0
+20:47:52.112 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,544, w=32,h=32, src=192,0
+20:47:52.112 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=640,544, w=32,h=32, src=192,0
+20:47:52.112 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=672,544, w=32,h=32, src=192,0
+20:47:52.112 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=704,544, w=32,h=32, src=192,0
+20:47:52.112 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=736,544, w=32,h=32, src=192,0
+20:47:52.113 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Loading view for layer Tile Layer 1
+20:47:52.114 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Created buffer with size 768.0x576.0
+20:47:52.114 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=704,0, w=32,h=32, src=256,128
+20:47:52.114 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=736,0, w=32,h=32, src=288,128
+20:47:52.114 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=704,32, w=32,h=32, src=256,160
+20:47:52.114 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=736,32, w=32,h=32, src=288,160
+20:47:52.114 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,64, w=32,h=32, src=320,0
+20:47:52.114 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,64, w=32,h=32, src=352,0
+20:47:52.114 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,64, w=32,h=32, src=384,0
+20:47:52.114 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,64, w=32,h=32, src=352,0
+20:47:52.114 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,64, w=32,h=32, src=384,0
+20:47:52.114 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,64, w=32,h=32, src=352,0
+20:47:52.114 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,64, w=32,h=32, src=384,0
+20:47:52.114 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,64, w=32,h=32, src=352,0
+20:47:52.115 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,64, w=32,h=32, src=384,0
+20:47:52.115 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,64, w=32,h=32, src=352,0
+20:47:52.115 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,64, w=32,h=32, src=384,0
+20:47:52.115 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,64, w=32,h=32, src=352,0
+20:47:52.115 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,64, w=32,h=32, src=384,0
+20:47:52.115 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,64, w=32,h=32, src=352,0
+20:47:52.115 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,64, w=32,h=32, src=384,0
+20:47:52.115 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,64, w=32,h=32, src=352,0
+20:47:52.115 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,64, w=32,h=32, src=384,0
+20:47:52.115 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,64, w=32,h=32, src=416,0
+20:47:52.115 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,64, w=32,h=32, src=448,0
+20:47:52.115 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,64, w=32,h=32, src=480,0
+20:47:52.115 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,96, w=32,h=32, src=320,32
+20:47:52.115 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,96, w=32,h=32, src=352,32
+20:47:52.115 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,96, w=32,h=32, src=384,32
+20:47:52.115 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,96, w=32,h=32, src=352,32
+20:47:52.115 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,96, w=32,h=32, src=384,32
+20:47:52.116 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,96, w=32,h=32, src=416,32
+20:47:52.116 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,96, w=32,h=32, src=352,32
+20:47:52.116 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,96, w=32,h=32, src=384,32
+20:47:52.116 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,96, w=32,h=32, src=416,32
+20:47:52.116 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,96, w=32,h=32, src=352,32
+20:47:52.116 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,96, w=32,h=32, src=384,32
+20:47:52.116 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,96, w=32,h=32, src=352,32
+20:47:52.116 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,96, w=32,h=32, src=384,32
+20:47:52.116 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,96, w=32,h=32, src=416,32
+20:47:52.116 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,96, w=32,h=32, src=352,32
+20:47:52.116 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,96, w=32,h=32, src=384,32
+20:47:52.116 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,96, w=32,h=32, src=352,32
+20:47:52.116 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,96, w=32,h=32, src=384,32
+20:47:52.116 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,96, w=32,h=32, src=416,32
+20:47:52.116 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,96, w=32,h=32, src=480,32
+20:47:52.116 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=640,96, w=32,h=32, src=192,128
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=672,96, w=32,h=32, src=224,128
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,128, w=32,h=32, src=320,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,128, w=32,h=32, src=352,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,128, w=32,h=32, src=384,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,128, w=32,h=32, src=416,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,128, w=32,h=32, src=448,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,128, w=32,h=32, src=352,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,128, w=32,h=32, src=384,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,128, w=32,h=32, src=352,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,128, w=32,h=32, src=384,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,128, w=32,h=32, src=416,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,128, w=32,h=32, src=352,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,128, w=32,h=32, src=384,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,128, w=32,h=32, src=352,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,128, w=32,h=32, src=384,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,128, w=32,h=32, src=416,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,128, w=32,h=32, src=448,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,128, w=32,h=32, src=384,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,128, w=32,h=32, src=416,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,128, w=32,h=32, src=448,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,128, w=32,h=32, src=480,32
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=640,128, w=32,h=32, src=192,160
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=672,128, w=32,h=32, src=224,160
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,160, w=32,h=32, src=320,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,160, w=32,h=32, src=352,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,160, w=32,h=32, src=384,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,160, w=32,h=32, src=416,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,160, w=32,h=32, src=448,64
+20:47:52.117 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,160, w=32,h=32, src=416,64
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,160, w=32,h=32, src=448,64
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,160, w=32,h=32, src=352,64
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,160, w=32,h=32, src=384,64
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,160, w=32,h=32, src=416,64
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,160, w=32,h=32, src=448,64
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,160, w=32,h=32, src=448,64
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,160, w=32,h=32, src=416,64
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,160, w=32,h=32, src=448,64
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,160, w=32,h=32, src=416,64
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,160, w=32,h=32, src=448,64
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,160, w=32,h=32, src=384,64
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,160, w=32,h=32, src=416,64
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,160, w=32,h=32, src=448,64
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,160, w=32,h=32, src=480,64
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,192, w=32,h=32, src=320,96
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,192, w=32,h=32, src=352,96
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,192, w=32,h=32, src=384,96
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,192, w=32,h=32, src=416,96
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,192, w=32,h=32, src=448,96
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,192, w=32,h=32, src=416,96
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,192, w=32,h=32, src=448,96
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,192, w=32,h=32, src=352,96
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,192, w=32,h=32, src=384,96
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,192, w=32,h=32, src=416,96
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,192, w=32,h=32, src=448,96
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,192, w=32,h=32, src=448,96
+20:47:52.118 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,192, w=32,h=32, src=416,96
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,192, w=32,h=32, src=448,96
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,192, w=32,h=32, src=416,96
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,192, w=32,h=32, src=448,96
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,192, w=32,h=32, src=384,96
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,192, w=32,h=32, src=416,96
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,192, w=32,h=32, src=448,96
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,192, w=32,h=32, src=480,96
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=640,192, w=32,h=32, src=192,192
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=672,192, w=32,h=32, src=224,192
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,224, w=32,h=32, src=320,128
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,224, w=32,h=32, src=352,64
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,224, w=32,h=32, src=384,64
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,224, w=32,h=32, src=416,64
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,224, w=32,h=32, src=352,64
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,224, w=32,h=32, src=384,64
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,224, w=32,h=32, src=352,64
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,224, w=32,h=32, src=384,64
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,224, w=32,h=32, src=352,64
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,224, w=32,h=32, src=384,64
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,224, w=32,h=32, src=352,64
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,224, w=32,h=32, src=384,64
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,224, w=32,h=32, src=416,64
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,224, w=32,h=32, src=352,64
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,224, w=32,h=32, src=384,64
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,224, w=32,h=32, src=352,64
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,224, w=32,h=32, src=352,64
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,224, w=32,h=32, src=384,64
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,224, w=32,h=32, src=416,64
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,224, w=32,h=32, src=480,192
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=640,224, w=32,h=32, src=192,224
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=672,224, w=32,h=32, src=224,224
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,256, w=32,h=32, src=320,224
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,256, w=32,h=32, src=352,224
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=64,256, w=32,h=32, src=384,224
+20:47:52.119 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,256, w=32,h=32, src=416,224
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,256, w=32,h=32, src=384,224
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,256, w=32,h=32, src=384,224
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,256, w=32,h=32, src=416,224
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,256, w=32,h=32, src=384,224
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,256, w=32,h=32, src=416,224
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,256, w=32,h=32, src=384,224
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,256, w=32,h=32, src=416,224
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,256, w=32,h=32, src=384,224
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,256, w=32,h=32, src=384,224
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,256, w=32,h=32, src=416,224
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,256, w=32,h=32, src=384,224
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,256, w=32,h=32, src=416,224
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,256, w=32,h=32, src=384,224
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,256, w=32,h=32, src=416,224
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,256, w=32,h=32, src=448,224
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,256, w=32,h=32, src=480,224
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,288, w=32,h=32, src=192,192
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,288, w=32,h=32, src=224,192
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,320, w=32,h=32, src=192,224
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,320, w=32,h=32, src=224,224
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,352, w=32,h=32, src=320,256
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,352, w=32,h=32, src=384,256
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,352, w=32,h=32, src=352,256
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,352, w=32,h=32, src=384,256
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,352, w=32,h=32, src=352,256
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,352, w=32,h=32, src=384,256
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,352, w=32,h=32, src=352,256
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,352, w=32,h=32, src=384,256
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,352, w=32,h=32, src=352,256
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,352, w=32,h=32, src=384,256
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,352, w=32,h=32, src=352,256
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,352, w=32,h=32, src=384,256
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,352, w=32,h=32, src=352,256
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,352, w=32,h=32, src=384,256
+20:47:52.120 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,352, w=32,h=32, src=416,256
+20:47:52.126 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,352, w=32,h=32, src=448,256
+20:47:52.126 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,352, w=32,h=32, src=480,256
+20:47:52.126 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,384, w=32,h=32, src=320,352
+20:47:52.126 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,384, w=32,h=32, src=352,320
+20:47:52.126 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,384, w=32,h=32, src=384,320
+20:47:52.126 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,384, w=32,h=32, src=416,320
+20:47:52.126 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,384, w=32,h=32, src=448,320
+20:47:52.126 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,384, w=32,h=32, src=352,320
+20:47:52.126 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,384, w=32,h=32, src=384,320
+20:47:52.126 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,384, w=32,h=32, src=352,320
+20:47:52.126 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,384, w=32,h=32, src=352,320
+20:47:52.126 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,384, w=32,h=32, src=384,320
+20:47:52.126 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,384, w=32,h=32, src=352,320
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,384, w=32,h=32, src=352,320
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,384, w=32,h=32, src=352,320
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,384, w=32,h=32, src=384,320
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,384, w=32,h=32, src=416,320
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,384, w=32,h=32, src=448,320
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,384, w=32,h=32, src=480,288
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,416, w=32,h=32, src=320,384
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,416, w=32,h=32, src=352,352
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,416, w=32,h=32, src=384,352
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,416, w=32,h=32, src=416,352
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,416, w=32,h=32, src=448,352
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,416, w=32,h=32, src=352,352
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,416, w=32,h=32, src=384,352
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,416, w=32,h=32, src=352,352
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,416, w=32,h=32, src=352,352
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,416, w=32,h=32, src=384,352
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,416, w=32,h=32, src=352,352
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,416, w=32,h=32, src=352,352
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,416, w=32,h=32, src=352,352
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,416, w=32,h=32, src=384,352
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,416, w=32,h=32, src=416,384
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,416, w=32,h=32, src=448,384
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,416, w=32,h=32, src=480,384
+20:47:52.127 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=96,448, w=32,h=32, src=320,480
+20:47:52.128 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=128,448, w=32,h=32, src=352,480
+20:47:52.128 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=160,448, w=32,h=32, src=416,480
+20:47:52.128 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=192,448, w=32,h=32, src=384,480
+20:47:52.128 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=224,448, w=32,h=32, src=416,480
+20:47:52.128 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=256,448, w=32,h=32, src=384,480
+20:47:52.128 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=288,448, w=32,h=32, src=416,480
+20:47:52.128 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=320,448, w=32,h=32, src=384,480
+20:47:52.128 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=352,448, w=32,h=32, src=416,480
+20:47:52.128 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=384,448, w=32,h=32, src=384,480
+20:47:52.128 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=416,448, w=32,h=32, src=416,480
+20:47:52.128 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=448,448, w=32,h=32, src=384,480
+20:47:52.128 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=480,448, w=32,h=32, src=416,480
+20:47:52.128 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=512,448, w=32,h=32, src=384,480
+20:47:52.128 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=544,448, w=32,h=32, src=416,480
+20:47:52.128 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=576,448, w=32,h=32, src=448,480
+20:47:52.128 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=608,448, w=32,h=32, src=480,480
+20:47:52.128 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,480, w=32,h=32, src=256,128
+20:47:52.128 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,480, w=32,h=32, src=288,128
+20:47:52.128 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=704,480, w=32,h=32, src=576,384
+20:47:52.128 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=736,480, w=32,h=32, src=608,384
+20:47:52.128 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=0,512, w=32,h=32, src=256,160
+20:47:52.128 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=32,512, w=32,h=32, src=288,160
+20:47:52.128 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=704,512, w=32,h=32, src=576,416
+20:47:52.129 [FXGL Background Thread 1 ] DEBUG TilesetLoader        - Writing to buffer: dst=736,512, w=32,h=32, src=608,416
+20:47:52.129 [FXGL Background Thread 1 ] DEBUG TMXLevelLoader       - Creating object layer entities
+20:47:52.129 [FXGL Background Thread 1 ] DEBUG GameWorld            - Clearing removable entities
+20:47:52.130 [FXGL Background Thread 1 ] DEBUG GameWorld            - Setting level: com.almasb.fxgl.entity.level.Level@78ce104d
+20:47:52.132 [FXGL Background Thread 1 ] DEBUG AssetLoader          - Loading from file system: /assets/music/Epic Battle.mp3
+20:47:52.298 [FXGL Background Thread 1 ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@38403b36
+20:47:52.303 [FXGL Background Thread 1 ] DEBUG InitAppTask          - Initializing Physics
+20:47:52.304 [FXGL Background Thread 1 ] DEBUG InitAppTask          - Initializing UI
+20:47:52.305 [FXGL Background Thread 1 ] DEBUG AssetLoader          - Loading from file system: /assets/textures/small_stone_tower.png
+20:47:52.315 [FXGL Background Thread 1 ] DEBUG AssetLoader          - Loading from file system: /assets/textures/big_stone_tower.png
+20:47:52.322 [FXGL Background Thread 1 ] DEBUG AssetLoader          - Loading from file system: /assets/textures/metal_ball_tower.png
+20:47:52.332 [FXGL Background Thread 1 ] DEBUG AssetLoader          - Loading from file system: /assets/textures/fire_tower.png
+20:47:52.339 [FXGL Background Thread 1 ] DEBUG InitAppTask          - Initialization Complete
+20:47:52.339 [FXGL Background Thread 1 ] INFO  InitAppTask          - Game initialization took: 0.338 sec
+20:47:52.368 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+20:47:52.376 [JavaFX Application Thread] DEBUG Engine               - Removing overlay from LoadingScene and adding to GameScene
+20:47:52.376 [JavaFX Application Thread] DEBUG MainWindow           - LoadingScene -> GameScene
+20:47:53.111 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small_stone_tower.png
+20:47:53.377 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/level1sheet_small.png
+20:47:53.379 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/level1sheet_small.png
+20:47:53.380 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/level1sheet_left_small.png
+20:47:53.381 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/level1sheet_left_small.png
+20:47:53.597 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small_stone_tower.png
+20:47:53.921 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/small stone.png
+20:47:54.386 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/level1sheet_small.png
+20:47:54.387 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/level1sheet_small.png
+20:47:54.387 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/level1sheet_left_small.png
+20:47:54.388 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/level1sheet_left_small.png
+20:47:54.400 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:54.646 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small_stone_tower.png
+20:47:54.735 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:55.057 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:55.058 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/music/coin.mp3
+20:47:55.216 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:55.262 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small_stone_tower.png
+20:47:55.410 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/level1sheet_small.png
+20:47:55.411 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/level1sheet_small.png
+20:47:55.412 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/level1sheet_left_small.png
+20:47:55.412 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/level1sheet_left_small.png
+20:47:55.456 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:55.552 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:55.584 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:55.586 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:55.712 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:55.713 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:56.032 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:56.064 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:56.096 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:56.098 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:56.240 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:56.241 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:56.272 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:56.368 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:56.369 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:56.371 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:56.417 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/level1sheet_small.png
+20:47:56.417 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/level1sheet_small.png
+20:47:56.418 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/level1sheet_left_small.png
+20:47:56.418 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/level1sheet_left_small.png
+20:47:56.688 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:56.689 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:56.768 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:56.770 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:56.847 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:56.879 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:56.895 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:56.897 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:56.957 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small_stone_tower.png
+20:47:57.039 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:57.040 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:57.088 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:57.184 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:57.348 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small_stone_tower.png
+20:47:57.392 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:57.394 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:57.442 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/level1sheet_small.png
+20:47:57.442 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/level1sheet_small.png
+20:47:57.443 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/level1sheet_left_small.png
+20:47:57.443 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/level1sheet_left_small.png
+20:47:57.445 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:57.446 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:57.584 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:57.585 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:57.663 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:57.695 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:57.696 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:57.697 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:57.760 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:57.904 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:58.000 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:58.096 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:58.098 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:58.112 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:58.113 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:58.114 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:58.115 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:58.161 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:58.255 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:58.256 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:58.349 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small_stone_tower.png
+20:47:58.368 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:58.369 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:58.384 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:58.386 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:58.480 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:58.512 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:58.576 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:58.719 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:58.797 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small_stone_tower.png
+20:47:58.815 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:58.848 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:58.849 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:58.896 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:58.897 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:58.912 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:58.913 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:58.944 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:58.945 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:58.976 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:59.056 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:59.057 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:59.152 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:59.199 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:59.200 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:59.296 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:59.312 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:59.313 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:59.328 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:59.392 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:59.536 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:59.600 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:59.632 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:59.664 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:59.665 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:59.696 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:59.697 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:59.711 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:59.712 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:59.728 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:59.729 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:59.791 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:47:59.792 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:47:59.793 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:47:59.967 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:00.000 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:00.002 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:00.064 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:00.065 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:00.112 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:00.144 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:00.144 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:00.145 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:00.209 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:00.352 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:00.416 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:00.432 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:00.495 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:00.496 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:00.497 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:00.498 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:00.528 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:00.529 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:00.559 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:00.560 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:00.591 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:00.608 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:00.610 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:00.768 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:00.800 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:00.801 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:00.879 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:00.880 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:00.912 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:00.944 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:00.945 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:00.946 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:01.007 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:01.151 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:01.216 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:01.232 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:01.280 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:01.281 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:01.296 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:01.297 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:01.344 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:01.345 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:01.345 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:01.346 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:01.393 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:01.424 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:01.426 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:01.567 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:01.600 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:01.601 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:01.712 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:01.727 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:01.728 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:01.744 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:01.808 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:01.871 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:01.872 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:01.952 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:02.016 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:02.032 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:02.080 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:02.081 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:02.096 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:02.097 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:02.127 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:02.128 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:02.144 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:02.145 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:02.191 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:02.191 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:02.192 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:02.368 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:02.416 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:02.417 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:02.512 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:02.544 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:02.608 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:02.720 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:02.721 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:02.752 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:02.816 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:02.831 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:02.880 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:02.881 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:02.882 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:02.882 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:02.896 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:02.897 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:02.929 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:02.930 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:02.992 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:02.993 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:02.994 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:03.056 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:03.057 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:03.168 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:03.311 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:03.344 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:03.344 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:03.345 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:03.407 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:03.551 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:03.617 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:03.632 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:03.696 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:03.697 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:03.697 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:03.698 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:03.698 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:03.699 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:03.760 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:03.761 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:03.792 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:03.793 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:03.794 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:03.920 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:03.921 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:03.968 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:04.032 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:04.033 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:04.111 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:04.143 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:04.208 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:04.352 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:04.384 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:04.385 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:04.416 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:04.432 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:04.495 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:04.496 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:04.576 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:04.608 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:04.609 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:04.705 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:04.705 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:04.705 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:04.706 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/coin.png
+20:48:04.742 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:04.743 [JavaFX Application Thread] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4399da63
+20:48:04.744 [JavaFX Application Thread] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4399da63
+20:48:04.815 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:04.976 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:05.008 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:05.056 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:05.200 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:05.264 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:05.279 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:05.344 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:05.345 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:05.440 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:05.615 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:05.760 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:05.760 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:05.761 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:05.808 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:05.809 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:05.809 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:05.856 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:05.952 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:05.953 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:06.000 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:06.064 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:06.080 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:06.239 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:06.240 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:06.241 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:06.416 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:06.464 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:06.465 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:06.560 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:06.608 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:06.609 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:06.610 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:06.623 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:06.624 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:06.656 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:06.735 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:06.736 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:06.799 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:06.864 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:06.880 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:06.928 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:06.929 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:06.944 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:06.945 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:07.024 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:07.025 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:07.039 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:07.216 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:07.263 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:07.264 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:07.360 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:07.375 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:07.376 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:07.408 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:07.409 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:07.410 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:07.455 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:07.600 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:07.664 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:07.680 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:07.728 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:07.729 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:07.824 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:07.825 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:07.840 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:07.952 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:07.952 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/coin.png
+20:48:07.953 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:07.953 [JavaFX Application Thread] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4399da63
+20:48:07.953 [JavaFX Application Thread] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4399da63
+20:48:08.015 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:08.160 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:08.192 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:08.192 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:08.193 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:08.255 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:08.400 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:08.448 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:08.449 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:08.464 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:08.480 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:08.640 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:08.784 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:08.785 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:08.800 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:08.801 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:08.832 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:08.912 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:08.913 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:08.975 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:09.024 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:09.071 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:09.168 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:09.169 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:09.216 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:09.280 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:09.296 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:09.440 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:09.441 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:09.456 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:09.520 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:09.521 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:09.616 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:09.617 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:09.632 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:09.633 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:09.648 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:09.792 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:09.840 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:09.856 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:09.858 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:09.888 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:09.983 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:09.984 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:10.015 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:10.016 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:10.016 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:10.017 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:10.032 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:10.096 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:10.096 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:10.097 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:10.112 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:10.271 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:10.272 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:10.273 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:10.320 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:10.321 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:10.432 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:10.433 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:10.464 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:10.608 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:10.656 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:10.657 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:10.657 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:10.703 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:10.703 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:10.704 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:10.767 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:10.768 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/coin.png
+20:48:10.768 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:10.768 [JavaFX Application Thread] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4399da63
+20:48:10.808 [JavaFX Application Thread] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4399da63
+20:48:10.815 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:10.816 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:10.863 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:10.928 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:10.943 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:11.104 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:11.296 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:11.455 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:11.487 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:11.504 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:11.505 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:11.536 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:11.679 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:11.744 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:11.760 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:11.920 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:12.112 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:12.209 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:12.209 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:12.272 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:12.304 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:12.352 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:12.495 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:12.559 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:12.576 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:12.736 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:12.928 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:12.943 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:12.944 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:13.087 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:13.120 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:13.168 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:13.312 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:13.376 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:13.392 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:13.552 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:13.743 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:13.904 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:13.936 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:13.984 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:14.128 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:14.192 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:14.208 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:14.368 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:14.560 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:14.720 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:14.752 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:14.800 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:14.944 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:15.008 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:15.039 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:15.184 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:15.376 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:15.536 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:15.568 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:15.616 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:15.760 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:15.856 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:15.872 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:16.015 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:16.208 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:16.368 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:16.400 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:16.448 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:16.592 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:16.672 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:16.687 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:16.832 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:17.024 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:17.184 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:17.216 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:17.264 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:17.408 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:17.488 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:17.503 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:17.648 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:17.840 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:17.999 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:18.032 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:18.080 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:18.143 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:18.144 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:18.224 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:18.305 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:18.320 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:18.448 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:18.454 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/coin.png
+20:48:18.454 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:18.454 [JavaFX Application Thread] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@4399da63
+20:48:18.455 [JavaFX Application Thread] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@4399da63
+20:48:18.464 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:18.672 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:18.816 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:18.848 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:18.896 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:19.056 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:19.120 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:19.136 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:19.137 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:19.138 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:19.232 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:19.233 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:19.280 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:19.280 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:19.281 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:19.392 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@1ec58826]
+20:48:19.393 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/music/coin.mp3
+20:48:19.488 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:19.631 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:19.664 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:19.712 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:19.872 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:19.936 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:19.952 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:20.096 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:20.304 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:20.447 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:20.479 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:20.527 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:20.646 [JavaFX Application Thread] DEBUG MainWindow           - Push state: DialogSubState
+20:48:20.647 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+20:48:20.648 [JavaFX Application Thread] DEBUG Engine               - Removing overlay from GameScene and adding to DialogSubState
+20:48:20.649 [JavaFX Application Thread] DEBUG MainWindow           - GameScene -> DialogSubState
+20:48:22.292 [JavaFX Application Thread] DEBUG MainWindow           - Pop state: DialogSubState
+20:48:22.292 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+20:48:22.292 [JavaFX Application Thread] DEBUG Engine               - Removing overlay from DialogSubState and adding to GameScene
+20:48:22.293 [JavaFX Application Thread] DEBUG MainWindow           - GameScene <- DialogSubState
+20:48:22.367 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:22.432 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:22.448 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:22.592 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:22.800 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:22.944 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:22.976 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:23.024 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:23.184 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:23.248 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:23.264 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:23.407 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:23.616 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:23.760 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:23.792 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:23.840 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:24.000 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:24.064 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:24.080 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:24.224 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:24.432 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:24.576 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:24.607 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:24.656 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:24.816 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:24.880 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:24.895 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:25.040 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:25.247 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:25.391 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:25.424 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:25.488 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:25.632 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:25.696 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:25.712 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:25.856 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:26.064 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:26.207 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:26.240 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:26.304 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:26.448 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/small stone.png
+20:48:26.572 [JavaFX Application Thread] DEBUG MainWindow           - Push state: DialogSubState
+20:48:26.572 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+20:48:26.573 [JavaFX Application Thread] DEBUG Engine               - Removing overlay from GameScene and adding to DialogSubState
+20:48:26.573 [JavaFX Application Thread] DEBUG MainWindow           - GameScene -> DialogSubState
+20:48:27.524 [JavaFX Application Thread] DEBUG MainWindow           - Pop state: DialogSubState
+20:48:27.524 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+20:48:27.524 [JavaFX Application Thread] DEBUG Engine               - Removing overlay from DialogSubState and adding to GameScene
+20:48:27.524 [JavaFX Application Thread] DEBUG MainWindow           - GameScene <- DialogSubState
+20:48:27.524 [JavaFX Application Thread] DEBUG Engine               - Exiting FXGL
+20:48:27.524 [JavaFX Application Thread] DEBUG Engine               - Shutting down background threads
+20:48:27.525 [JavaFX Application Thread] DEBUG Engine               - Saving FXGL system data
+20:48:27.527 [JavaFX Application Thread] DEBUG FSServiceImpl        - Writing to: C:\Users\user\IdeaProjects\TowerDefense\system\fxgl.bundle
+20:48:27.528 [JavaFX Application Thread] DEBUG Engine               - Closing logger and exiting JavaFX
