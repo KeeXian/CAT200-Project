@@ -1,6 +1,7 @@
 package com.almasb.fxglgames.td.event;
 
 import com.almasb.fxgl.entity.Entity;
+import com.almasb.fxglgames.td.TowerDefenseApp;
 import javafx.event.Event;
 import javafx.event.EventType;
 
@@ -26,5 +27,6 @@ public class EnemyKilledEvent extends Event {
     public EnemyKilledEvent(Entity enemy) {
         super(ANY);
         this.enemy = enemy;
+        TowerDefenseApp.score.setValue(TowerDefenseApp.score.getValue()+1);
     }
 }

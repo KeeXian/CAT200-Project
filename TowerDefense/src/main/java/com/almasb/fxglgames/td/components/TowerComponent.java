@@ -5,6 +5,7 @@ import com.almasb.fxgl.dsl.components.ProjectileComponent;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.component.Component;
 import com.almasb.fxgl.time.LocalTimer;
+import com.almasb.fxglgames.td.TowerDefenseApp;
 import com.almasb.fxglgames.td.TowerDefenseType;
 import com.almasb.fxglgames.td.Config;
 import javafx.geometry.Point2D;
@@ -19,6 +20,7 @@ public class TowerComponent extends Component {
 
     @Override
     public void onAdded() {
+        TowerDefenseApp.score.set( TowerDefenseApp.score.get()-1);
         shootTimer = FXGL.newLocalTimer();
         shootTimer.capture();
     }

@@ -16,12 +16,15 @@ import com.almasb.fxgl.entity.level.Level;
 import com.almasb.fxgl.entity.level.tiled.TMXLevelLoader;
 import com.almasb.fxgl.input.Input;
 import com.almasb.fxgl.input.UserAction;
+import com.almasb.fxgl.ui.UIFactory;
 import com.almasb.fxglgames.td.collision.BulletEnemyHandler;
 import com.almasb.fxglgames.td.event.EnemyKilledEvent;
 import com.almasb.fxglgames.td.event.EnemyReachedGoalEvent;
 import com.almasb.fxglgames.td.tower.TowerIcon;
 import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.geometry.Point2D;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.input.MouseButton;
@@ -82,6 +85,7 @@ public class TowerDefenseApp extends GameApplication {
         settings.setProfilingEnabled(false);
         settings.setCloseConfirmation(true);
         settings.setApplicationMode(ApplicationMode.DEVELOPER);
+        settings.setManualResizeEnabled(true);
     }
 
     @Override
@@ -146,11 +150,13 @@ public class TowerDefenseApp extends GameApplication {
     // TODO: this should be tower data
     private Color selectedColor = Color.BLACK;
     private int selectedIndex = 1;
+    public static IntegerProperty score= new SimpleIntegerProperty(0);
 
     @Override
     protected void initUI() {
         Rectangle uiBG = new Rectangle(getAppWidth(), 50);
         uiBG.setTranslateY(550);
+
 
         getGameScene().addUINode(uiBG);
 
@@ -168,6 +174,11 @@ public class TowerDefenseApp extends GameApplication {
 
             getGameScene().addUINode(icon);
         }
+        Text scoreText = getUIFactory().newText("",Color.BLACK,24);
+        scoreText.setTranslateX(600);
+        scoreText.setTranslateY(100);
+        scoreText.textProperty().bind(score.asString("Score: [%d]"));
+        getGameScene().addUINode(scoreText);
     }
 
     private void spawnEnemy() {
