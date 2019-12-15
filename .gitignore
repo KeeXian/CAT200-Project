@@ -1,2 +1,2 @@
-TowerDefense/.idea/*
-TowerDefense/logs/*
+TowerDefense/.idea/**
+TowerDefense/logs/**

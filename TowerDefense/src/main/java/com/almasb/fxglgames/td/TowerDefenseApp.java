@@ -210,7 +210,6 @@ public class TowerDefenseApp extends GameApplication {
         Text scoreText = getUIFactory().newText("",Color.BLACK,24);
         scoreText.setTranslateX(600);
         scoreText.setTranslateY(100);
-        scoreText.textProperty().bind(score.asString("Score: [%d]"));
         getGameScene().addUINode(scoreText);
     }
 

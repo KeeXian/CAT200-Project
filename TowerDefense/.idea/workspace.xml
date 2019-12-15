@@ -1,74 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a71e80b-2474-49a8-b2ec-7efc105b51e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-18.22.31.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-18.24.12.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-18.24.28.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-18.24.54.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-18.25.22.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-18.25.39.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-18.25.54.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-18.26.42.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-18.28.09.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-18.28.46.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-18.30.30.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-18.30.59.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-18.31.40.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-18.32.50.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-18.33.08.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-18.33.36.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-18.34.07.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-18.34.33.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-18.35.15.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-18.37.03.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-19.33.11.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-19.35.09.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-19.38.01.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-19.41.51.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-19.48.17.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-19.49.00.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-19.50.08.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-19.52.21.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-21.24.41.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-14-Dec-2019-21.25.14.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/enemy/EnemyDataComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/event/BulletHitEnemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/tower/BulletComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/tower/FireTowerComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/Level1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/Level1Idle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/Level1Run.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/level1sheet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/level1sheet_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/level1sheet_left_small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/level1sheet_small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/newdude.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/TowerDefense.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/textures/Level1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/textures/Level1Idle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/textures/Level1Run.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/textures/level1sheet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/textures/level1sheet_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/textures/level1sheet_left_small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/textures/level1sheet_small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/assets/textures/newdude.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/enemy/EnemyDataComponent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/event/BulletHitEnemy.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/tower/BulletComponent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/tower/FireTowerComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/TowerDefenseApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/TowerDefenseApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/TowerDefenseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/TowerDefenseFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/collision/BulletEnemyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/collision/BulletEnemyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/components/EnemyComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/components/EnemyComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/components/TowerComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/components/TowerComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/tower/TowerDataComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/tower/TowerDataComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/TowerDefenseApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/TowerDefenseApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/TowerDefenseFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/TowerDefenseFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/collision/BulletEnemyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/collision/BulletEnemyHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/components/EnemyComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/components/EnemyComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/tower/TowerDataComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/tower/TowerDataComponent.class" afterDir="false" />
-    </list>
+    <list default="true" id="7a71e80b-2474-49a8-b2ec-7efc105b51e4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,7 +35,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
@@ -153,10 +86,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="281" y="0" width="804" height="768" key="#Project_Structure" timestamp="1576165669167">
+    <state x="281" y="0" width="804" height="768" key="#Project_Structure" timestamp="1576417221185">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="281" y="0" width="804" height="768" key="#Project_Structure/0.0.1366.768@0.0.1366.768" timestamp="1576165669167" />
+    <state x="281" y="0" width="804" height="768" key="#Project_Structure/0.0.1366.768@0.0.1366.768" timestamp="1576417221185" />
     <state x="145" y="44" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576165726167">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -173,6 +106,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="475" y="0" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1366.768@0.0.1366.768" timestamp="1576240015312" />
+    <state x="469" y="143" key="FileChooserDialogImpl" timestamp="1576417174064">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="469" y="143" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1576417174064" />
     <state width="1321" height="185" key="GridCell.Tab.0.bottom" timestamp="1576346366106">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
