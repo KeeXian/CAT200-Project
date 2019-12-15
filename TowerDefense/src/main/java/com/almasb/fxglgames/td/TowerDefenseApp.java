@@ -17,10 +17,14 @@ import com.almasb.fxgl.entity.level.tiled.TMXLevelLoader;
 import com.almasb.fxgl.input.Input;
 import com.almasb.fxgl.input.UserAction;
 import com.almasb.fxgl.ui.UIFactory;
+import com.almasb.fxgl.time.TimerAction;
 import com.almasb.fxglgames.td.collision.BulletEnemyHandler;
-import com.almasb.fxglgames.td.event.EnemyKilledEvent;
+import com.almasb.fxglgames.td.enemy.EnemyDataComponent;
+import com.almasb.fxglgames.td.event.BulletHitEnemy;
 import com.almasb.fxglgames.td.event.EnemyReachedGoalEvent;
 import com.almasb.fxglgames.td.tower.TowerIcon;
+import javafx.animation.AnimationTimer;
+import javafx.animation.FadeTransition;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -39,6 +43,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
 
@@ -59,7 +64,8 @@ public class TowerDefenseApp extends GameApplication {
     // TODO: assign bullet data from tower that shot it
 
     // TODO: read from level data
-    private int levelEnemies = 10;
+    private int levelEnemies = 30;
+    private double player_gold = 4000;
 
     private Point2D enemySpawnPoint = new Point2D(50, 0);
 
@@ -108,6 +114,7 @@ public class TowerDefenseApp extends GameApplication {
     @Override
     protected void initGameVars(Map<String, Object> vars) {
         vars.put("numEnemies", levelEnemies);
+        vars.put("playerGold",player_gold);
     }
 
     @Override
@@ -138,28 +145,34 @@ public class TowerDefenseApp extends GameApplication {
 
         getGameTimer().runAtIntervalWhile(this::spawnEnemy, Duration.seconds(1), enemiesLeft);
 
-        getEventBus().addEventHandler(EnemyKilledEvent.ANY, this::onEnemyKilled);
         getEventBus().addEventHandler(EnemyReachedGoalEvent.ANY, e -> gameOver());
+        getEventBus().addEventHandler(BulletHitEnemy.ANY, this::onEnemyShot);
     }
 
     @Override
     protected void initPhysics() {
-        getPhysicsWorld().addCollisionHandler(new BulletEnemyHandler());
+        BulletEnemyHandler a = new BulletEnemyHandler();
+        a.setIndex(selectedIndex);
+        getPhysicsWorld().addCollisionHandler(a);
     }
 
     // TODO: this should be tower data
     private Color selectedColor = Color.BLACK;
     private int selectedIndex = 1;
-    public static IntegerProperty score= new SimpleIntegerProperty(0);
+    // TODO: this is the enemy data
+    private int selectedLevel = 5;
+    private int enemyIndex = 1;
+    private Text gold= new Text("4000.0");
 
     @Override
     protected void initUI() {
         Rectangle uiBG = new Rectangle(getAppWidth(), 50);
         uiBG.setTranslateY(550);
-
-
         getGameScene().addUINode(uiBG);
-
+        gold.setText(getGameState().getDouble("playerGold").toString());
+        gold.setTranslateX(20);
+        gold.setTranslateY(20);
+        getGameScene().addUINode(gold);
         for (int i = 0; i < 4; i++) {
             int index = i + 1;
 
@@ -181,10 +194,20 @@ public class TowerDefenseApp extends GameApplication {
         getGameScene().addUINode(scoreText);
     }
 
+    private boolean stop = false;
     private void spawnEnemy() {
-        getGameState().increment("numEnemies", -1);
-
-        getGameWorld().spawn("Enemy", enemySpawnPoint.getX(), enemySpawnPoint.getY());
+        if(getGameState().getInt("numEnemies")%10==0 && getGameState().getInt("numEnemies")!=levelEnemies) {
+            enemyIndex=random(1,5);
+            stop = true;
+        }
+        else {
+            getGameState().increment("numEnemies", -1);
+            getGameWorld().spawn("Enemy",
+                    new SpawnData(enemySpawnPoint.getX(), enemySpawnPoint.getY())
+                            .put("index", enemyIndex)
+                            .put("level", selectedLevel)
+            );
+        }
     }
 
     private void placeTower() {
@@ -195,7 +218,28 @@ public class TowerDefenseApp extends GameApplication {
         );
     }
 
-    private void onEnemyKilled(EnemyKilledEvent event) {
+    private void onEnemyShot(BulletHitEnemy event){
+        Entity enemy = event.getEnemy();
+        EnemyDataComponent enemyDataComponent = EnemyDataComponent.makeEnemy(enemyIndex, selectedLevel);
+        if(enemy.getComponent(EnemyDataComponent.class).getHp()<=0){
+            levelEnemies--;
+            if(levelEnemies==0)
+                gameOver();
+            }
+            gold.setText(getGameState().getDouble("playerGold").toString());
+            Point2D position = enemy.getPosition();
+            Text xMark = getUIFactory().newText("X", Color.RED, 24);
+            xMark.setTranslateX(position.getX() + 20);
+            xMark.setTranslateY(position.getY() + 60);
+            FadeTransition fade = new FadeTransition(Duration.millis(3000), xMark);
+            fade.setFromValue(1.0);
+            fade.setToValue(0);
+            fade.play();
+            getGameScene().addGameView(new GameView(xMark, 1000));
+        }
+
+
+  /*  private void onEnemyKilled(EnemyKilledEvent event) {
         levelEnemies--;
 
         if (levelEnemies == 0) {
@@ -210,13 +254,13 @@ public class TowerDefenseApp extends GameApplication {
         xMark.setTranslateY(position.getY() + 20);
 
         getGameScene().addGameView(new GameView(xMark, 1000));
-    }
+    }*/
 
     private void gameOver() {
         LoseMusic=getAssetLoader().loadMusic("game-lose.mp3");
         getAudioPlayer().stopMusic(BGM);
         getAudioPlayer().playMusic(LoseMusic);
-        getDisplay().showMessageBox("Demo Over. Thanks for playing!", getGameController()::exit);
+        getDisplay().showMessageBox("Game Over. Thanks for playing!", getGameController()::exit);
     }
 
     public static void main(String[] args) {
