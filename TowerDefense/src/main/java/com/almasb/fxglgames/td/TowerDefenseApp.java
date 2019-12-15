@@ -118,8 +118,11 @@ public class TowerDefenseApp extends GameApplication {
             @Override
             protected void onActionBegin() {
                 if (worldBounds.contains(input.getMousePositionWorld())||worldBounds_alt.contains(input.getMousePositionWorld())) {
+                    System.out.println(input.getMousePositionWorld());
                     placeTower();
                 }
+                else
+                    System.out.println(input.getMousePositionWorld());
             }
         }, MouseButton.PRIMARY);
 
@@ -249,8 +252,8 @@ public class TowerDefenseApp extends GameApplication {
                             .put("Position", new Point2D(getInput().getMouseXWorld() - 25, getInput().getMouseYWorld() - 25))
             );
             gold.setText(getGameState().getDouble("playerGold").toString());
-            for(int i=-25; i<35; i++)
-                for(int j=-25; j<35;j++) {
+            for(int i=-32; i<32; i++)
+                for(int j=-32; j<32;j++) {
                     Point2D point = new Point2D(getInput().getMouseXWorld()+i, getInput().getMouseYWorld()+j);
                     point2DS.add(point);
                 }
