@@ -147,7 +147,7 @@ public class TowerDefenseApp extends GameApplication {
     @Override
     protected void initGame() {
         Level level;
-        var levelFile=new File("untitled.tmx");
+        var levelFile=new File("map.tmx");
         getGameWorld().addEntityFactory(new TowerDefenseFactory());
         try {
             level = new TMXLevelLoader().load(levelFile.toURI().toURL(), getGameWorld());
