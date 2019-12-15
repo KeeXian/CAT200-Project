@@ -49,9 +49,9 @@ public class EnemyDataComponent extends Component {
         EnemyDataComponent enemy = new EnemyDataComponent();
         enemy.type=index;
         if(index==1)
-            enemy.setStat(5*lvl, 0.01, 300*lvl);
+            enemy.setStat(10*lvl, 0.01, 300*lvl);
         else
-            enemy.setStat(2*lvl, 0.02, 100*lvl);
+            enemy.setStat(5*lvl, 0.02, 100*lvl);
         return enemy;
     }
 }

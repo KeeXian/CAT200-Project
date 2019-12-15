@@ -48,6 +48,11 @@ public class EnemyComponent extends Component{
 
     public EnemyComponent(double speed){
         this.speed=speed*60*2;
+        animidle=new AnimationChannel(new AssetLoader().loadImage("level1sheet_small.png"),4,40,40, Duration.seconds(1),1,1);
+        animwalk=new AnimationChannel(new AssetLoader().loadImage("level1sheet_small.png"),4,40,40,Duration.seconds(1),0,3);
+        animidle_left=new AnimationChannel(new AssetLoader().loadImage("level1sheet_left_small.png"),4,40,40, Duration.seconds(1),1,1);
+        animwalk_left=new AnimationChannel(new AssetLoader().loadImage("level1sheet_left_small.png"),4,40,40,Duration.seconds(1),0,3);
+        texture=new AnimatedTexture(animidle);
     }
 
     @Override
@@ -60,11 +65,11 @@ public class EnemyComponent extends Component{
             texture.loopAnimationChannel(animwalk);
         }
 
-            if (texture.getAnimationChannel() == animidle) {
-                texture.loopAnimationChannel(animwalk);
-            }
-           else if(texture.getAnimationChannel()==animidle_left)
-                texture.loopAnimationChannel(animwalk_left);
+        if (texture.getAnimationChannel() == animidle) {
+            texture.loopAnimationChannel(animwalk);
+        }
+        else if(texture.getAnimationChannel()==animidle_left)
+            texture.loopAnimationChannel(animwalk_left);
 
 
         Point2D velocity = nextWaypoint.subtract(entity.getPosition())
