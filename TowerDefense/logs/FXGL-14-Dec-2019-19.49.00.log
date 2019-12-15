@@ -1,0 +1,296 @@
+19:48:35.268 [main                     ] DEBUG GameApplication      - Logger initialized
+19:48:35.270 [main                     ] DEBUG GameApplication      - Logging settings
+Title: Tower Defense
+Version: 0.2
+Width: 800
+Height: 600
+Fullscreen: false
+Intro: false
+Menus: false
+Profiling: false
+Single step:false
+App Mode: DEVELOPER
+Menu Key: ESCAPE
+Stage Style: DECORATED
+Scene Factory: class com.almasb.fxgl.app.SceneFactory
+Dialog Factory: class com.almasb.fxgl.ui.FXGLDialogFactory
+UI Factory: class com.almasb.fxgl.ui.FXGLUIFactory
+
+19:48:35.447 [JavaFX Application Thread] DEBUG Engine               - Initializing FXGL
+19:48:35.448 [JavaFX Application Thread] INFO  Engine               - FXGL-11.5 (17.09.2019 20.41) on WINDOWS (J:13 FX:12.0.1)
+19:48:35.448 [JavaFX Application Thread] INFO  Engine               - Source code and latest versions at: https://github.com/AlmasB/FXGL
+19:48:35.448 [JavaFX Application Thread] INFO  Engine               -              Join the FXGL chat at: https://gitter.im/AlmasB/FXGL
+19:48:35.448 [JavaFX Application Thread] DEBUG Engine               - Initializing environment variables
+19:48:35.450 [JavaFX Application Thread] DEBUG Engine               - Logging environment variables
+19:48:35.450 [JavaFX Application Thread] DEBUG Engine               - achievements: []
+19:48:35.450 [JavaFX Application Thread] DEBUG Engine               - sceneStack: com.almasb.fxgl.app.Engine@52631196
+19:48:35.451 [JavaFX Application Thread] DEBUG Engine               - language: ObjectProperty [value: null]
+19:48:35.451 [JavaFX Application Thread] DEBUG Engine               - isCloseConfirmation: false
+19:48:35.451 [JavaFX Application Thread] DEBUG Engine               - isProfilingEnabled: false
+19:48:35.451 [JavaFX Application Thread] DEBUG Engine               - soundNotification: core/notification.wav
+19:48:35.451 [JavaFX Application Thread] DEBUG Engine               - devShowBBoxProperty: BooleanProperty [value: false]
+19:48:35.452 [JavaFX Application Thread] DEBUG Engine               - pixelsPerMeter: 50.0
+19:48:35.452 [JavaFX Application Thread] DEBUG Engine               - overlayRoot: Group@78c92e89
+19:48:35.452 [JavaFX Application Thread] DEBUG Engine               - appIcon: fxgl_icon.png
+19:48:35.452 [JavaFX Application Thread] DEBUG Engine               - soundMenuBack: menu/back.wav
+19:48:35.452 [JavaFX Application Thread] DEBUG Engine               - isFullScreenAllowed: false
+19:48:35.452 [JavaFX Application Thread] DEBUG Engine               - isIntroEnabled: false
+19:48:35.453 [JavaFX Application Thread] DEBUG Engine               - eventBus: com.almasb.fxgl.event.EventBus@3e33b730
+19:48:35.453 [JavaFX Application Thread] DEBUG Engine               - fontMono: lucida_console.ttf
+19:48:35.453 [JavaFX Application Thread] DEBUG Engine               - soundMenuSelect: menu/select.wav
+19:48:35.453 [JavaFX Application Thread] DEBUG Engine               - isWindows: true
+19:48:35.453 [JavaFX Application Thread] DEBUG Engine               - isMobile: false
+19:48:35.453 [JavaFX Application Thread] DEBUG Engine               - height: 600
+19:48:35.453 [JavaFX Application Thread] DEBUG Engine               - isExperimentalNative: false
+19:48:35.453 [JavaFX Application Thread] DEBUG Engine               - isSingleStep: false
+19:48:35.454 [JavaFX Application Thread] DEBUG Engine               - cSSList: [fxgl_dark.css]
+19:48:35.454 [JavaFX Application Thread] DEBUG Engine               - fontGame: Abel-Regular.ttf
+19:48:35.454 [JavaFX Application Thread] DEBUG Engine               - menuKey: ESCAPE
+19:48:35.454 [JavaFX Application Thread] DEBUG Engine               - devShowPositionProperty: BooleanProperty [value: false]
+19:48:35.454 [JavaFX Application Thread] DEBUG Engine               - versionCheckDays: 7
+19:48:35.454 [JavaFX Application Thread] DEBUG Engine               - masterTimer: com.almasb.fxgl.time.Timer@7416eec1
+19:48:35.454 [JavaFX Application Thread] DEBUG Engine               - configClass: Optional.empty
+19:48:35.454 [JavaFX Application Thread] DEBUG Engine               - isFullScreenFromStart: false
+19:48:35.454 [JavaFX Application Thread] DEBUG Engine               - version: 0.2
+19:48:35.454 [JavaFX Application Thread] DEBUG Engine               - fullScreen: BooleanProperty [value: false]
+19:48:35.455 [JavaFX Application Thread] DEBUG Engine               - dialogFactory: com.almasb.fxgl.ui.FXGLDialogFactory@7e616ac9
+19:48:35.455 [JavaFX Application Thread] DEBUG Engine               - applicationMode: DEVELOPER
+19:48:35.455 [JavaFX Application Thread] DEBUG Engine               - isMac: false
+19:48:35.455 [JavaFX Application Thread] DEBUG Engine               - urlGoogleForms: https://goo.gl/forms/6wrMnOBxTE1fEpOy2
+19:48:35.455 [JavaFX Application Thread] DEBUG Engine               - isMenuEnabled: false
+19:48:35.455 [JavaFX Application Thread] DEBUG Engine               - profileName: user.profile
+19:48:35.455 [JavaFX Application Thread] DEBUG Engine               - urlPOM: https://raw.githubusercontent.com/AlmasB/FXGL/master/pom.xml
+19:48:35.455 [JavaFX Application Thread] DEBUG Engine               - devSensorColorProperty: ObjectProperty [value: 0xffff00ff]
+19:48:35.455 [JavaFX Application Thread] DEBUG Engine               - notificationViewClass: class com.almasb.fxgl.notification.view.XboxNotificationView
+19:48:35.455 [JavaFX Application Thread] DEBUG Engine               - sceneFactory: com.almasb.fxgl.app.SceneFactory@4f6dbeea
+19:48:35.456 [JavaFX Application Thread] DEBUG Engine               - dataFileExt: .dat
+19:48:35.456 [JavaFX Application Thread] DEBUG Engine               - stageStyle: DECORATED
+19:48:35.456 [JavaFX Application Thread] DEBUG Engine               - isManualResizeEnabled: false
+19:48:35.456 [JavaFX Application Thread] DEBUG Engine               - title: Tower Defense
+19:48:35.456 [JavaFX Application Thread] DEBUG Engine               - platform: WINDOWS
+19:48:35.456 [JavaFX Application Thread] DEBUG Engine               - devBBoxColorProperty: ObjectProperty [value: 0xff0000ff]
+19:48:35.456 [JavaFX Application Thread] DEBUG Engine               - isDesktop: true
+19:48:35.456 [JavaFX Application Thread] DEBUG Engine               - credits: []
+19:48:35.456 [JavaFX Application Thread] DEBUG Engine               - globalMusicVolumeProperty: DoubleProperty [value: 0.5]
+19:48:35.456 [JavaFX Application Thread] DEBUG Engine               - uIFactory: com.almasb.fxgl.ui.FXGLUIFactory@6cc41a00
+19:48:35.456 [JavaFX Application Thread] DEBUG Engine               - isPreserveResizeRatio: false
+19:48:35.457 [JavaFX Application Thread] DEBUG Engine               - fontText: Courier-Prime.ttf
+19:48:35.457 [JavaFX Application Thread] DEBUG Engine               - isExperimentalTiledLargeMap: false
+19:48:35.457 [JavaFX Application Thread] DEBUG Engine               - secondsIn24h: 60
+19:48:35.457 [JavaFX Application Thread] DEBUG Engine               - runtimeInfo: RuntimeInfo(platform=WINDOWS, version=11.5, build=17.09.2019 20.41)
+19:48:35.457 [JavaFX Application Thread] DEBUG Engine               - isLinux: false
+19:48:35.457 [JavaFX Application Thread] DEBUG Engine               - soundMenuPress: menu/press.wav
+19:48:35.457 [JavaFX Application Thread] DEBUG Engine               - urlGithub: https://github.com/AlmasB/FXGL
+19:48:35.457 [JavaFX Application Thread] DEBUG Engine               - profileDir: profiles/
+19:48:35.457 [JavaFX Application Thread] DEBUG Engine               - isDeveloperMenuEnabled: false
+19:48:35.457 [JavaFX Application Thread] DEBUG Engine               - globalSoundVolumeProperty: DoubleProperty [value: 0.5]
+19:48:35.457 [JavaFX Application Thread] DEBUG Engine               - isBrowser: false
+19:48:35.457 [JavaFX Application Thread] DEBUG Engine               - globalSoundVolume: 0.5
+19:48:35.458 [JavaFX Application Thread] DEBUG Engine               - urlLeaderboard: http://fxgl-top.herokuapp.com/
+19:48:35.458 [JavaFX Application Thread] DEBUG Engine               - saveDir: saves/
+19:48:35.458 [JavaFX Application Thread] DEBUG Engine               - engineServices: [class com.almasb.fxgl.audio.AudioPlayer, class com.almasb.fxgl.notification.impl.NotificationServiceProvider, class com.almasb.fxgl.achievement.AchievementManager, class com.almasb.fxgl.cutscene.CutsceneService, class com.almasb.fxgl.minigames.MiniGameService]
+19:48:35.458 [JavaFX Application Thread] DEBUG Engine               - globalMusicVolume: 0.5
+19:48:35.458 [JavaFX Application Thread] DEBUG Engine               - width: 800
+19:48:35.458 [JavaFX Application Thread] DEBUG Engine               - saveFileExt: .sav
+19:48:35.458 [JavaFX Application Thread] DEBUG Engine               - isAndroid: false
+19:48:35.458 [JavaFX Application Thread] DEBUG Engine               - fontUI: VarelaRound-Regular.ttf
+19:48:35.458 [JavaFX Application Thread] DEBUG Engine               - isIOS: false
+19:48:35.458 [JavaFX Application Thread] DEBUG Engine               - enabledMenuItems: []
+19:48:35.460 [JavaFX Application Thread] DEBUG Engine               - Adding new engine service: class com.almasb.fxgl.audio.AudioPlayer
+19:48:35.462 [JavaFX Application Thread] DEBUG Engine               - Adding new engine service: class com.almasb.fxgl.notification.impl.NotificationServiceProvider
+19:48:35.462 [JavaFX Application Thread] DEBUG Engine               - Adding new engine service: class com.almasb.fxgl.achievement.AchievementManager
+19:48:35.463 [JavaFX Application Thread] DEBUG Engine               - Adding new engine service: class com.almasb.fxgl.cutscene.CutsceneService
+19:48:35.463 [JavaFX Application Thread] DEBUG Engine               - Adding new engine service: class com.almasb.fxgl.minigames.MiniGameService
+19:48:35.465 [JavaFX Application Thread] DEBUG Engine               - Loading localizations
+19:48:35.474 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/properties/languages/english.properties
+19:48:35.477 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/properties/languages/french.properties
+19:48:35.479 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/properties/languages/german.properties
+19:48:35.479 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/properties/languages/russian.properties
+19:48:35.480 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/properties/languages/hungarian.properties
+19:48:35.487 [JavaFX Application Thread] DEBUG Engine               - Registering font factories
+19:48:35.487 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/ui/fonts/VarelaRound-Regular.ttf
+19:48:35.636 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/ui/fonts/Abel-Regular.ttf
+19:48:35.638 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/ui/fonts/lucida_console.ttf
+19:48:35.642 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/ui/fonts/Courier-Prime.ttf
+19:48:35.645 [JavaFX Application Thread] DEBUG Engine               - Setting UI factory
+19:48:35.712 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/fxgl_logo.png
+19:48:35.772 [JavaFX Application Thread] DEBUG MainWindow           - Creating a JavaFX scene
+19:48:35.804 [JavaFX Application Thread] DEBUG MainWindow           - Target settings size: 800.0 x 600.0
+19:48:35.804 [JavaFX Application Thread] DEBUG MainWindow           - Scaled scene size:    800.0 x 600.0
+19:48:35.804 [JavaFX Application Thread] DEBUG MainWindow           - Scaled ratio: (1.0, 1.0)
+19:48:35.805 [JavaFX Application Thread] DEBUG MainWindow           - Set initial scene to FXGLStartupScene
+19:48:35.811 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/fxgl_icon.png
+19:48:35.821 [JavaFX Application Thread] DEBUG Engine               - Applying CSS: fxgl_dark.css
+19:48:35.821 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/ui/css/fxgl_dark.css
+19:48:35.823 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/ui/cursors/fxgl_default.png
+19:48:35.825 [JavaFX Application Thread] DEBUG MainWindow           - Opening main window
+19:48:35.943 [JavaFX Application Thread] DEBUG MainWindow           - Window border size: (16.0, 39.0)
+19:48:35.943 [JavaFX Application Thread] DEBUG MainWindow           - Scaled size: 800.0 x 600.0
+19:48:35.943 [JavaFX Application Thread] DEBUG MainWindow           - Scaled ratio: (1.0, 1.0)
+19:48:35.943 [JavaFX Application Thread] DEBUG MainWindow           - Scene size: 800.0 x 600.0
+19:48:35.944 [JavaFX Application Thread] DEBUG MainWindow           - Stage size: 816.0 x 639.0
+19:48:35.954 [FXGL Background Thread 1 ] DEBUG FS                   - Loaded FSServiceImpl
+19:48:35.954 [FXGL Background Thread 1 ] DEBUG Engine               - Loading FXGL system data
+19:48:35.961 [FXGL Background Thread 1 ] DEBUG FSServiceImpl        - Reading from: C:\Users\user\IdeaProjects\TowerDefense\system\fxgl.bundle
+19:48:35.971 [FXGL Background Thread 1 ] DEBUG Engine               - Bundle FXGL: {}
+19:48:35.971 [FXGL Background Thread 1 ] DEBUG Engine               - Initializing application scenes
+19:48:35.994 [FXGL Background Thread 1 ] DEBUG GameWorld            - Game world initialized
+19:48:36.042 [FXGL Background Thread 1 ] DEBUG PhysicsWorld         - Physics world initialized: appHeight=600, physics.ppm=50.0
+19:48:36.044 [FXGL Background Thread 1 ] DEBUG GameScene            - Game scene initialized: 800x600
+19:48:36.073 [FXGL Background Thread 1 ] DEBUG Input                - Registered new binding: Resume - Esc
+19:48:36.074 [FXGL Background Thread 1 ] DEBUG AssetLoader          - Loading from file system: /assets/textures/pause_menu_bg.png
+19:48:36.104 [FXGL Background Thread 1 ] DEBUG Input                - Registered new binding: Pause - Esc
+19:48:36.104 [FXGL Background Thread 1 ] DEBUG Engine               - Application scenes initialized
+19:48:36.108 [JavaFX Application Thread] DEBUG Engine               - Running preInit()
+19:48:36.109 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Place Tower - LMB
+19:48:36.110 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Screenshot - P
+19:48:36.110 [JavaFX Application Thread] DEBUG Input                - Registered new binding: System info dump - CTRL+9
+19:48:36.110 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Restart - CTRL+R
+19:48:36.111 [JavaFX Application Thread] DEBUG Engine               - generateDefaultProfile()
+19:48:36.111 [JavaFX Application Thread] DEBUG Engine               - Creating default profile
+19:48:36.111 [JavaFX Application Thread] DEBUG EventBus             - Firing event: SaveEvent
+19:48:36.125 [JavaFX Application Thread] INFO  Engine               - FXGL initialization took: 0.660 sec
+19:48:36.125 [JavaFX Application Thread] DEBUG LoopRunner           - Starting loop
+19:48:36.144 [JavaFX Application Thread] DEBUG FXGLStartupScene     - STARTUP
+19:48:36.144 [JavaFX Application Thread] DEBUG Engine               - Starting new game
+19:48:36.150 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+19:48:36.151 [FXGL Background Thread 1 ] DEBUG InitAppTask          - Clearing previous game
+19:48:36.151 [FXGL Background Thread 1 ] DEBUG GameWorld            - Clearing game world
+19:48:36.151 [FXGL Background Thread 1 ] DEBUG PhysicsWorld         - Clearing physics world
+19:48:36.151 [FXGL Background Thread 1 ] DEBUG GameScene            - Clearing game scene
+19:48:36.151 [FXGL Background Thread 1 ] DEBUG InitAppTask          - Initializing Game
+19:48:36.160 [JavaFX Application Thread] DEBUG Engine               - Removing overlay from FXGLStartupScene and adding to LoadingScene
+19:48:36.161 [JavaFX Application Thread] DEBUG MainWindow           - FXGLStartupScene -> LoadingScene
+19:48:36.163 [FXGL Background Thread 1 ] DEBUG InitAppTask          - Initializing Physics
+19:48:36.164 [FXGL Background Thread 1 ] DEBUG InitAppTask          - Initializing UI
+19:48:36.166 [FXGL Background Thread 1 ] DEBUG InitAppTask          - Initialization Complete
+19:48:36.167 [FXGL Background Thread 1 ] INFO  InitAppTask          - Game initialization took: 0.016 sec
+19:48:36.209 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+19:48:36.219 [JavaFX Application Thread] DEBUG Engine               - Removing overlay from LoadingScene and adding to GameScene
+19:48:36.220 [JavaFX Application Thread] DEBUG MainWindow           - LoadingScene -> GameScene
+19:48:41.020 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:41.327 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:41.437 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:41.835 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:41.851 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:42.267 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:42.635 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:42.684 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:43.165 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:43.627 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:43.836 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:44.012 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:44.189 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:44.316 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:44.428 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:44.795 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:44.797 [JavaFX Application Thread] WARN  FXGL.ProgressBar     - Current value < min value. Setting min value as current
+19:48:44.844 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:44.846 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:45.196 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:45.308 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:45.436 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:45.787 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:45.852 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:45.868 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:46.189 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:46.251 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:46.700 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:46.716 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:46.796 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:46.860 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:47.197 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:47.211 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:47.644 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:47.693 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:47.788 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:47.868 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:48.108 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:48.188 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:48.363 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:48.364 [JavaFX Application Thread] WARN  FXGL.ProgressBar     - Current value < min value. Setting min value as current
+19:48:48.588 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:48.684 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:48.843 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:48.844 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:49.115 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:49.196 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:49.356 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:49.597 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:49.675 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:49.804 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:49.853 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:50.108 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:50.188 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:50.283 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:50.588 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:50.684 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:50.780 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:50.844 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:51.115 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:51.197 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:51.292 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:51.596 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:51.772 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:51.851 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:52.108 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:52.189 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:52.300 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:52.604 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:52.779 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:52.860 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:53.148 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:53.308 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:53.533 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:53.644 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:53.804 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:54.171 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:54.188 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:54.284 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:54.348 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:54.685 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:54.715 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:54.716 [JavaFX Application Thread] WARN  FXGL.ProgressBar     - Current value < min value. Setting min value as current
+19:48:54.844 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:54.860 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:55.164 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:55.212 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:55.388 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:55.500 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:55.708 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:55.804 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:55.884 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:55.996 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:56.188 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:56.236 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:56.428 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:56.524 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:56.636 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:56.748 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:56.908 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:57.101 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:57.121 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:57.308 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:57.452 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:57.564 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:57.611 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:57.612 [JavaFX Application Thread] WARN  FXGL.ProgressBar     - Current value < min value. Setting min value as current
+19:48:57.948 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:57.949 [JavaFX Application Thread] WARN  FXGL.ProgressBar     - Current value < min value. Setting min value as current
+19:48:57.996 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:58.107 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:58.587 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:58.636 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:58.875 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:59.148 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:59.325 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:59.628 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:48:59.675 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:49:00.172 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:49:00.635 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:49:00.715 [JavaFX Application Thread] DEBUG EventBus             - Firing event: com.almasb.fxglgames.td.event.BulletHitEnemy[source=javafx.event.Event$$Lambda$130/0x0000000800ce7440@4e5363c1]
+19:49:00.965 [JavaFX Application Thread] DEBUG Engine               - Exiting FXGL
+19:49:00.965 [JavaFX Application Thread] DEBUG Engine               - Shutting down background threads
+19:49:00.966 [JavaFX Application Thread] DEBUG Engine               - Saving FXGL system data
+19:49:00.968 [JavaFX Application Thread] DEBUG FSServiceImpl        - Writing to: C:\Users\user\IdeaProjects\TowerDefense\system\fxgl.bundle
+19:49:00.969 [JavaFX Application Thread] DEBUG Engine               - Closing logger and exiting JavaFX
