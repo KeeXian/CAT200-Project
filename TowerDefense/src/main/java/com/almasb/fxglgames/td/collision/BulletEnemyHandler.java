@@ -1,6 +1,7 @@
 package com.almasb.fxglgames.td.collision;
 
 import com.almasb.fxgl.app.GameApplication;
+import com.almasb.fxgl.audio.Music;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.physics.CollisionHandler;
@@ -34,31 +35,35 @@ public class BulletEnemyHandler extends CollisionHandler {
         // TODO: add HP/Damage system
         bullet.removeFromWorld();
         FXGL.getEventBus().fireEvent(new BulletHitEnemy(enemy));
+        Music music = FXGL.getAssetLoader().loadMusic("coin.mp3");
         if(enemy.getComponent(EnemyDataComponent.class).getHp()<=0) {
+            FXGL.getAudioPlayer().stopMusic(music);
+            FXGL.getAudioPlayer().playMusic(music);
             enemy.removeFromWorld();
             double money = FXGL.getGameState().getDouble("playerGold");
             FXGL.getGameState().setValue("playerGold",
                     (money+enemy.getComponent(EnemyDataComponent.class).getGold()));
             Text text = FXGL.getUIFactory().
-                    newText("+"+enemy.getComponent(EnemyDataComponent.class).getGold(), Color.BLACK, 24);
+                    newText("+"+enemy.getComponent(EnemyDataComponent.class).getGold(), Color.BLACK, 10);
             text.setTranslateX(20);
             text.setTranslateY(30);
             FadeTransition fade = new FadeTransition(Duration.millis(3000),text);
             fade.setFromValue(1.0);
             fade.setToValue(0);
             fade.play();
+            FXGL.getGameScene().addUINode(text);
         }
         else {
             enemy.getComponent(EnemyDataComponent.class).updateHp(bullet.getComponent(BulletComponent.class).getDamage());
             if(bullet.getComponent(BulletComponent.class).getLingerDamage()>0) {
                 int x = bullet.getComponent(BulletComponent.class).getLingerDamage();
                 FXGL.getGameTimer().runAtInterval(()-> {
-                    if(enemy.hasComponent(EnemyDataComponent.class))
-                            enemy.getComponent(EnemyDataComponent.class).updateHp(x);
-                    else
-                        enemy.removeFromWorld();
+                            if(enemy.hasComponent(EnemyDataComponent.class))
+                                enemy.getComponent(EnemyDataComponent.class).updateHp(x);
+                            else
+                                enemy.removeFromWorld();
                         }
-                ,Duration.millis(1000),3);
+                        ,Duration.millis(1000),3);
             }
         }
 

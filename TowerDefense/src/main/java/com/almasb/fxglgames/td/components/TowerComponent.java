@@ -20,6 +20,13 @@ import javafx.util.Duration;
 public class TowerComponent extends Component {
 
     private LocalTimer shootTimer;
+    private double delay;
+    private double speed;
+
+    public TowerComponent(double delay, double speed){
+        this.delay=delay;
+        this.speed=speed;
+    }
 
     @Override
     public void onAdded() {
@@ -30,7 +37,7 @@ public class TowerComponent extends Component {
     @Override
     public void onUpdate(double tpf) {
 
-        if (shootTimer.elapsed(Duration.seconds(0.5))) {
+        if (shootTimer.elapsed(Duration.seconds(delay))) {
             FXGL.getGameWorld()
                     .getClosestEntity(entity, e -> e.isType(TowerDefenseType.ENEMY))
                     .ifPresent(nearestEnemy -> {
@@ -41,17 +48,19 @@ public class TowerComponent extends Component {
     }
 
     private void shoot(Entity enemy) {
-        Point2D position = getEntity().getPosition();
-        Point2D direction = enemy.getPosition().add(10,30).subtract(position);
+        Point2D position = getEntity().getPosition().add(30,0);
+        Point2D direction = enemy.getPosition().add(20,30).subtract(position);
         Entity bullet;
         if(getEntity().hasComponent(FireTowerComponent.class)) {
             bullet = FXGL.spawn("Bullet", new SpawnData(position).
                     put("damage", getEntity().getComponent(FireTowerComponent.class).getDamage()).
-                    put("burn damage",getEntity().getComponent(FireTowerComponent.class).getBurnDamage()));
+                    put("burn damage",getEntity().getComponent(FireTowerComponent.class).getBurnDamage()).
+                    put("delay",getEntity().getComponent(FireTowerComponent.class).getAttackDelay()));
         } else {
             bullet = FXGL.spawn("Bullet", new SpawnData(position).
-                    put("damage", getEntity().getComponent(TowerDataComponent.class).getDamage()));
+                    put("damage", getEntity().getComponent(TowerDataComponent.class).getDamage()).
+                    put("delay",getEntity().getComponent(TowerDataComponent.class).getAttackDelay()));
         }
-        bullet.addComponent(new ProjectileComponent(direction, Config.BULLET_SPEED));
+        bullet.addComponent(new ProjectileComponent(direction, speed));
     }
 }

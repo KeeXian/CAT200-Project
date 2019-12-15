@@ -7,6 +7,7 @@ import com.almasb.fxgl.entity.*;
 import com.almasb.fxgl.entity.components.CollidableComponent;
 import com.almasb.fxgl.physics.BoundingShape;
 import com.almasb.fxgl.physics.HitBox;
+import com.almasb.fxgl.texture.Texture;
 import com.almasb.fxglgames.td.components.EnemyComponent;
 import com.almasb.fxglgames.td.components.TowerComponent;
 import com.almasb.fxglgames.td.enemy.EnemyDataComponent;
@@ -66,14 +67,34 @@ public class TowerDefenseFactory implements EntityFactory {
             FXGL.getGameScene().addUINode(text);
         }
         else {
+            Texture texture = null;
+            if(data.get("index").equals(1))
+                texture = new Texture(getAssetLoader().loadImage("small_stone_tower.png"));
+            else if(data.get("index").equals(2))
+                texture = new Texture(getAssetLoader().loadImage("big_stone_tower.png"));
+            else if(data.get("index").equals(3))
+                texture = new Texture(getAssetLoader().loadImage("metal_ball_tower.png"));
+            else
+                texture = new Texture(getAssetLoader().loadImage("fire_tower.png"));
+            texture.setFitHeight(60);
+            texture.setFitWidth(60);
             tower = entityBuilder()
                     .type(TowerDefenseType.TOWER)
                     .from(data)
-                    .view(new Rectangle(40, 40, data.get("color")))
+                    .view(texture)
                     .with(new CollidableComponent(true), towerComponent)
-                    .with(new TowerComponent())
+                    .with(new TowerComponent(towerComponent.getAttackDelay(),towerComponent.getSpeed()))
                     .build();
             FXGL.getGameState().increment("playerGold",-(towerComponent.getPrice()));
+            Text text = FXGL.getUIFactory().
+                    newText("-"+towerComponent.getPrice(), Color.BLACK, 10);
+            text.setTranslateX(20);
+            text.setTranslateY(30);
+            FadeTransition fade = new FadeTransition(Duration.millis(3000),text);
+            fade.setFromValue(1.0);
+            fade.setToValue(0);
+            fade.play();
+            FXGL.getGameScene().addUINode(text);
         }
         return tower;
     }
@@ -85,11 +106,11 @@ public class TowerDefenseFactory implements EntityFactory {
                     .from(data)
                     .viewWithBBox(new Rectangle(15, 5, Color.DARKGREY))
                     .with(new CollidableComponent(true))
-                    .with(new OffscreenCleanComponent(), new BulletComponent(data.get("damage")))
+                    .with(new OffscreenCleanComponent(), new BulletComponent(data.get("damage"),data.get("delay")))
                     .build();
             if (data.hasKey("burn damage")){
                 bullet.removeComponent(BulletComponent.class);
-                bullet.addComponent(new BulletComponent(data.get("damage"),data.get("burn damage")));
+                bullet.addComponent(new BulletComponent(data.get("damage"),data.get("burn damage"),data.get("delay")));
             }
             return bullet;
     }

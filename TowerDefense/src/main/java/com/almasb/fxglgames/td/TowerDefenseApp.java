@@ -4,12 +4,21 @@ import com.almasb.fxgl.app.ApplicationMode;
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.app.GameView;
+import com.almasb.fxgl.audio.Audio;
+import com.almasb.fxgl.audio.AudioPlayer;
+import com.almasb.fxgl.audio.Music;
+import com.almasb.fxgl.audio.Sound;
 import com.almasb.fxgl.core.math.FXGLMath;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.SpawnData;
+import com.almasb.fxgl.entity.level.Level;
+import com.almasb.fxgl.entity.level.tiled.TMXLevelLoader;
 import com.almasb.fxgl.input.Input;
 import com.almasb.fxgl.input.UserAction;
+import com.almasb.fxgl.texture.AnimatedTexture;
+import com.almasb.fxgl.texture.AnimationChannel;
+import com.almasb.fxgl.texture.Texture;
 import com.almasb.fxgl.time.TimerAction;
 import com.almasb.fxglgames.td.collision.BulletEnemyHandler;
 import com.almasb.fxglgames.td.enemy.EnemyDataComponent;
@@ -18,16 +27,21 @@ import com.almasb.fxglgames.td.event.EnemyReachedGoalEvent;
 import com.almasb.fxglgames.td.tower.TowerIcon;
 import javafx.animation.AnimationTimer;
 import javafx.animation.FadeTransition;
+import javafx.animation.TranslateTransition;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.geometry.Point2D;
 import javafx.geometry.Rectangle2D;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
+import java.io.File;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -56,6 +70,7 @@ public class TowerDefenseApp extends GameApplication {
     private int levelEnemies = 30;
     private double player_gold = 4000;
 
+
     private Point2D enemySpawnPoint = new Point2D(50, 0);
 
     private List<Point2D> waypoints = new ArrayList<>();
@@ -64,16 +79,21 @@ public class TowerDefenseApp extends GameApplication {
         return new ArrayList<>(waypoints);
     }
 
+    private Music BGM;
+
+    private Music LoseMusic;
+
+    private ArrayList<Texture> textures = new ArrayList<Texture>();
     @Override
     protected void initSettings(GameSettings settings) {
         settings.setTitle("Tower Defense");
         settings.setVersion("0.2");
-        settings.setWidth(800);
+        settings.setWidth(768);
         settings.setHeight(600);
         settings.setIntroEnabled(false);
-        settings.setMenuEnabled(false);
+        settings.setMenuEnabled(true);
         settings.setProfilingEnabled(false);
-        settings.setCloseConfirmation(false);
+        settings.setCloseConfirmation(true);
         settings.setApplicationMode(ApplicationMode.DEVELOPER);
     }
 
@@ -82,10 +102,12 @@ public class TowerDefenseApp extends GameApplication {
         Input input = getInput();
 
         input.addAction(new UserAction("Place Tower") {
-            private Rectangle2D worldBounds = new Rectangle2D(0, 0, getAppWidth(), getAppHeight() - 100 - 40);
+            private Rectangle2D worldBounds = new Rectangle2D(32, 96, 544, 128);
+            private Rectangle2D worldBounds_alt=new Rectangle2D(128, 368, 464, 48);
+
             @Override
             protected void onActionBegin() {
-                if (worldBounds.contains(input.getMousePositionWorld())) {
+                if (worldBounds.contains(input.getMousePositionWorld())||worldBounds_alt.contains(input.getMousePositionWorld())) {
                     placeTower();
                 }
             }
@@ -100,7 +122,17 @@ public class TowerDefenseApp extends GameApplication {
 
     @Override
     protected void initGame() {
+        Level level;
+        var levelFile=new File("untitled.tmx");
         getGameWorld().addEntityFactory(new TowerDefenseFactory());
+        try {
+            level = new TMXLevelLoader().load(levelFile.toURI().toURL(), getGameWorld());
+            getGameWorld().setLevel(level);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        BGM=getAssetLoader().loadMusic("Epic Battle.mp3");
+        getAudioPlayer().loopMusic(BGM);
 
         // TODO: read this from external level data
         waypoints.addAll(Arrays.asList(
@@ -117,7 +149,7 @@ public class TowerDefenseApp extends GameApplication {
         getGameTimer().runAtIntervalWhile(this::spawnEnemy, Duration.seconds(1), enemiesLeft);
 
         getEventBus().addEventHandler(EnemyReachedGoalEvent.ANY, e -> gameOver());
-        getEventBus().addEventHandler(BulletHitEnemy.ANY, this::onEnemyShot);
+        getEventBus().addEventHandler(BulletHitEnemy.ANY, this::onEnemyKilled);
     }
 
     @Override
@@ -126,7 +158,6 @@ public class TowerDefenseApp extends GameApplication {
         a.setIndex(selectedIndex);
         getPhysicsWorld().addCollisionHandler(a);
     }
-
     // TODO: this should be tower data
     private Color selectedColor = Color.BLACK;
     private int selectedIndex = 1;
@@ -137,22 +168,21 @@ public class TowerDefenseApp extends GameApplication {
 
     @Override
     protected void initUI() {
-        Rectangle uiBG = new Rectangle(getAppWidth(), 100);
-        uiBG.setTranslateY(500);
+        Rectangle uiBG = new Rectangle(getAppWidth(), 50);
+        uiBG.setTranslateY(550);
         getGameScene().addUINode(uiBG);
         gold.setText(getGameState().getDouble("playerGold").toString());
+        gold.setFill(Color.BLACK);
         gold.setTranslateX(20);
-        gold.setTranslateY(20);
+        gold.setTranslateY(40);
         getGameScene().addUINode(gold);
+        addIntoTextureList();
         for (int i = 0; i < 4; i++) {
             int index = i + 1;
-
-            Color color = FXGLMath.randomColor();
-            TowerIcon icon = new TowerIcon(color);
-            icon.setTranslateX(10 + i * 100);
-            icon.setTranslateY(500);
+            TowerIcon icon = new TowerIcon(textures.get(i));
+            icon.setTranslateX(10 + i * 120);
+            icon.setTranslateY(545);
             icon.setOnMouseClicked(e -> {
-                selectedColor = color;
                 selectedIndex = index;
             });
 
@@ -160,11 +190,9 @@ public class TowerDefenseApp extends GameApplication {
         }
     }
 
-    private boolean stop = false;
     private void spawnEnemy() {
         if(getGameState().getInt("numEnemies")%10==0 && getGameState().getInt("numEnemies")!=levelEnemies) {
             enemyIndex=random(1,5);
-            stop = true;
         }
         else {
             getGameState().increment("numEnemies", -1);
@@ -178,30 +206,39 @@ public class TowerDefenseApp extends GameApplication {
 
     private void placeTower() {
         getGameWorld().spawn("Tower",
-                new SpawnData(getInput().getMouseXWorld(), getInput().getMouseYWorld())
-                        .put("color", selectedColor)
+                new SpawnData(getInput().getMouseXWorld()-25, getInput().getMouseYWorld()-25)
+                        .put("texture", textures.get(selectedIndex))
                         .put("index", selectedIndex)
         );
+        gold.setText(getGameState().getDouble("playerGold").toString());
     }
 
-    private void onEnemyShot(BulletHitEnemy event){
+    private void onEnemyKilled(BulletHitEnemy event){
         Entity enemy = event.getEnemy();
         EnemyDataComponent enemyDataComponent = EnemyDataComponent.makeEnemy(enemyIndex, selectedLevel);
-        if(enemy.getComponent(EnemyDataComponent.class).getHp()<=0){
+        if(enemy.getComponent(EnemyDataComponent.class).getHp()<=0) {
             levelEnemies--;
-            if(levelEnemies==0)
+            if (levelEnemies == 0)
                 gameOver();
-            }
             gold.setText(getGameState().getDouble("playerGold").toString());
             Point2D position = enemy.getPosition();
-            Text xMark = getUIFactory().newText("X", Color.RED, 24);
-            xMark.setTranslateX(position.getX() + 20);
-            xMark.setTranslateY(position.getY() + 60);
-            FadeTransition fade = new FadeTransition(Duration.millis(3000), xMark);
+            Texture coin = new Texture(getAssetLoader().loadImage("coin.png"));
+            coin.setFitHeight(30);
+            coin.setFitWidth(30);
+            coin.setTranslateX(position.getX());
+            coin.setTranslateY(position.getY() + 50);
+
+            TranslateTransition transition = new TranslateTransition();
+            transition.setNode(coin);
+            transition.setByY(-40);
+            transition.play();
+
+            FadeTransition fade = new FadeTransition(Duration.millis(3000), coin);
             fade.setFromValue(1.0);
             fade.setToValue(0);
             fade.play();
-            getGameScene().addGameView(new GameView(xMark, 1000));
+            getGameScene().addGameView(new GameView(coin, 1000));
+        }
         }
 
 
@@ -223,7 +260,29 @@ public class TowerDefenseApp extends GameApplication {
     }*/
 
     private void gameOver() {
+        LoseMusic=getAssetLoader().loadMusic("game-lose.mp3");
+        getAudioPlayer().stopMusic(BGM);
+        getAudioPlayer().playMusic(LoseMusic);
         getDisplay().showMessageBox("Game Over. Thanks for playing!", getGameController()::exit);
+    }
+
+    private void addIntoTextureList(){
+        Texture texture = new Texture(getAssetLoader().loadImage("small_stone_tower.png"));
+        texture.setFitHeight(60);
+        texture.setFitWidth(60);
+        textures.add(texture);
+        texture = new Texture(getAssetLoader().loadImage("big_stone_tower.png"));
+        texture.setFitHeight(60);
+        texture.setFitWidth(60);
+        textures.add(texture);
+        texture = new Texture(getAssetLoader().loadImage("metal_ball_tower.png"));
+        texture.setFitHeight(60);
+        texture.setFitWidth(60);
+        textures.add(texture);
+        texture = new Texture(getAssetLoader().loadImage("fire_tower.png"));
+        texture.setFitHeight(60);
+        texture.setFitWidth(60);
+        textures.add(texture);
     }
 
     public static void main(String[] args) {
