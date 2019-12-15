@@ -10,7 +10,7 @@ public class EnemyDataComponent extends Component {
     protected double speed;
     protected double gold;
     protected int type;
-    protected 
+    protected int score;
 
     public EnemyDataComponent(){
         hp=0;
@@ -23,12 +23,13 @@ public class EnemyDataComponent extends Component {
         hpBar.setTraceFill(Color.RED.brighter());
     }
 
-    public void setStat(int hp, double sp, int gold){
+    public void setStat(int hp, double sp, int gold,int score){
         this.hp=hp;
         hpBar.setMaxValue(hp);
         hpBar.setCurrentValue(hp);
         speed=sp;
         this.gold=gold;
+        this.score=score;
     }
     public int getHp(){
         return hp;
@@ -45,14 +46,15 @@ public class EnemyDataComponent extends Component {
     public int getType() {
         return type;
     }
+    public int getScore(){return score;}
 
     public static EnemyDataComponent makeEnemy(int index, int lvl){
         EnemyDataComponent enemy = new EnemyDataComponent();
         enemy.type=index;
         if(index==1)
-            enemy.setStat(10*lvl, 0.01, 300*lvl);
+            enemy.setStat(10*lvl, 0.01, 300*lvl,lvl*300);
         else
-            enemy.setStat(5*lvl, 0.02, 100*lvl);
+            enemy.setStat(5*lvl, 0.02, 100*lvl,lvl*150);
         return enemy;
     }
 }

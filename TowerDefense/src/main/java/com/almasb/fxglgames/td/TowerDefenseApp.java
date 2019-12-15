@@ -39,6 +39,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
@@ -71,6 +74,7 @@ public class TowerDefenseApp extends GameApplication {
     // TODO: read from level data
     private int levelEnemies = 30;
     private double player_gold = 4000;
+    private int score=0;
 
     private Point2D enemySpawnPoint = new Point2D(50, 0);
 
@@ -83,6 +87,8 @@ public class TowerDefenseApp extends GameApplication {
     private Music BGM;
 
     private Music LoseMusic;
+
+    private Music SuccessMusic;
 
     private ArrayList<Texture> textures = new ArrayList<Texture>();
 
@@ -135,6 +141,7 @@ public class TowerDefenseApp extends GameApplication {
     protected void initGameVars(Map<String, Object> vars) {
         vars.put("numEnemies", levelEnemies);
         vars.put("playerGold",player_gold);
+        vars.put("HighScore",score);
     }
 
     @Override
@@ -179,9 +186,10 @@ public class TowerDefenseApp extends GameApplication {
     private Color selectedColor = Color.BLACK;
     private int selectedIndex = 1;
     // TODO: this is the enemy data
-    private int selectedLevel = 5;
+    private int selectedLevel = 1;
     private int enemyIndex = 1;
     private Text gold= new Text(Double.toString(player_gold));
+    private Text highscore=new Text(Integer.toString(score));
 
     @Override
     protected void initUI() {
@@ -193,6 +201,11 @@ public class TowerDefenseApp extends GameApplication {
         gold.setTranslateX(20);
         gold.setTranslateY(40);
         getGameScene().addUINode(gold);
+        highscore.setText("Score: "+getGameState().getInt("HighScore").toString());
+        highscore.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 16));
+        highscore.setTranslateX(650);
+        highscore.setTranslateY(40);
+        getGameScene().addUINode(highscore);
         addIntoTextureList();
         for (int i = 0; i < 4; i++) {
             int index = i + 1;
@@ -255,11 +268,15 @@ public class TowerDefenseApp extends GameApplication {
         if(enemy.getComponent(EnemyDataComponent.class).getHp()<=0) {
             levelEnemies--;
             if (levelEnemies == 0)
-                gameOver();
+                gameCleared();
+
             double money = getGameState().getDouble("playerGold");
             getGameState().setValue("playerGold",
                     (money+enemy.getComponent(EnemyDataComponent.class).getGold()));
             gold.setText(getGameState().getDouble("playerGold").toString());
+            score+=enemy.getComponent(EnemyDataComponent.class).getScore();
+            getGameState().setValue("HighScore",score);
+            highscore.setText("Score: "+getGameState().getInt("HighScore").toString());
             Point2D position = enemy.getPosition();
             Texture coin = new Texture(getAssetLoader().loadImage("coin.png"));
             coin.setFitHeight(30);
@@ -302,9 +319,16 @@ public class TowerDefenseApp extends GameApplication {
         LoseMusic=getAssetLoader().loadMusic("game-lose.mp3");
         getAudioPlayer().stopMusic(BGM);
         getAudioPlayer().playMusic(LoseMusic);
-        getDisplay().showMessageBox("Game Over. Thanks for playing!", getGameController()::exit);
+        getDisplay().showMessageBox("Game Over. Thanks for playing!", getGameController()::gotoMainMenu);
         for(int i=0; i<point2DS.size();i++)
             System.out.println("Tower " + i + " : " + point2DS.get(i));
+    }
+
+    private void gameCleared(){
+        SuccessMusic=getAssetLoader().loadMusic("Victory!.wav");
+        getAudioPlayer().stopMusic(BGM);
+        getAudioPlayer().playMusic(SuccessMusic);
+        getDisplay().showMessageBox("Game Cleared!!! Thanks for playing!", getGameController()::gotoMainMenu);
     }
 
     private void addIntoTextureList(){
