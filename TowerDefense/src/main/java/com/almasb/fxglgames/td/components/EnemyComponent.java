@@ -23,7 +23,17 @@ public class EnemyComponent extends Component {
     public void onAdded() {
         waypoints = ((TowerDefenseApp) FXGL.getApp()).getWaypoints();
 
+<<<<<<< Updated upstream
         nextWaypoint = waypoints.remove(0);
+=======
+    public EnemyComponent(double speed,int index,int level){
+        this.speed=speed*60*2;
+        animidle=new AnimationChannel(new AssetLoader().loadImage("level1sheet_small.png"),4,40,40, Duration.seconds(1),1,1);
+        animwalk=new AnimationChannel(new AssetLoader().loadImage("level1sheet_small.png"),4,40,40,Duration.seconds(1),0,3);
+        animidle_left=new AnimationChannel(new AssetLoader().loadImage("level1sheet_left_small.png"),4,40,40, Duration.seconds(1),1,1);
+        animwalk_left=new AnimationChannel(new AssetLoader().loadImage("level1sheet_left_small.png"),4,40,40,Duration.seconds(1),0,3);
+        texture=new AnimatedTexture(animidle);
+>>>>>>> Stashed changes
     }
 
     @Override

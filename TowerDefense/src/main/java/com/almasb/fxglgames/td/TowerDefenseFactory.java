@@ -22,9 +22,15 @@ public class TowerDefenseFactory implements EntityFactory {
         return entityBuilder()
                 .type(TowerDefenseType.ENEMY)
                 .from(data)
+<<<<<<< Updated upstream
                 .viewWithBBox(new Rectangle(40, 40, Color.RED))
                 .with(new CollidableComponent(true))
                 .with(new EnemyComponent())
+=======
+                .viewWithBBox(vBox)
+                .with(new CollidableComponent(true), enemyDataComponent)
+                .with(new EnemyComponent(enemyDataComponent.getSpeed(),data.get("index"),data.get("level")))
+>>>>>>> Stashed changes
                 .build();
     }
 
