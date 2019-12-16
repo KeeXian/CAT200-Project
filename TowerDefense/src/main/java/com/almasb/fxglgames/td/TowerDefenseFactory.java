@@ -14,6 +14,7 @@ import com.almasb.fxglgames.td.components.TowerComponent;
 import com.almasb.fxglgames.td.enemy.EnemyDataComponent;
 import com.almasb.fxglgames.td.tower.BulletComponent;
 import com.almasb.fxglgames.td.tower.TowerDataComponent;
+import com.almasb.fxglgames.td.tower.TowerLocationInfo;
 import javafx.animation.FadeTransition;
 import javafx.geometry.Point2D;
 import javafx.scene.layout.VBox;
@@ -23,6 +24,7 @@ import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
 
@@ -42,7 +44,7 @@ public class TowerDefenseFactory implements EntityFactory {
                 .from(data)
                 .viewWithBBox(vBox)
                 .with(new CollidableComponent(true), enemyDataComponent)
-                .with(new EnemyComponent(enemyDataComponent.getSpeed()))
+                .with(new EnemyComponent(enemyDataComponent.getSpeed(),data.get("index"),data.get("level")))
                 .build();
         newEntity.getBoundingBoxComponent().addHitBox(new HitBox("BODY", new Point2D(0, 0), BoundingShape.box(30, 40)));
         return newEntity;
