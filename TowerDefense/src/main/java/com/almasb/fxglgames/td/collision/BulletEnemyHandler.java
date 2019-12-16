@@ -40,15 +40,6 @@ public class BulletEnemyHandler extends CollisionHandler {
             FXGL.getAudioPlayer().stopMusic(music);
             FXGL.getAudioPlayer().playMusic(music);
             enemy.removeFromWorld();
-            Text text = FXGL.getUIFactory().
-                    newText("+"+enemy.getComponent(EnemyDataComponent.class).getGold(), Color.BLACK, 10);
-            text.setTranslateX(20);
-            text.setTranslateY(30);
-            FadeTransition fade = new FadeTransition(Duration.millis(3000),text);
-            fade.setFromValue(1.0);
-            fade.setToValue(0);
-            fade.play();
-            FXGL.getGameScene().addUINode(text);
         }
         else {
             enemy.getComponent(EnemyDataComponent.class).updateHp(bullet.getComponent(BulletComponent.class).getDamage());

@@ -41,7 +41,7 @@ public class TowerDefenseFactory implements EntityFactory {
                 .from(data)
                 .viewWithBBox(vBox)
                 .with(new CollidableComponent(true), enemyDataComponent)
-                .with(new EnemyComponent(enemyDataComponent.getSpeed()))
+                .with(new EnemyComponent(enemyDataComponent.getSpeed(),data.get("index")))
                 .build();
         newEntity.getBoundingBoxComponent().addHitBox(new HitBox("BODY", new Point2D(0, 0), BoundingShape.box(30, 40)));
         return newEntity;

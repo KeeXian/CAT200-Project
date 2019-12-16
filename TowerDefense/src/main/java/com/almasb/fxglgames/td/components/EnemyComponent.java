@@ -46,13 +46,24 @@ public class EnemyComponent extends Component{
         nextWaypoint = waypoints.remove(0);
     }
 
-    public EnemyComponent(double speed){
-        this.speed=speed*60*2;
-        animidle=new AnimationChannel(new AssetLoader().loadImage("level1sheet_small.png"),4,40,40, Duration.seconds(1),1,1);
-        animwalk=new AnimationChannel(new AssetLoader().loadImage("level1sheet_small.png"),4,40,40,Duration.seconds(1),0,3);
-        animidle_left=new AnimationChannel(new AssetLoader().loadImage("level1sheet_left_small.png"),4,40,40, Duration.seconds(1),1,1);
-        animwalk_left=new AnimationChannel(new AssetLoader().loadImage("level1sheet_left_small.png"),4,40,40,Duration.seconds(1),0,3);
-        texture=new AnimatedTexture(animidle);
+    public EnemyComponent(double speed, int index){
+        this.speed = speed * 60 * 2;
+        if(index==3){
+            animidle = new AnimationChannel(new AssetLoader().loadImage("level1sheet_small.png"), 4, 40, 40, Duration.seconds(1), 1, 1);
+            animwalk = new AnimationChannel(new AssetLoader().loadImage("level1sheet_small.png"), 4, 40, 40, Duration.seconds(1), 0, 3);
+            animidle_left = new AnimationChannel(new AssetLoader().loadImage("level1sheet_left_small.png"), 4, 40, 40, Duration.seconds(1), 1, 1);
+            animwalk_left = new AnimationChannel(new AssetLoader().loadImage("level1sheet_left_small.png"), 4, 40, 40, Duration.seconds(1), 0, 3);
+            texture = new AnimatedTexture(animidle);
+            texture.setFitHeight(80);
+            texture.setFitWidth(80);
+        }
+        else {
+            animidle = new AnimationChannel(new AssetLoader().loadImage("level1sheet_small.png"), 4, 40, 40, Duration.seconds(1), 1, 1);
+            animwalk = new AnimationChannel(new AssetLoader().loadImage("level1sheet_small.png"), 4, 40, 40, Duration.seconds(1), 0, 3);
+            animidle_left = new AnimationChannel(new AssetLoader().loadImage("level1sheet_left_small.png"), 4, 40, 40, Duration.seconds(1), 1, 1);
+            animwalk_left = new AnimationChannel(new AssetLoader().loadImage("level1sheet_left_small.png"), 4, 40, 40, Duration.seconds(1), 0, 3);
+            texture = new AnimatedTexture(animidle);
+        }
     }
 
     @Override

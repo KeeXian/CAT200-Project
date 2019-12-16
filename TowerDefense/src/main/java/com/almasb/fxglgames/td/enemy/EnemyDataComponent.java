@@ -49,9 +49,11 @@ public class EnemyDataComponent extends Component {
         EnemyDataComponent enemy = new EnemyDataComponent();
         enemy.type=index;
         if(index==1)
-            enemy.setStat(10*lvl, 0.01, 300*lvl);
+            enemy.setStat(20*lvl, 0.01, 300*lvl);  //Orc Component
+        else if(index==2)
+            enemy.setStat(12*lvl, 0.02, 100*lvl);  //Bat Component
         else
-            enemy.setStat(5*lvl, 0.02, 100*lvl);
+            enemy.setStat(3000,0.008,8000);  //Boss Component
         return enemy;
     }
 }

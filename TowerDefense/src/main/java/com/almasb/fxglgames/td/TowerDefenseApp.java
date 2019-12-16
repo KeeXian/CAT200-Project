@@ -4,37 +4,28 @@ import com.almasb.fxgl.app.ApplicationMode;
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.app.GameView;
-import com.almasb.fxgl.audio.Audio;
-import com.almasb.fxgl.audio.AudioPlayer;
 import com.almasb.fxgl.audio.Music;
-import com.almasb.fxgl.audio.Sound;
-import com.almasb.fxgl.core.math.FXGLMath;
-import com.almasb.fxgl.core.util.BiConsumer;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.SpawnData;
 import com.almasb.fxgl.entity.level.Level;
 import com.almasb.fxgl.entity.level.tiled.TMXLevelLoader;
+import com.almasb.fxgl.gameplay.GameDifficulty;
 import com.almasb.fxgl.input.Input;
 import com.almasb.fxgl.input.UserAction;
-import com.almasb.fxgl.physics.CollisionHandler;
-import com.almasb.fxgl.texture.AnimatedTexture;
-import com.almasb.fxgl.texture.AnimationChannel;
 import com.almasb.fxgl.texture.Texture;
-import com.almasb.fxgl.time.TimerAction;
 import com.almasb.fxglgames.td.collision.BulletEnemyHandler;
 import com.almasb.fxglgames.td.enemy.EnemyDataComponent;
 import com.almasb.fxglgames.td.event.BulletHitEnemy;
 import com.almasb.fxglgames.td.event.EnemyReachedGoalEvent;
+import com.almasb.fxglgames.td.tower.TowerDataComponent;
 import com.almasb.fxglgames.td.tower.TowerIcon;
-import javafx.animation.AnimationTimer;
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.geometry.Point2D;
 import javafx.geometry.Rectangle2D;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.paint.Color;
@@ -48,7 +39,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
 
@@ -70,7 +60,7 @@ public class TowerDefenseApp extends GameApplication {
 
     // TODO: read from level data
     private int levelEnemies = 30;
-    private double player_gold = 4000;
+    private double player_gold = 8000;
 
     private Point2D enemySpawnPoint = new Point2D(50, 0);
 
@@ -87,6 +77,10 @@ public class TowerDefenseApp extends GameApplication {
     private ArrayList<Texture> textures = new ArrayList<Texture>();
 
     private ArrayList<Point2D> point2DS = new ArrayList<Point2D>();
+    private ArrayList<int[]> waves = new ArrayList<int[]>();
+    private int numWaves=0;
+
+    private ImageView imageView;
     @Override
     protected void initSettings(GameSettings settings) {
         settings.setTitle("Tower Defense");
@@ -179,7 +173,7 @@ public class TowerDefenseApp extends GameApplication {
     private Color selectedColor = Color.BLACK;
     private int selectedIndex = 1;
     // TODO: this is the enemy data
-    private int selectedLevel = 5;
+    private int selectedLevel = 3;
     private int enemyIndex = 1;
     private Text gold= new Text(Double.toString(player_gold));
 
@@ -203,14 +197,23 @@ public class TowerDefenseApp extends GameApplication {
                 selectedIndex = index;
             });
             getGameScene().addUINode(icon);
+            TowerDataComponent tower = TowerDataComponent.makeTower(index);
+            Text price = getUIFactory().newText(Double.toString(tower.getPrice()));
+            price.setTranslateX(60 + i * 120);
+            price.setTranslateY(575);
+            getGameScene().addUINode(price);
         }
+
     }
 
     private void spawnEnemy() {
         //
         //adjust enemy type and spawn enemy
         //
-        if(getGameState().getInt("numEnemies")%5==0 && getGameState().getInt("numEnemies")!=levelEnemies) {
+        int enemy;
+        if( getGameState().getInt("numEnemies")== 1 && getGameState().getInt("numEnemies")!=levelEnemies)
+            enemyIndex=(3);
+        else if (getGameState().getInt("numEnemies")%5==0 && getGameState().getInt("numEnemies")!=levelEnemies) {
             enemyIndex=random(1,2);
             if(enemyIndex==1)
                 selectedLevel=random(1,3);
@@ -277,26 +280,18 @@ public class TowerDefenseApp extends GameApplication {
             fade.setToValue(0);
             fade.play();
             getGameScene().addGameView(new GameView(coin, 1000));
+
+            Text text = FXGL.getUIFactory().
+                    newText("+"+enemy.getComponent(EnemyDataComponent.class).getGold(), Color.BLACK, 10);
+            text.setTranslateX(20);
+            text.setTranslateY(30);
+            FadeTransition anotherfade = new FadeTransition(Duration.millis(3000),text);
+            anotherfade.setFromValue(1.0);
+            anotherfade.setToValue(0);
+            anotherfade.play();
+            FXGL.getGameScene().addUINode(text);
         }
         }
-
-
-  /*  private void onEnemyKilled(EnemyKilledEvent event) {
-        levelEnemies--;
-
-        if (levelEnemies == 0) {
-            gameOver();
-        }
-
-        Entity enemy = event.getEnemy();
-        Point2D position = enemy.getPosition();
-
-        Text xMark = getUIFactory().newText("X", Color.RED, 24);
-        xMark.setTranslateX(position.getX());
-        xMark.setTranslateY(position.getY() + 20);
-
-        getGameScene().addGameView(new GameView(xMark, 1000));
-    }*/
 
     private void gameOver() {
         LoseMusic=getAssetLoader().loadMusic("game-lose.mp3");
@@ -325,6 +320,23 @@ public class TowerDefenseApp extends GameApplication {
         texture.setFitWidth(60);
         textures.add(texture);
     }
+
+    /* public void configureEnemyWaves(int difficulty){
+        switch (difficulty){
+            case 0: {
+                getGameState().gameDifficultyProperty().setValue(GameDifficulty.EASY);
+                numWaves = 3;
+                levelEnemies=5;
+                int [] wave1 = {2,2,2,1,1};
+                waves.add(wave1);
+                int [] wave2 = {2,1,1,1,1};
+                waves.add(wave2);
+                int [] wave3 = {1,2,1,1,3};
+                waves.add(wave3);
+            }
+
+        }
+    }*/
 
     public static void main(String[] args) {
         launch(args);
