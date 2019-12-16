@@ -17,6 +17,9 @@ import com.almasb.fxglgames.td.tower.TowerDataComponent;
 import com.almasb.fxglgames.td.tower.TowerLocationInfo;
 import javafx.animation.FadeTransition;
 import javafx.geometry.Point2D;
+import javafx.geometry.Pos;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -53,7 +56,6 @@ public class TowerDefenseFactory implements EntityFactory {
     @Spawns("Tower")
     public Entity spawnTower(SpawnData data) {
         TowerDataComponent towerComponent = TowerDataComponent.makeTower(data.get("index"));
-        CollidableComponent collidableComponent=new CollidableComponent(true);
 //        try {
 //            towerComponent = getAssetLoader()
 //                    .loadKV("Tower" + data.get("index") + ".kv")
@@ -63,17 +65,6 @@ public class TowerDefenseFactory implements EntityFactory {
 //            throw new RuntimeException("Failed to parse KV file: " + e);
 //        }
         Entity tower = new Entity();
-        if(FXGL.getGameState().getDouble("playerGold")<towerComponent.getPrice()) {
-            Text text = FXGL.getUIFactory().newText("Insufficient Funds", Color.RED, 24);
-            text.setTranslateX(150);
-            text.setTranslateY(20);
-            FadeTransition fadeTransition = new FadeTransition(Duration.millis(3000), text);
-            fadeTransition.setFromValue(1.0);
-            fadeTransition.setToValue(0);
-            fadeTransition.play();
-            FXGL.getGameScene().addUINode(text);
-        }
-        else {
             Texture texture = null;
             if(data.get("index").equals(1))
                 texture = new Texture(getAssetLoader().loadImage("small_stone_tower.png"));
@@ -85,12 +76,14 @@ public class TowerDefenseFactory implements EntityFactory {
                 texture = new Texture(getAssetLoader().loadImage("fire_tower.png"));
             texture.setFitHeight(60);
             texture.setFitWidth(60);
+            VBox vBox = new VBox();
+            vBox.getChildren().addAll(towerComponent.levelLabel,texture);
             tower = entityBuilder()
                     .type(TowerDefenseType.TOWER)
                     .at((Point2D)data.get("Position"))
                     .from(data)
-                    .viewWithBBox(texture)
-                    .with(collidableComponent, towerComponent)
+                    .viewWithBBox(vBox)
+                    .with(new CollidableComponent(true), towerComponent)
                     .with(new TowerComponent(towerComponent.getAttackDelay(),towerComponent.getSpeed()))
                     .build();
             FXGL.getGameState().increment("playerGold",-(towerComponent.getPrice()));
@@ -103,8 +96,6 @@ public class TowerDefenseFactory implements EntityFactory {
             fade.setToValue(0);
             fade.play();
             FXGL.getGameScene().addUINode(text);
-        }
-        collidableComponents.add(collidableComponent);
         return tower;
     }
 

@@ -10,6 +10,7 @@ import com.almasb.fxgl.audio.Music;
 import com.almasb.fxgl.audio.Sound;
 import com.almasb.fxgl.core.math.FXGLMath;
 import com.almasb.fxgl.core.util.BiConsumer;
+import com.almasb.fxgl.core.util.Consumer;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.SpawnData;
@@ -35,13 +36,19 @@ import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.geometry.Point2D;
 import javafx.geometry.Rectangle2D;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
@@ -122,6 +129,40 @@ public class TowerDefenseApp extends GameApplication {
                 if (checkValidTowerLocation(input.getMousePositionWorld())) {
                     placeTower(input.getMousePositionWorld());
                 }
+                else {
+                    Rectangle2D tempRect=getWorldBoundOnPoint(input.getMousePositionWorld());
+                    if(tempRect!=null){
+                        double x_coor = tempRect.getMinX() + tempRect.getWidth() / 2.0;
+                        double y_coor = tempRect.getHeight() / 2.0 + tempRect.getMinY();
+                        List<Entity> tower_chosen = getGameWorld().getEntitiesAt(new Point2D(x_coor - 32, y_coor - 60));
+                        if(!tower_chosen.isEmpty()){
+                            Entity tower=tower_chosen.get(0);
+                            if(tower.getComponent(TowerDataComponent.class).getLevel()<3){
+                                getDisplay().showConfirmationBox("Do you want to upgrade the tower to level " +
+                                        (tower.getComponent(TowerDataComponent.class).getLevel()+1) + "?", aBoolean -> {
+                                            if(aBoolean) {
+                                                player_gold = getGameState().getDouble("playerGold") - tower.getComponent(TowerDataComponent.class).getUpgradeCost();
+                                                getGameState().setValue("playerGold",player_gold);
+                                                gold.setText(Double.toString(player_gold));
+                                                Text text = FXGL.getUIFactory().
+                                                        newText("-"+ tower.getComponent(TowerDataComponent.class).getUpgradeCost(), Color.BLACK, 10);
+                                                text.setTranslateX(20);
+                                                text.setTranslateY(30);
+                                                FadeTransition fade = new FadeTransition(Duration.millis(3000),text);
+                                                fade.setFromValue(1.0);
+                                                fade.setToValue(0);
+                                                fade.play();
+                                                FXGL.getGameScene().addUINode(text);
+                                                tower.getComponent(TowerDataComponent.class).upgradeTower();
+                                                tower.getComponent(TowerDataComponent.class).setLabel();
+                                                showMessage("The tower is upgraded to level " +
+                                                        tower.getComponent(TowerDataComponent.class).getLevel());
+                                            }
+                                        });
+                            }
+                        }
+                    }
+                }
             }
         }, MouseButton.PRIMARY);
 
@@ -130,19 +171,21 @@ public class TowerDefenseApp extends GameApplication {
             protected void onAction() {
                 int index;
                 Rectangle2D tempRect=getWorldBoundOnPoint(input.getMousePositionWorld());
-                double x_coor=tempRect.getMinX()+tempRect.getWidth()/2.0;
-                double y_coor = tempRect.getHeight()/2.0+tempRect.getMinY();
-                List<Entity> tower_chosen=getGameWorld().getEntitiesAt(new Point2D(x_coor-32,y_coor-40));
-                index=getObjIndexOnPoint(input.getMousePositionWorld());
-                list.get(index).setOccupied(false);
-                if(!tower_chosen.isEmpty()) {
-                    CoinMusic=getAssetLoader().loadMusic("coin.mp3");
-                    getAudioPlayer().stopMusic(CoinMusic);
-                    getAudioPlayer().playMusic(CoinMusic);
-                    player_gold+=tower_chosen.get(0).getComponent(TowerDataComponent.class).getPrice()/2.0;
-                    getGameState().setValue("playerGold",player_gold);
-                    gold.setText(getGameState().getDouble("playerGold").toString());
-                    tower_chosen.get(0).removeFromWorld();
+                if(tempRect!=null) {
+                    double x_coor = tempRect.getMinX() + tempRect.getWidth() / 2.0;
+                    double y_coor = tempRect.getHeight() / 2.0 + tempRect.getMinY();
+                    List<Entity> tower_chosen = getGameWorld().getEntitiesAt(new Point2D(x_coor - 32, y_coor - 60));
+                    index = getObjIndexOnPoint(input.getMousePositionWorld());
+                    list.get(index).setOccupied(false);
+                    if (!tower_chosen.isEmpty()) {
+                            CoinMusic = getAssetLoader().loadMusic("coin.mp3");
+                            getAudioPlayer().stopMusic(CoinMusic);
+                            getAudioPlayer().playMusic(CoinMusic);
+                            player_gold += tower_chosen.get(0).getComponent(TowerDataComponent.class).getPrice() / 2.0;
+                            getGameState().setValue("playerGold", player_gold);
+                            gold.setText(getGameState().getDouble("playerGold").toString());
+                            tower_chosen.get(0).removeFromWorld();
+                    }
                 }
             }
         }, MouseButton.SECONDARY);
@@ -263,10 +306,10 @@ public class TowerDefenseApp extends GameApplication {
         double x_coor=tempRect.getMinX()+tempRect.getWidth()/2.0;
         double y_coor = tempRect.getHeight()/2.0+tempRect.getMinY();
             getGameWorld().spawn("Tower",
-                    new SpawnData(x_coor-32, y_coor-40)
+                    new SpawnData(x_coor-32, y_coor-60)
                             .put("texture", textures.get(selectedIndex - 1))
                             .put("index", selectedIndex)
-                            .put("Position", new Point2D(x_coor-32, y_coor-40)));
+                            .put("Position", new Point2D(x_coor-32, y_coor-60)));
             player_gold=getGameState().getDouble("playerGold");
             gold.setText(getGameState().getDouble("playerGold").toString());
     }
@@ -361,15 +404,19 @@ public class TowerDefenseApp extends GameApplication {
 
     public boolean checkValidTowerLocation(Point2D point){
         boolean validLocation=false;
-        for (TowerLocationInfo towerLocationInfo : list) {
-            if (!towerLocationInfo.isOccupied()) {
-                if (towerLocationInfo.getRect().contains(point)) {
-                    validLocation = true;
-                    towerLocationInfo.setOccupied(true);
-                    break;
+        TowerDataComponent tower = TowerDataComponent.makeTower(selectedIndex);
+        if(tower.getPrice()>getGameState().getDouble("playerGold"))
+            trgInsufficientFunds();
+        else
+            for (TowerLocationInfo towerLocationInfo : list) {
+                if (!towerLocationInfo.isOccupied()) {
+                    if (towerLocationInfo.getRect().contains(point)) {
+                        validLocation = true;
+                        towerLocationInfo.setOccupied(true);
+                        break;
+                    }
                 }
             }
-        }
         return validLocation;
     }
 
@@ -393,6 +440,17 @@ public class TowerDefenseApp extends GameApplication {
             }
         }
         return index;
+    }
+
+    public void trgInsufficientFunds(){
+        Text text = FXGL.getUIFactory().newText("Insufficient Funds", Color.RED, 24);
+        text.setTranslateX(150);
+        text.setTranslateY(20);
+        FadeTransition fadeTransition = new FadeTransition(Duration.millis(3000), text);
+        fadeTransition.setFromValue(1.0);
+        fadeTransition.setToValue(0);
+        fadeTransition.play();
+        FXGL.getGameScene().addUINode(text);
     }
 
     public static void main(String[] args) {
