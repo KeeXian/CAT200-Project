@@ -1,5 +1,9 @@
 package com.almasb.fxglgames.td;
 
+<<<<<<< HEAD
+=======
+import com.almasb.fxgl.app.AssetLoader;
+>>>>>>> shuen
 import com.almasb.fxgl.dsl.EntityBuilder;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.dsl.components.OffscreenCleanComponent;
@@ -13,6 +17,10 @@ import com.almasb.fxglgames.td.components.TowerComponent;
 import com.almasb.fxglgames.td.enemy.EnemyDataComponent;
 import com.almasb.fxglgames.td.tower.BulletComponent;
 import com.almasb.fxglgames.td.tower.TowerDataComponent;
+<<<<<<< HEAD
+=======
+import com.almasb.fxglgames.td.tower.TowerLocationInfo;
+>>>>>>> shuen
 import javafx.animation.FadeTransition;
 import javafx.geometry.Point2D;
 import javafx.scene.layout.VBox;
@@ -22,6 +30,10 @@ import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
+<<<<<<< HEAD
+=======
+import java.util.LinkedList;
+>>>>>>> shuen
 
 import static com.almasb.fxgl.dsl.FXGL.*;
 
@@ -41,7 +53,11 @@ public class TowerDefenseFactory implements EntityFactory {
                 .from(data)
                 .viewWithBBox(vBox)
                 .with(new CollidableComponent(true), enemyDataComponent)
+<<<<<<< HEAD
                 .with(new EnemyComponent(enemyDataComponent.getSpeed(),data.get("index")))
+=======
+                .with(new EnemyComponent(enemyDataComponent.getSpeed(),data.get("index"),data.get("level")))
+>>>>>>> shuen
                 .build();
         newEntity.getBoundingBoxComponent().addHitBox(new HitBox("BODY", new Point2D(0, 0), BoundingShape.box(30, 40)));
         return newEntity;
@@ -131,4 +147,5 @@ public class TowerDefenseFactory implements EntityFactory {
             }
             return bullet;
     }
+
 }
