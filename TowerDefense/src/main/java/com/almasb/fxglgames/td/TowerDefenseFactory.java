@@ -14,6 +14,7 @@ import com.almasb.fxglgames.td.components.TowerComponent;
 import com.almasb.fxglgames.td.enemy.EnemyDataComponent;
 import com.almasb.fxglgames.td.tower.BulletComponent;
 import com.almasb.fxglgames.td.tower.TowerDataComponent;
+import com.almasb.fxglgames.td.tower.TowerLocationInfo;
 import javafx.animation.FadeTransition;
 import javafx.geometry.Point2D;
 import javafx.scene.layout.VBox;
@@ -23,6 +24,7 @@ import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
 

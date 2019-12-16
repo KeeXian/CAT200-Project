@@ -23,10 +23,13 @@ import com.almasb.fxgl.texture.AnimationChannel;
 import com.almasb.fxgl.texture.Texture;
 import com.almasb.fxgl.time.TimerAction;
 import com.almasb.fxglgames.td.collision.BulletEnemyHandler;
+import com.almasb.fxglgames.td.components.TowerComponent;
 import com.almasb.fxglgames.td.enemy.EnemyDataComponent;
 import com.almasb.fxglgames.td.event.BulletHitEnemy;
 import com.almasb.fxglgames.td.event.EnemyReachedGoalEvent;
+import com.almasb.fxglgames.td.tower.TowerDataComponent;
 import com.almasb.fxglgames.td.tower.TowerIcon;
+import com.almasb.fxglgames.td.tower.TowerLocationInfo;
 import javafx.animation.AnimationTimer;
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
@@ -34,6 +37,8 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.geometry.Point2D;
 import javafx.geometry.Rectangle2D;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
@@ -47,10 +52,7 @@ import javafx.util.Duration;
 
 import java.io.File;
 import java.net.MalformedURLException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
@@ -90,9 +92,12 @@ public class TowerDefenseApp extends GameApplication {
 
     private Music SuccessMusic;
 
+    private Music CoinMusic;
+
     private ArrayList<Texture> textures = new ArrayList<Texture>();
 
-    private ArrayList<Point2D> point2DS = new ArrayList<Point2D>();
+    LinkedList<TowerLocationInfo> list=new LinkedList<>();
+
     @Override
     protected void initSettings(GameSettings settings) {
         settings.setTitle("Tower Defense");
@@ -110,31 +115,34 @@ public class TowerDefenseApp extends GameApplication {
     @Override
     protected void initInput() {
         Input input = getInput();
-
+        addListofWorldBound(list);
         input.addAction(new UserAction("Place Tower") {
-            private Rectangle2D worldBounds = new Rectangle2D(32, 96, 544, 128);
-            private Rectangle2D worldBounds_alt=new Rectangle2D(128, 368, 464, 48);
-
             @Override
             protected void onActionBegin() {
-                if (worldBounds.contains(input.getMousePositionWorld())||worldBounds_alt.contains(input.getMousePositionWorld())) {
-                    System.out.println(input.getMousePositionWorld());
-                    placeTower();
+                if (checkValidTowerLocation(input.getMousePositionWorld())) {
+                    placeTower(input.getMousePositionWorld());
                 }
-                else
-                    System.out.println(input.getMousePositionWorld());
             }
         }, MouseButton.PRIMARY);
 
         input.addAction(new UserAction("remove tower") {
             @Override
             protected void onAction() {
-                List<Entity> list = getGameWorld().getEntitiesAt(input.getMousePositionWorld());
-                if(!list.isEmpty()){
-                    System.out.println(list.get(0));
-                    Entity entity=list.get(0);
-                    if(entity.isType(TowerDefenseType.TOWER))
-                        entity.removeFromWorld();
+                int index;
+                Rectangle2D tempRect=getWorldBoundOnPoint(input.getMousePositionWorld());
+                double x_coor=tempRect.getMinX()+tempRect.getWidth()/2.0;
+                double y_coor = tempRect.getHeight()/2.0+tempRect.getMinY();
+                List<Entity> tower_chosen=getGameWorld().getEntitiesAt(new Point2D(x_coor-32,y_coor-40));
+                index=getObjIndexOnPoint(input.getMousePositionWorld());
+                list.get(index).setOccupied(false);
+                if(!tower_chosen.isEmpty()) {
+                    CoinMusic=getAssetLoader().loadMusic("coin.mp3");
+                    getAudioPlayer().stopMusic(CoinMusic);
+                    getAudioPlayer().playMusic(CoinMusic);
+                    player_gold+=tower_chosen.get(0).getComponent(TowerDataComponent.class).getPrice()/2.0;
+                    getGameState().setValue("playerGold",player_gold);
+                    gold.setText(getGameState().getDouble("playerGold").toString());
+                    tower_chosen.get(0).removeFromWorld();
                 }
             }
         }, MouseButton.SECONDARY);
@@ -151,6 +159,13 @@ public class TowerDefenseApp extends GameApplication {
     protected void initGame() {
         Level level;
         var levelFile=new File("map.tmx");
+        Rectangle rect=new Rectangle(50, 30);
+        rect.setFill(Color.TRANSPARENT);
+        rect.setStroke(Color.BLACK);
+        rect.setStrokeWidth(2.0);
+        rect.setTranslateX(12);
+        rect.setTranslateY(20);
+        getGameScene().addUINode(rect);
         getGameWorld().addEntityFactory(new TowerDefenseFactory());
         try {
             level = new TMXLevelLoader().load(levelFile.toURI().toURL(), getGameWorld());
@@ -206,7 +221,7 @@ public class TowerDefenseApp extends GameApplication {
         getGameScene().addUINode(gold);
         highscore.setText("Score: "+getGameState().getInt("HighScore").toString());
         highscore.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 16));
-        highscore.setTranslateX(650);
+        highscore.setTranslateX(640);
         highscore.setTranslateY(40);
         getGameScene().addUINode(highscore);
         addIntoTextureList();
@@ -243,26 +258,17 @@ public class TowerDefenseApp extends GameApplication {
         }
     }
 
-    private void placeTower() {
-        if(!point2DS.contains(getInput().getMousePositionWorld())) {
+    private void placeTower(Point2D point) {
+        Rectangle2D tempRect=getWorldBoundOnPoint(point);
+        double x_coor=tempRect.getMinX()+tempRect.getWidth()/2.0;
+        double y_coor = tempRect.getHeight()/2.0+tempRect.getMinY();
             getGameWorld().spawn("Tower",
-                    new SpawnData(getInput().getMouseXWorld() - 25, getInput().getMouseYWorld() - 25)
+                    new SpawnData(x_coor-32, y_coor-40)
                             .put("texture", textures.get(selectedIndex - 1))
                             .put("index", selectedIndex)
-                            .put("Position", new Point2D(getInput().getMouseXWorld() - 25, getInput().getMouseYWorld() - 25))
-            );
+                            .put("Position", new Point2D(x_coor-32, y_coor-40)));
+            player_gold=getGameState().getDouble("playerGold");
             gold.setText(getGameState().getDouble("playerGold").toString());
-            for(int i=-32; i<32; i++)
-                for(int j=-32; j<32;j++) {
-                    Point2D point = new Point2D(getInput().getMouseXWorld()+i, getInput().getMouseYWorld()+j);
-                    point2DS.add(point);
-                }
-        }else{
-            try{ throw new Exception("Cannot place tower");}
-            catch(Exception e){
-                System.out.println(e);
-            }
-        }
     }
 
     private void onEnemyKilled(BulletHitEnemy event){
@@ -300,38 +306,18 @@ public class TowerDefenseApp extends GameApplication {
         }
         }
 
-
-  /*  private void onEnemyKilled(EnemyKilledEvent event) {
-        levelEnemies--;
-
-        if (levelEnemies == 0) {
-            gameOver();
-        }
-
-        Entity enemy = event.getEnemy();
-        Point2D position = enemy.getPosition();
-
-        Text xMark = getUIFactory().newText("X", Color.RED, 24);
-        xMark.setTranslateX(position.getX());
-        xMark.setTranslateY(position.getY() + 20);
-
-        getGameScene().addGameView(new GameView(xMark, 1000));
-    }*/
-
     private void gameOver() {
         LoseMusic=getAssetLoader().loadMusic("game-lose.mp3");
         getAudioPlayer().stopMusic(BGM);
         getAudioPlayer().playMusic(LoseMusic);
-        getDisplay().showMessageBox("Game Over. Thanks for playing!", getGameController()::gotoMainMenu);
-        for(int i=0; i<point2DS.size();i++)
-            System.out.println("Tower " + i + " : " + point2DS.get(i));
+        getDisplay().showMessageBox("Game Over. Thanks for playing!"+'\n'+"Score: "+score, getGameController()::gotoMainMenu);
     }
 
     private void gameCleared(){
         SuccessMusic=getAssetLoader().loadMusic("Victory!.wav");
         getAudioPlayer().stopMusic(BGM);
         getAudioPlayer().playMusic(SuccessMusic);
-        getDisplay().showMessageBox("Game Cleared!!! Thanks for playing!", getGameController()::gotoMainMenu);
+        getDisplay().showMessageBox("Game Cleared!!! Thanks for playing!"+'\n'+"Score: "+score, getGameController()::gotoMainMenu);
     }
 
     private void addIntoTextureList(){
@@ -351,6 +337,62 @@ public class TowerDefenseApp extends GameApplication {
         texture.setFitHeight(60);
         texture.setFitWidth(60);
         textures.add(texture);
+    }
+
+    public void addListofWorldBound(LinkedList<TowerLocationInfo> linkedList){ //add a list of location for tower placement
+        linkedList.add(new TowerLocationInfo(new Rectangle2D(32,96,64,64)));
+        linkedList.add(new TowerLocationInfo(new Rectangle2D(128,96,64,64)));
+        linkedList.add(new TowerLocationInfo(new Rectangle2D(224,96,64,64)));
+        linkedList.add(new TowerLocationInfo(new Rectangle2D(320,96,64,64)));
+        linkedList.add(new TowerLocationInfo(new Rectangle2D(416,96,64,64)));
+        linkedList.add(new TowerLocationInfo(new Rectangle2D(512,96,64,64)));
+        linkedList.add(new TowerLocationInfo(new Rectangle2D(32,192,64,64)));
+        linkedList.add(new TowerLocationInfo(new Rectangle2D(128,192,64,64)));
+        linkedList.add(new TowerLocationInfo(new Rectangle2D(224,192,64,64)));
+        linkedList.add(new TowerLocationInfo(new Rectangle2D(320,192,64,64)));
+        linkedList.add(new TowerLocationInfo(new Rectangle2D(416,192,64,64)));
+        linkedList.add(new TowerLocationInfo(new Rectangle2D(512,192,64,64)));
+        linkedList.add(new TowerLocationInfo(new Rectangle2D(160,384,64,64)));
+        linkedList.add(new TowerLocationInfo(new Rectangle2D(256,384,64,64)));
+        linkedList.add(new TowerLocationInfo(new Rectangle2D(352,384,64,64)));
+        linkedList.add(new TowerLocationInfo(new Rectangle2D(448,384,64,64)));
+        linkedList.add(new TowerLocationInfo(new Rectangle2D(544,384,64,64)));
+    }
+
+    public boolean checkValidTowerLocation(Point2D point){
+        boolean validLocation=false;
+        for (TowerLocationInfo towerLocationInfo : list) {
+            if (!towerLocationInfo.isOccupied()) {
+                if (towerLocationInfo.getRect().contains(point)) {
+                    validLocation = true;
+                    towerLocationInfo.setOccupied(true);
+                    break;
+                }
+            }
+        }
+        return validLocation;
+    }
+
+    public Rectangle2D getWorldBoundOnPoint(Point2D point){
+        Rectangle2D rect=null;
+        for (TowerLocationInfo towerLocationInfo : list) {
+                if (towerLocationInfo.getRect().contains(point)) {
+                    rect=towerLocationInfo.getRect();
+                    break;
+                }
+        }
+        return rect;
+    }
+
+    public int getObjIndexOnPoint(Point2D point){
+        int index=0;
+        for(int j=0;j<list.size();j++){
+            if (list.get(j).getRect().contains(point)) {
+                index=j;
+                break;
+            }
+        }
+        return index;
     }
 
     public static void main(String[] args) {
