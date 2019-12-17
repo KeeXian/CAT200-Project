@@ -4,28 +4,18 @@ import com.almasb.fxgl.app.ApplicationMode;
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.app.GameView;
-<<<<<<< HEAD
-import com.almasb.fxgl.audio.Music;
-=======
 import com.almasb.fxgl.audio.Audio;
 import com.almasb.fxgl.audio.AudioPlayer;
 import com.almasb.fxgl.audio.Music;
 import com.almasb.fxgl.audio.Sound;
 import com.almasb.fxgl.core.math.FXGLMath;
 import com.almasb.fxgl.core.util.BiConsumer;
->>>>>>> shuen
+import com.almasb.fxgl.core.util.Consumer;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.SpawnData;
 import com.almasb.fxgl.entity.level.Level;
 import com.almasb.fxgl.entity.level.tiled.TMXLevelLoader;
-<<<<<<< HEAD
-import com.almasb.fxgl.gameplay.GameDifficulty;
-import com.almasb.fxgl.input.Input;
-import com.almasb.fxgl.input.UserAction;
-import com.almasb.fxgl.texture.Texture;
-import com.almasb.fxglgames.td.collision.BulletEnemyHandler;
-=======
 import com.almasb.fxgl.input.Input;
 import com.almasb.fxgl.input.UserAction;
 import com.almasb.fxgl.physics.CollisionHandler;
@@ -35,31 +25,30 @@ import com.almasb.fxgl.texture.Texture;
 import com.almasb.fxgl.time.TimerAction;
 import com.almasb.fxglgames.td.collision.BulletEnemyHandler;
 import com.almasb.fxglgames.td.components.TowerComponent;
->>>>>>> shuen
 import com.almasb.fxglgames.td.enemy.EnemyDataComponent;
 import com.almasb.fxglgames.td.event.BulletHitEnemy;
 import com.almasb.fxglgames.td.event.EnemyReachedGoalEvent;
 import com.almasb.fxglgames.td.tower.TowerDataComponent;
 import com.almasb.fxglgames.td.tower.TowerIcon;
-<<<<<<< HEAD
-=======
 import com.almasb.fxglgames.td.tower.TowerLocationInfo;
 import javafx.animation.AnimationTimer;
->>>>>>> shuen
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.geometry.Point2D;
 import javafx.geometry.Rectangle2D;
-<<<<<<< HEAD
-=======
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
->>>>>>> shuen
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
@@ -70,15 +59,8 @@ import javafx.util.Duration;
 
 import java.io.File;
 import java.net.MalformedURLException;
-<<<<<<< HEAD
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-=======
 import java.util.*;
 import java.util.concurrent.TimeUnit;
->>>>>>> shuen
 
 import static com.almasb.fxgl.dsl.FXGL.*;
 
@@ -99,13 +81,14 @@ public class TowerDefenseApp extends GameApplication {
     // TODO: assign bullet data from tower that shot it
 
     // TODO: read from level data
-    private int levelEnemies = 30;
-<<<<<<< HEAD
-    private double player_gold = 8000;
-=======
-    private double player_gold = 4000;
+    private int numEnemies = 6;
+    private double player_gold = 10000;
     private int score=0;
->>>>>>> shuen
+    private int selectedIndex = 1;
+    private int enemyLevel = 1;
+    private int enemyIndex = random(1,2);
+    private Text gold= new Text(Double.toString(player_gold));
+    private Text highscore=new Text(Integer.toString(score));
 
     private Point2D enemySpawnPoint = new Point2D(50, 0);
 
@@ -119,15 +102,6 @@ public class TowerDefenseApp extends GameApplication {
 
     private Music LoseMusic;
 
-<<<<<<< HEAD
-    private ArrayList<Texture> textures = new ArrayList<Texture>();
-
-    private ArrayList<Point2D> point2DS = new ArrayList<Point2D>();
-    private ArrayList<int[]> waves = new ArrayList<int[]>();
-    private int numWaves=0;
-
-    private ImageView imageView;
-=======
     private Music SuccessMusic;
 
     private Music CoinMusic;
@@ -136,7 +110,7 @@ public class TowerDefenseApp extends GameApplication {
 
     LinkedList<TowerLocationInfo> list=new LinkedList<>();
 
->>>>>>> shuen
+    //Initial game settings
     @Override
     protected void initSettings(GameSettings settings) {
         settings.setTitle("Tower Defense");
@@ -151,25 +125,55 @@ public class TowerDefenseApp extends GameApplication {
         settings.setApplicationMode(ApplicationMode.DEVELOPER);
     }
 
+    //intialize all the inputs
     @Override
     protected void initInput() {
         Input input = getInput();
         addListofWorldBound(list);
         input.addAction(new UserAction("Place Tower") {
-<<<<<<< HEAD
-            private Rectangle2D worldBounds = new Rectangle2D(32, 96, 544, 128);
-            private Rectangle2D worldBounds_alt=new Rectangle2D(128, 368, 464, 48);
-
-            @Override
-            protected void onActionBegin() {
-                if (worldBounds.contains(input.getMousePositionWorld())||worldBounds_alt.contains(input.getMousePositionWorld())) {
-                    placeTower();
-=======
             @Override
             protected void onActionBegin() {
                 if (checkValidTowerLocation(input.getMousePositionWorld())) {
                     placeTower(input.getMousePositionWorld());
->>>>>>> shuen
+                }
+                else {
+                    Rectangle2D tempRect=getWorldBoundOnPoint(input.getMousePositionWorld());
+                    if(tempRect!=null){
+                        double x_coor = tempRect.getMinX() + tempRect.getWidth() / 2.0;
+                        double y_coor = tempRect.getHeight() / 2.0 + tempRect.getMinY();
+                        List<Entity> tower_chosen = getGameWorld().getEntitiesAt(new Point2D(x_coor - 32, y_coor - 60));
+                        if(!tower_chosen.isEmpty()){
+                            Entity tower=tower_chosen.get(0);
+                            if(tower.getComponent(TowerDataComponent.class).getLevel()<3){
+                                getDisplay().showConfirmationBox("Do you want to upgrade the tower to level " +
+                                        (tower.getComponent(TowerDataComponent.class).getLevel()+1) + "?"+'\n'+"Cost: "+
+                                        tower.getComponent(TowerDataComponent.class).getUpgradeCost()+" gold", yes -> {
+                                            if(yes) {
+                                                if(getGameState().getDouble("playerGold")>=tower.getComponent(TowerDataComponent.class).getUpgradeCost()) {
+                                                    player_gold = getGameState().getDouble("playerGold") - tower.getComponent(TowerDataComponent.class).getUpgradeCost();
+                                                    getGameState().setValue("playerGold", player_gold);
+                                                    gold.setText(Double.toString(player_gold));
+                                                    Text text = FXGL.getUIFactory().
+                                                            newText("-" + tower.getComponent(TowerDataComponent.class).getUpgradeCost(), Color.BLACK, 10);
+                                                    text.setTranslateX(20);
+                                                    text.setTranslateY(30);
+                                                    FadeTransition fade = new FadeTransition(Duration.millis(3000), text);
+                                                    fade.setFromValue(1.0);
+                                                    fade.setToValue(0);
+                                                    fade.play();
+                                                    FXGL.getGameScene().addUINode(text);
+                                                    tower.getComponent(TowerDataComponent.class).upgradeTower();
+                                                    tower.getComponent(TowerDataComponent.class).setLabel();
+                                                    showMessage("The tower is upgraded to level " +
+                                                            tower.getComponent(TowerDataComponent.class).getLevel());
+                                                }
+                                                else
+                                                    trgInsufficientFunds();
+                                            }
+                                        });
+                            }
+                        }
+                    }
                 }
             }
         }, MouseButton.PRIMARY);
@@ -177,51 +181,46 @@ public class TowerDefenseApp extends GameApplication {
         input.addAction(new UserAction("remove tower") {
             @Override
             protected void onAction() {
-<<<<<<< HEAD
-                List<Entity> list = getGameWorld().getEntitiesAt(input.getMousePositionWorld());
-                if(!list.isEmpty()){
-                    System.out.println(list.get(0));
-                    Entity entity=list.get(0);
-                    if(entity.isType(TowerDefenseType.TOWER))
-                        entity.removeFromWorld();
-=======
                 int index;
                 Rectangle2D tempRect=getWorldBoundOnPoint(input.getMousePositionWorld());
-                double x_coor=tempRect.getMinX()+tempRect.getWidth()/2.0;
-                double y_coor = tempRect.getHeight()/2.0+tempRect.getMinY();
-                List<Entity> tower_chosen=getGameWorld().getEntitiesAt(new Point2D(x_coor-32,y_coor-40));
-                index=getObjIndexOnPoint(input.getMousePositionWorld());
-                list.get(index).setOccupied(false);
-                if(!tower_chosen.isEmpty()) {
-                    CoinMusic=getAssetLoader().loadMusic("coin.mp3");
-                    getAudioPlayer().stopMusic(CoinMusic);
-                    getAudioPlayer().playMusic(CoinMusic);
-                    player_gold+=tower_chosen.get(0).getComponent(TowerDataComponent.class).getPrice()/2.0;
-                    getGameState().setValue("playerGold",player_gold);
-                    gold.setText(getGameState().getDouble("playerGold").toString());
-                    tower_chosen.get(0).removeFromWorld();
->>>>>>> shuen
+                if(tempRect!=null) {
+                    double x_coor = tempRect.getMinX() + tempRect.getWidth() / 2.0;
+                    double y_coor = tempRect.getHeight() / 2.0 + tempRect.getMinY();
+                    List<Entity> tower_chosen = getGameWorld().getEntitiesAt(new Point2D(x_coor - 32, y_coor - 60));
+                    index = getObjIndexOnPoint(input.getMousePositionWorld());
+                    list.get(index).setOccupied(false);
+                    if (!tower_chosen.isEmpty()) {
+                            CoinMusic = getAssetLoader().loadMusic("coin.mp3");
+                            getAudioPlayer().stopMusic(CoinMusic);
+                            getAudioPlayer().playMusic(CoinMusic);
+                            player_gold += tower_chosen.get(0).getComponent(TowerDataComponent.class).getPrice() / 2.0;
+                            getGameState().setValue("playerGold", player_gold);
+                            gold.setText(getGameState().getDouble("playerGold").toString());
+                            tower_chosen.get(0).removeFromWorld();
+                    }
                 }
             }
         }, MouseButton.SECONDARY);
     }
 
+    /**
+     * this functions assign values to in-game variables that can be used throughout the games
+     * called through the global FXGL function:
+     * getGameState().getObj("String name")
+     * the value will be assign to the String and can be used throughout the game
+     */
     @Override
     protected void initGameVars(Map<String, Object> vars) {
-        vars.put("numEnemies", levelEnemies);
+        vars.put("numEnemies", numEnemies);
         vars.put("playerGold",player_gold);
-<<<<<<< HEAD
-=======
         vars.put("HighScore",score);
->>>>>>> shuen
     }
 
+    //initialize game map, set up icons and the map
+    //programme the path for enemies to move
     @Override
     protected void initGame() {
         Level level;
-<<<<<<< HEAD
-        var levelFile=new File("untitled.tmx");
-=======
         var levelFile=new File("map.tmx");
         Rectangle rect=new Rectangle(50, 30);
         rect.setFill(Color.TRANSPARENT);
@@ -230,7 +229,6 @@ public class TowerDefenseApp extends GameApplication {
         rect.setTranslateX(12);
         rect.setTranslateY(20);
         getGameScene().addUINode(rect);
->>>>>>> shuen
         getGameWorld().addEntityFactory(new TowerDefenseFactory());
         try {
             level = new TMXLevelLoader().load(levelFile.toURI().toURL(), getGameWorld());
@@ -259,45 +257,32 @@ public class TowerDefenseApp extends GameApplication {
         getEventBus().addEventHandler(BulletHitEnemy.ANY, this::onEnemyKilled);
     }
 
+    //handle physics such as when entities collide with each other
     @Override
     protected void initPhysics() {
         BulletEnemyHandler a = new BulletEnemyHandler();
         a.setIndex(selectedIndex);
         getPhysicsWorld().addCollisionHandler(a);
     }
-    // TODO: this should be tower data
-    private Color selectedColor = Color.BLACK;
-    private int selectedIndex = 1;
-    // TODO: this is the enemy data
-<<<<<<< HEAD
-    private int selectedLevel = 3;
-    private int enemyIndex = 1;
-    private Text gold= new Text(Double.toString(player_gold));
-=======
-    private int selectedLevel = 1;
-    private int enemyIndex = 1;
-    private Text gold= new Text(Double.toString(player_gold));
-    private Text highscore=new Text(Integer.toString(score));
->>>>>>> shuen
 
     @Override
     protected void initUI() {
-        Rectangle uiBG = new Rectangle(getAppWidth(), 50);
-        uiBG.setTranslateY(550);
+        Rectangle uiBG = new Rectangle(getAppWidth(), 70);
+        uiBG.setTranslateY(530);
+        uiBG.setFill(Color.DARKGREY);
         getGameScene().addUINode(uiBG);
+        //assigns values to the game state "playerGold"
         gold.setText(getGameState().getDouble("playerGold").toString());
         gold.setFill(Color.BLACK);
         gold.setTranslateX(20);
         gold.setTranslateY(40);
         getGameScene().addUINode(gold);
-<<<<<<< HEAD
-=======
+        //the score is get from the game state "HighScore"
         highscore.setText("Score: "+getGameState().getInt("HighScore").toString());
         highscore.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 16));
         highscore.setTranslateX(640);
         highscore.setTranslateY(40);
         getGameScene().addUINode(highscore);
->>>>>>> shuen
         addIntoTextureList();
         for (int i = 0; i < 4; i++) {
             int index = i + 1;
@@ -308,157 +293,103 @@ public class TowerDefenseApp extends GameApplication {
                 selectedIndex = index;
             });
             getGameScene().addUINode(icon);
-            TowerDataComponent tower = TowerDataComponent.makeTower(index);
-            Text price = getUIFactory().newText(Double.toString(tower.getPrice()));
-            price.setTranslateX(60 + i * 120);
-            price.setTranslateY(575);
-            getGameScene().addUINode(price);
         }
-
+        Label smallStonePrice = new Label("Gold: 1000");
+        smallStonePrice.setTranslateX(70);
+        smallStonePrice.setTranslateY(570);
+        smallStonePrice.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,8));
+        Label bigStonePrice=new Label("Gold: 2000");
+        bigStonePrice.setTranslateX(185);
+        bigStonePrice.setTranslateY(570);
+        bigStonePrice.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,8));
+        Label metalBallPrice=new Label("Gold: 4000");
+        metalBallPrice.setTranslateX(305);
+        metalBallPrice.setTranslateY(570);
+        metalBallPrice.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,8));
+        Label fireTowerPrice=new Label("Gold: 7800");
+        fireTowerPrice.setTranslateX(425);
+        fireTowerPrice.setTranslateY(570);
+        fireTowerPrice.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,8));
+        Label smallStoneName=new Label("Small Stone Tower");
+        smallStoneName.setTranslateX(2);
+        smallStoneName.setTranslateY(530);
+        smallStoneName.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,10));
+        Label bigStoneName=new Label("Big Stone Tower");
+        bigStoneName.setTranslateX(122);
+        bigStoneName.setTranslateY(530);
+        bigStoneName.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,10));
+        Label metalBallName=new Label("Metal Ball Tower");
+        metalBallName.setTranslateX(242);
+        metalBallName.setTranslateY(530);
+        metalBallName.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,10));
+        Label fireTowerName=new Label("Fireball Tower");
+        fireTowerName.setTranslateX(362);
+        fireTowerName.setTranslateY(530);
+        fireTowerName.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,10));
+        getGameScene().addUINodes(smallStonePrice,bigStonePrice,metalBallPrice,fireTowerPrice,smallStoneName,bigStoneName,metalBallName,fireTowerName);
     }
 
+    //spawn enemies from the spawning point
     private void spawnEnemy() {
         //
         //adjust enemy type and spawn enemy
         //
-<<<<<<< HEAD
-        int enemy;
-        if( getGameState().getInt("numEnemies")== 1 && getGameState().getInt("numEnemies")!=levelEnemies)
-            enemyIndex=(3);
-        else if (getGameState().getInt("numEnemies")%5==0 && getGameState().getInt("numEnemies")!=levelEnemies) {
-=======
-        if(getGameState().getInt("numEnemies")%5==0 && getGameState().getInt("numEnemies")!=levelEnemies) {
->>>>>>> shuen
+        if(getGameState().getInt("numEnemies")==1 && getGameState().getInt("numEnemies")!=numEnemies) {
+            enemyIndex = 3;
+        }
+        else if(getGameState().getInt("numEnemies")%5==0 && getGameState().getInt("numEnemies")!=numEnemies) {
             enemyIndex=random(1,2);
             if(enemyIndex==1)
-                selectedLevel=random(1,3);
+                enemyLevel=random(1,3);
             else
-                selectedLevel=random(1,2);
+                enemyLevel=random(1,2);
         }
         else {
+            if(enemyIndex==3) {
+                if(BGM==getAssetLoader().loadMusic("Epic Battle.mp3")) {
+                    getAudioPlayer().stopMusic(BGM);
+                    BGM = getAssetLoader().loadMusic("Boss.mp3");
+                    getAudioPlayer().loopMusic(BGM);
+                }
+            }
+            //decrement the number of enemies waiting to be spawn
             getGameState().increment("numEnemies", -1);
+            //spawns a enemy and sends the required information through the put function
             getGameWorld().spawn("Enemy",
                     new SpawnData(enemySpawnPoint.getX(), enemySpawnPoint.getY())
                             .put("index", enemyIndex)
-                            .put("level", selectedLevel)
+                            .put("level", enemyLevel)
             );
         }
-<<<<<<< HEAD
-    }
-
-    private void placeTower() {
-        if(!point2DS.contains(getInput().getMousePositionWorld())) {
-            getGameWorld().spawn("Tower",
-                    new SpawnData(getInput().getMouseXWorld() - 25, getInput().getMouseYWorld() - 25)
-                            .put("texture", textures.get(selectedIndex - 1))
-                            .put("index", selectedIndex)
-                            .put("Position", new Point2D(getInput().getMouseXWorld() - 25, getInput().getMouseYWorld() - 25))
-            );
-            gold.setText(getGameState().getDouble("playerGold").toString());
-            for(int i=-25; i<35; i++)
-                for(int j=-25; j<35;j++) {
-                    Point2D point = new Point2D(getInput().getMouseXWorld()+i, getInput().getMouseYWorld()+j);
-                    point2DS.add(point);
-                }
-        }else{
-            try{ throw new Exception("Cannot place tower");}
-            catch(Exception e){
-                System.out.println(e);
-            }
-        }
-    }
-
-    private void onEnemyKilled(BulletHitEnemy event){
-        Entity enemy = event.getEnemy();
-        EnemyDataComponent enemyDataComponent = EnemyDataComponent.makeEnemy(enemyIndex, selectedLevel);
-        if(enemy.getComponent(EnemyDataComponent.class).getHp()<=0) {
-            levelEnemies--;
-            if (levelEnemies == 0)
-                gameOver();
-            double money = getGameState().getDouble("playerGold");
-            getGameState().setValue("playerGold",
-                    (money+enemy.getComponent(EnemyDataComponent.class).getGold()));
-            gold.setText(getGameState().getDouble("playerGold").toString());
-            Point2D position = enemy.getPosition();
-            Texture coin = new Texture(getAssetLoader().loadImage("coin.png"));
-            coin.setFitHeight(30);
-            coin.setFitWidth(30);
-            coin.setTranslateX(position.getX());
-            coin.setTranslateY(position.getY() + 50);
-
-            TranslateTransition transition = new TranslateTransition();
-            transition.setNode(coin);
-            transition.setByY(-40);
-            transition.play();
-
-            FadeTransition fade = new FadeTransition(Duration.millis(3000), coin);
-            fade.setFromValue(1.0);
-            fade.setToValue(0);
-            fade.play();
-            getGameScene().addGameView(new GameView(coin, 1000));
-
-            Text text = FXGL.getUIFactory().
-                    newText("+"+enemy.getComponent(EnemyDataComponent.class).getGold(), Color.BLACK, 10);
-            text.setTranslateX(20);
-            text.setTranslateY(30);
-            FadeTransition anotherfade = new FadeTransition(Duration.millis(3000),text);
-            anotherfade.setFromValue(1.0);
-            anotherfade.setToValue(0);
-            anotherfade.play();
-            FXGL.getGameScene().addUINode(text);
-        }
-        }
-
-    private void gameOver() {
-        LoseMusic=getAssetLoader().loadMusic("game-lose.mp3");
-        getAudioPlayer().stopMusic(BGM);
-        getAudioPlayer().playMusic(LoseMusic);
-        getDisplay().showMessageBox("Game Over. Thanks for playing!", getGameController()::exit);
-        for(int i=0; i<point2DS.size();i++)
-            System.out.println("Tower " + i + " : " + point2DS.get(i));
-    }
-
-    private void addIntoTextureList(){
-        Texture texture = new Texture(getAssetLoader().loadImage("small_stone_tower.png"));
-        texture.setFitHeight(60);
-        texture.setFitWidth(60);
-        textures.add(texture);
-        texture = new Texture(getAssetLoader().loadImage("big_stone_tower.png"));
-        texture.setFitHeight(60);
-        texture.setFitWidth(60);
-        textures.add(texture);
-        texture = new Texture(getAssetLoader().loadImage("metal_ball_tower.png"));
-        texture.setFitHeight(60);
-        texture.setFitWidth(60);
-        textures.add(texture);
-        texture = new Texture(getAssetLoader().loadImage("fire_tower.png"));
-        texture.setFitHeight(60);
-        texture.setFitWidth(60);
-        textures.add(texture);
-=======
     }
 
     private void placeTower(Point2D point) {
         Rectangle2D tempRect=getWorldBoundOnPoint(point);
         double x_coor=tempRect.getMinX()+tempRect.getWidth()/2.0;
         double y_coor = tempRect.getHeight()/2.0+tempRect.getMinY();
+        //spawns a tower and sends the required information through the put function
+        //the default spawn tower is of type small stone tower
             getGameWorld().spawn("Tower",
-                    new SpawnData(x_coor-32, y_coor-40)
+                    new SpawnData(x_coor-32, y_coor-60)
                             .put("texture", textures.get(selectedIndex - 1))
                             .put("index", selectedIndex)
-                            .put("Position", new Point2D(x_coor-32, y_coor-40)));
+                            .put("Position", new Point2D(x_coor-32, y_coor-60)));
             player_gold=getGameState().getDouble("playerGold");
             gold.setText(getGameState().getDouble("playerGold").toString());
     }
 
+    //occurs after the event which an enemy is hit by a bullet
     private void onEnemyKilled(BulletHitEnemy event){
         Entity enemy = event.getEnemy();
-        EnemyDataComponent enemyDataComponent = EnemyDataComponent.makeEnemy(enemyIndex, selectedLevel);
         if(enemy.getComponent(EnemyDataComponent.class).getHp()<=0) {
-            levelEnemies--;
-            if (levelEnemies == 0)
+            /**
+             * decrements the number of enemies left in the game
+             * note that number of enemies left in the game is different from
+             * number of enemies waiting to be spawn
+             */
+            numEnemies--;
+            if (numEnemies == 0)
                 gameCleared();
-
             double money = getGameState().getDouble("playerGold");
             getGameState().setValue("playerGold",
                     (money+enemy.getComponent(EnemyDataComponent.class).getGold()));
@@ -466,25 +397,9 @@ public class TowerDefenseApp extends GameApplication {
             score+=enemy.getComponent(EnemyDataComponent.class).getScore();
             getGameState().setValue("HighScore",score);
             highscore.setText("Score: "+getGameState().getInt("HighScore").toString());
-            Point2D position = enemy.getPosition();
-            Texture coin = new Texture(getAssetLoader().loadImage("coin.png"));
-            coin.setFitHeight(30);
-            coin.setFitWidth(30);
-            coin.setTranslateX(position.getX());
-            coin.setTranslateY(position.getY() + 50);
-
-            TranslateTransition transition = new TranslateTransition();
-            transition.setNode(coin);
-            transition.setByY(-40);
-            transition.play();
-
-            FadeTransition fade = new FadeTransition(Duration.millis(3000), coin);
-            fade.setFromValue(1.0);
-            fade.setToValue(0);
-            fade.play();
-            getGameScene().addGameView(new GameView(coin, 1000));
+            removeEnemyFromWorld(enemy);
         }
-        }
+    }
 
     private void gameOver() {
         LoseMusic=getAssetLoader().loadMusic("game-lose.mp3");
@@ -500,6 +415,7 @@ public class TowerDefenseApp extends GameApplication {
         getDisplay().showMessageBox("Game Cleared!!! Thanks for playing!"+'\n'+"Score: "+score, getGameController()::gotoMainMenu);
     }
 
+    //adds the tower textures into a list for display purposes
     private void addIntoTextureList(){
         Texture texture = new Texture(getAssetLoader().loadImage("small_stone_tower.png"));
         texture.setFitHeight(60);
@@ -541,15 +457,21 @@ public class TowerDefenseApp extends GameApplication {
 
     public boolean checkValidTowerLocation(Point2D point){
         boolean validLocation=false;
-        for (TowerLocationInfo towerLocationInfo : list) {
-            if (!towerLocationInfo.isOccupied()) {
-                if (towerLocationInfo.getRect().contains(point)) {
-                    validLocation = true;
-                    towerLocationInfo.setOccupied(true);
-                    break;
+        TowerDataComponent tower = TowerDataComponent.makeTower(selectedIndex);
+        if(tower.getPrice()>getGameState().getDouble("playerGold")) {
+            //if user does not have insufficient gold to spawn selected tower
+            trgInsufficientFunds();
+        }
+        else
+            for (TowerLocationInfo towerLocationInfo : list) {
+                if (!towerLocationInfo.isOccupied()) {
+                    if (towerLocationInfo.getRect().contains(point)) {
+                        validLocation = true;
+                        towerLocationInfo.setOccupied(true);
+                        break;
+                    }
                 }
             }
-        }
         return validLocation;
     }
 
@@ -573,25 +495,53 @@ public class TowerDefenseApp extends GameApplication {
             }
         }
         return index;
->>>>>>> shuen
     }
 
-    /* public void configureEnemyWaves(int difficulty){
-        switch (difficulty){
-            case 0: {
-                getGameState().gameDifficultyProperty().setValue(GameDifficulty.EASY);
-                numWaves = 3;
-                levelEnemies=5;
-                int [] wave1 = {2,2,2,1,1};
-                waves.add(wave1);
-                int [] wave2 = {2,1,1,1,1};
-                waves.add(wave2);
-                int [] wave3 = {1,2,1,1,3};
-                waves.add(wave3);
-            }
+    //error message for insufficient funds
+    public void trgInsufficientFunds(){
+        Text text = FXGL.getUIFactory().newText("Insufficient Funds", Color.RED, 24);
+        text.setTranslateX(280);
+        text.setTranslateY(20);
+        FadeTransition fadeTransition = new FadeTransition(Duration.millis(3000), text);
+        fadeTransition.setFromValue(1.0);
+        fadeTransition.setToValue(0);
+        fadeTransition.play();
+        FXGL.getGameScene().addUINode(text);
+    }
 
-        }
-    }*/
+    //remove enemy entity and UI for enemy removal and coin spawning
+    protected void removeEnemyFromWorld(Entity enemy){
+        Point2D position = enemy.getPosition();
+        //The coin that appears when enemy is killed
+        Texture coin = new Texture(getAssetLoader().loadImage("coin.png"));
+        coin.setFitHeight(30);
+        coin.setFitWidth(30);
+        coin.setTranslateX(position.getX());
+        coin.setTranslateY(position.getY() + 50);
+        TranslateTransition transition = new TranslateTransition();
+        transition.setNode(coin);
+        transition.setByY(-40);
+        transition.play();
+        FadeTransition fade = new FadeTransition(Duration.millis(3000), coin);
+        fade.setFromValue(1.0);
+        fade.setToValue(0);
+        fade.play();
+        getGameScene().addGameView(new GameView(coin, 1000));
+
+        Music music = FXGL.getAssetLoader().loadMusic("coin.mp3");
+        FXGL.getAudioPlayer().stopMusic(music);
+        FXGL.getAudioPlayer().playMusic(music);
+        enemy.removeFromWorld();
+        Text text = FXGL.getUIFactory().
+                newText("+"+enemy.getComponent(EnemyDataComponent.class).getGold(), Color.BLACK, 10);
+        text.setTranslateX(20);
+        text.setTranslateY(30);
+        fade = new FadeTransition(Duration.millis(3000),text);
+        fade.setFromValue(1.0);
+        fade.setToValue(0);
+        fade.play();
+        FXGL.getGameScene().addUINode(text);
+    }
 
     public static void main(String[] args) {
         launch(args);

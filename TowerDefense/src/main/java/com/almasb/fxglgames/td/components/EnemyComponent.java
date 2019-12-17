@@ -32,17 +32,9 @@ public class EnemyComponent extends Component{
 
     private double speed;
 
-<<<<<<< HEAD
-    public EnemyComponent(){
-        animidle=new AnimationChannel(new AssetLoader().loadImage("level1sheet_small.png"),4,40,40, Duration.seconds(1),1,1);
-        animwalk=new AnimationChannel(new AssetLoader().loadImage("level1sheet_small.png"),4,40,40,Duration.seconds(1),0,3);
-        animidle_left=new AnimationChannel(new AssetLoader().loadImage("level1sheet_left_small.png"),4,40,40, Duration.seconds(1),1,1);
-        animwalk_left=new AnimationChannel(new AssetLoader().loadImage("level1sheet_left_small.png"),4,40,40,Duration.seconds(1),0,3);
-=======
     public EnemyComponent(double speed,int index,int level){
         this.speed=speed*60*2;
         setTexture(index, level);
->>>>>>> shuen
         texture=new AnimatedTexture(animidle);
     }
 
@@ -51,26 +43,6 @@ public class EnemyComponent extends Component{
         entity.getViewComponent().addChild(texture);
         waypoints = ((TowerDefenseApp) FXGL.getApp()).getWaypoints();
         nextWaypoint = waypoints.remove(0);
-    }
-
-    public EnemyComponent(double speed, int index){
-        this.speed = speed * 60 * 2;
-        if(index==3){
-            animidle = new AnimationChannel(new AssetLoader().loadImage("level1sheet_small.png"), 4, 40, 40, Duration.seconds(1), 1, 1);
-            animwalk = new AnimationChannel(new AssetLoader().loadImage("level1sheet_small.png"), 4, 40, 40, Duration.seconds(1), 0, 3);
-            animidle_left = new AnimationChannel(new AssetLoader().loadImage("level1sheet_left_small.png"), 4, 40, 40, Duration.seconds(1), 1, 1);
-            animwalk_left = new AnimationChannel(new AssetLoader().loadImage("level1sheet_left_small.png"), 4, 40, 40, Duration.seconds(1), 0, 3);
-            texture = new AnimatedTexture(animidle);
-            texture.setFitHeight(80);
-            texture.setFitWidth(80);
-        }
-        else {
-            animidle = new AnimationChannel(new AssetLoader().loadImage("level1sheet_small.png"), 4, 40, 40, Duration.seconds(1), 1, 1);
-            animwalk = new AnimationChannel(new AssetLoader().loadImage("level1sheet_small.png"), 4, 40, 40, Duration.seconds(1), 0, 3);
-            animidle_left = new AnimationChannel(new AssetLoader().loadImage("level1sheet_left_small.png"), 4, 40, 40, Duration.seconds(1), 1, 1);
-            animwalk_left = new AnimationChannel(new AssetLoader().loadImage("level1sheet_left_small.png"), 4, 40, 40, Duration.seconds(1), 0, 3);
-            texture = new AnimatedTexture(animidle);
-        }
     }
 
     @Override
@@ -108,8 +80,6 @@ public class EnemyComponent extends Component{
         }
     }
 
-<<<<<<< HEAD
-=======
     public void setTexture(int index,int level){
         String img1="",img2="";
         boolean valid=true;
@@ -143,19 +113,30 @@ public class EnemyComponent extends Component{
                 default: valid=false;
             }
         }
+        else if(index==3){
+            img1="level2sheet_big.png";
+            img2="level2sheet2_left_big.png";
+        }
         else
             valid=false;
 
         if(valid){
-            animidle=new AnimationChannel(new AssetLoader().loadImage(img1),4,40,40, Duration.seconds(1),1,1);
-            animwalk=new AnimationChannel(new AssetLoader().loadImage(img1),4,40,40,Duration.seconds(1),0,3);
-            animidle_left=new AnimationChannel(new AssetLoader().loadImage(img2),4,40,40, Duration.seconds(1),1,1);
-            animwalk_left=new AnimationChannel(new AssetLoader().loadImage(img2),4,40,40,Duration.seconds(1),0,3);
+            if(index==3){
+                animidle=new AnimationChannel(new AssetLoader().loadImage(img1),4,75,80, Duration.seconds(1),1,1);
+                animwalk=new AnimationChannel(new AssetLoader().loadImage(img1),4,75,80,Duration.seconds(1),0,3);
+                animidle_left=new AnimationChannel(new AssetLoader().loadImage(img2),4,80,80, Duration.seconds(1),1,1);
+                animwalk_left=new AnimationChannel(new AssetLoader().loadImage(img2),4,78,80,Duration.seconds(1),0,3);
+            }
+            else {
+                animidle = new AnimationChannel(new AssetLoader().loadImage(img1), 4, 40, 40, Duration.seconds(1), 1, 1);
+                animwalk = new AnimationChannel(new AssetLoader().loadImage(img1), 4, 40, 40, Duration.seconds(1), 0, 3);
+                animidle_left = new AnimationChannel(new AssetLoader().loadImage(img2), 4, 40, 40, Duration.seconds(1), 1, 1);
+                animwalk_left = new AnimationChannel(new AssetLoader().loadImage(img2), 4, 40, 40, Duration.seconds(1), 0, 3);
+            }
         }
         else{
             System.out.println("Invalid index and level");
         }
     }
 
->>>>>>> shuen
 }

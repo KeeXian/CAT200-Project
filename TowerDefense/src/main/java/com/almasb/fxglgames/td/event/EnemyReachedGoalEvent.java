@@ -4,7 +4,7 @@ import javafx.event.Event;
 import javafx.event.EventType;
 
 /**
- * @author Almas Baimagambetov (almaslvl@gmail.com)
+ * an event in which enemy has reached the goal
  */
 public class EnemyReachedGoalEvent extends Event {
 
