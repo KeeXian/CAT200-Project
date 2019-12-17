@@ -2,29 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a71e80b-2474-49a8-b2ec-7efc105b51e4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TowerDefense.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TowerDefense.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-16-Dec-2019-08.29.12.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-16-Dec-2019-08.29.37.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-16-Dec-2019-08.30.01.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-16-Dec-2019-08.33.09.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-16-Dec-2019-08.33.31.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-16-Dec-2019-08.33.49.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-16-Dec-2019-08.34.50.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-16-Dec-2019-08.35.12.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-16-Dec-2019-08.36.22.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-16-Dec-2019-08.36.40.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-17-Dec-2019-01.26.03.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-17-Dec-2019-01.27.48.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-17-Dec-2019-01.29.06.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-17-Dec-2019-01.50.19.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-17-Dec-2019-01.50.56.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-17-Dec-2019-01.52.20.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-17-Dec-2019-01.54.11.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-17-Dec-2019-01.54.55.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-17-Dec-2019-01.56.17.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-17-Dec-2019-01.56.40.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/TowerDefenseApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/TowerDefenseApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/TowerDefenseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/TowerDefenseFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/tower/FireTowerComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/tower/FireTowerComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/tower/TowerDataComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/tower/TowerDataComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/TowerDefenseApp$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/TowerDefenseApp$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/TowerDefenseApp$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/TowerDefenseApp$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/TowerDefenseApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/TowerDefenseApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/TowerDefenseFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/TowerDefenseFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/tower/FireTowerComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/tower/FireTowerComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/tower/TowerDataComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/tower/TowerDataComponent.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,46 +105,46 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="351" y="0" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1576516411270" />
-    <state width="1493" height="203" key="GridCell.Tab.0.bottom" timestamp="1576518979571">
+    <state width="1493" height="203" key="GridCell.Tab.0.bottom" timestamp="1576587570210">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576518979571" />
-    <state width="1493" height="203" key="GridCell.Tab.0.center" timestamp="1576518979571">
+    <state width="1493" height="203" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576587570210" />
+    <state width="1493" height="203" key="GridCell.Tab.0.center" timestamp="1576587570210">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1576518979571" />
-    <state width="1493" height="203" key="GridCell.Tab.0.left" timestamp="1576518979571">
+    <state width="1493" height="203" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1576587570210" />
+    <state width="1493" height="203" key="GridCell.Tab.0.left" timestamp="1576587570210">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1576518979571" />
-    <state width="1493" height="203" key="GridCell.Tab.0.right" timestamp="1576518979571">
+    <state width="1493" height="203" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1576587570210" />
+    <state width="1493" height="203" key="GridCell.Tab.0.right" timestamp="1576587570210">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1576518979571" />
-    <state width="1493" height="255" key="GridCell.Tab.1.bottom" timestamp="1576506726722">
+    <state width="1493" height="203" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1576587570210" />
+    <state width="1493" height="255" key="GridCell.Tab.1.bottom" timestamp="1576519098633">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="255" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576506726722" />
-    <state width="1493" height="255" key="GridCell.Tab.1.center" timestamp="1576506726722">
+    <state width="1493" height="255" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576519098633" />
+    <state width="1493" height="255" key="GridCell.Tab.1.center" timestamp="1576519098633">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="255" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1576506726722" />
-    <state width="1493" height="255" key="GridCell.Tab.1.left" timestamp="1576506726721">
+    <state width="1493" height="255" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1576519098633" />
+    <state width="1493" height="255" key="GridCell.Tab.1.left" timestamp="1576519098633">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="255" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1576506726721" />
-    <state width="1493" height="255" key="GridCell.Tab.1.right" timestamp="1576506726722">
+    <state width="1493" height="255" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1576519098633" />
+    <state width="1493" height="255" key="GridCell.Tab.1.right" timestamp="1576519098633">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="255" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1576506726722" />
+    <state width="1493" height="255" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1576519098633" />
     <state x="277" y="74" key="SettingsEditor" timestamp="1576445426447">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="277" y="74" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1576445426447" />
-    <state x="444" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1576498555155">
+    <state x="444" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1576586001977">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="444" y="256" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1576498555155" />
+    <state x="444" y="256" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1576586001977" />
     <state x="425" y="197" key="run.anything.popup" timestamp="1576509648561">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

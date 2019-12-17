@@ -82,7 +82,7 @@ public class TowerDefenseApp extends GameApplication {
 
     // TODO: read from level data
     private int levelEnemies = 30;
-    private double player_gold = 4000;
+    private double player_gold = 2000;
     private int score=0;
 
     private Point2D enemySpawnPoint = new Point2D(50, 0);
@@ -139,24 +139,29 @@ public class TowerDefenseApp extends GameApplication {
                             Entity tower=tower_chosen.get(0);
                             if(tower.getComponent(TowerDataComponent.class).getLevel()<3){
                                 getDisplay().showConfirmationBox("Do you want to upgrade the tower to level " +
-                                        (tower.getComponent(TowerDataComponent.class).getLevel()+1) + "?", aBoolean -> {
-                                            if(aBoolean) {
-                                                player_gold = getGameState().getDouble("playerGold") - tower.getComponent(TowerDataComponent.class).getUpgradeCost();
-                                                getGameState().setValue("playerGold",player_gold);
-                                                gold.setText(Double.toString(player_gold));
-                                                Text text = FXGL.getUIFactory().
-                                                        newText("-"+ tower.getComponent(TowerDataComponent.class).getUpgradeCost(), Color.BLACK, 10);
-                                                text.setTranslateX(20);
-                                                text.setTranslateY(30);
-                                                FadeTransition fade = new FadeTransition(Duration.millis(3000),text);
-                                                fade.setFromValue(1.0);
-                                                fade.setToValue(0);
-                                                fade.play();
-                                                FXGL.getGameScene().addUINode(text);
-                                                tower.getComponent(TowerDataComponent.class).upgradeTower();
-                                                tower.getComponent(TowerDataComponent.class).setLabel();
-                                                showMessage("The tower is upgraded to level " +
-                                                        tower.getComponent(TowerDataComponent.class).getLevel());
+                                        (tower.getComponent(TowerDataComponent.class).getLevel()+1) + "?"+'\n'+"Cost: "+
+                                        tower.getComponent(TowerDataComponent.class).getUpgradeCost()+" gold", yes -> {
+                                            if(yes) {
+                                                if(getGameState().getDouble("playerGold")>=tower.getComponent(TowerDataComponent.class).getUpgradeCost()) {
+                                                    player_gold = getGameState().getDouble("playerGold") - tower.getComponent(TowerDataComponent.class).getUpgradeCost();
+                                                    getGameState().setValue("playerGold", player_gold);
+                                                    gold.setText(Double.toString(player_gold));
+                                                    Text text = FXGL.getUIFactory().
+                                                            newText("-" + tower.getComponent(TowerDataComponent.class).getUpgradeCost(), Color.BLACK, 10);
+                                                    text.setTranslateX(20);
+                                                    text.setTranslateY(30);
+                                                    FadeTransition fade = new FadeTransition(Duration.millis(3000), text);
+                                                    fade.setFromValue(1.0);
+                                                    fade.setToValue(0);
+                                                    fade.play();
+                                                    FXGL.getGameScene().addUINode(text);
+                                                    tower.getComponent(TowerDataComponent.class).upgradeTower();
+                                                    tower.getComponent(TowerDataComponent.class).setLabel();
+                                                    showMessage("The tower is upgraded to level " +
+                                                            tower.getComponent(TowerDataComponent.class).getLevel());
+                                                }
+                                                else
+                                                    trgInsufficientFunds();
                                             }
                                         });
                             }
@@ -254,8 +259,9 @@ public class TowerDefenseApp extends GameApplication {
 
     @Override
     protected void initUI() {
-        Rectangle uiBG = new Rectangle(getAppWidth(), 50);
-        uiBG.setTranslateY(550);
+        Rectangle uiBG = new Rectangle(getAppWidth(), 70);
+        uiBG.setTranslateY(530);
+        uiBG.setFill(Color.DARKGREY);
         getGameScene().addUINode(uiBG);
         gold.setText(getGameState().getDouble("playerGold").toString());
         gold.setFill(Color.BLACK);
@@ -278,6 +284,40 @@ public class TowerDefenseApp extends GameApplication {
             });
             getGameScene().addUINode(icon);
         }
+        Label smallStonePrice = new Label("Gold: 1000");
+        smallStonePrice.setTranslateX(70);
+        smallStonePrice.setTranslateY(570);
+        smallStonePrice.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,8));
+        Label bigStonePrice=new Label("Gold: 2000");
+        bigStonePrice.setTranslateX(185);
+        bigStonePrice.setTranslateY(570);
+        bigStonePrice.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,8));
+        Label metalBallPrice=new Label("Gold: 4000");
+        metalBallPrice.setTranslateX(305);
+        metalBallPrice.setTranslateY(570);
+        metalBallPrice.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,8));
+        Label fireTowerPrice=new Label("Gold: 7800");
+        fireTowerPrice.setTranslateX(425);
+        fireTowerPrice.setTranslateY(570);
+        fireTowerPrice.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,8));
+        Label smallStoneName=new Label("Small Stone Tower");
+        smallStoneName.setTranslateX(2);
+        smallStoneName.setTranslateY(530);
+        smallStoneName.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,10));
+        Label bigStoneName=new Label("Big Stone Tower");
+        bigStoneName.setTranslateX(122);
+        bigStoneName.setTranslateY(530);
+        bigStoneName.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,10));
+        Label metalBallName=new Label("Metal Ball Tower");
+        metalBallName.setTranslateX(242);
+        metalBallName.setTranslateY(530);
+        metalBallName.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,10));
+        Label fireTowerName=new Label("Fireball Tower");
+        fireTowerName.setTranslateX(362);
+        fireTowerName.setTranslateY(530);
+        fireTowerName.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,10));
+        getGameScene().addUINodes(smallStonePrice,bigStonePrice,metalBallPrice,fireTowerPrice,smallStoneName,bigStoneName,metalBallName,fireTowerName);
+
     }
 
     private void spawnEnemy() {
@@ -444,7 +484,7 @@ public class TowerDefenseApp extends GameApplication {
 
     public void trgInsufficientFunds(){
         Text text = FXGL.getUIFactory().newText("Insufficient Funds", Color.RED, 24);
-        text.setTranslateX(150);
+        text.setTranslateX(280);
         text.setTranslateY(20);
         FadeTransition fadeTransition = new FadeTransition(Duration.millis(3000), text);
         fadeTransition.setFromValue(1.0);
