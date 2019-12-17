@@ -51,15 +51,16 @@ public class EnemyDataComponent extends Component {
     }
     public int getScore(){return score;}
 
+    //Set the stat of the enemy
     public static EnemyDataComponent makeEnemy(int index, int lvl){
         EnemyDataComponent enemy = new EnemyDataComponent();
         enemy.type=index;
         if(index==1)
-            enemy.setStat(10*lvl, 0.01, 300*lvl,lvl*300);
+            enemy.setStat(10*lvl, 0.01, 400*lvl,lvl*300);
         else if(index==2)
-            enemy.setStat(5*lvl, 0.02, 100*lvl,lvl*150);
+            enemy.setStat(5*lvl, 0.02, 200*lvl,lvl*150);
         else if(index==3)
-            enemy.setStat(1400,0.005,8000,10000);
+            enemy.setStat(1000,0.005,8000,10000);
         return enemy;
     }
 }

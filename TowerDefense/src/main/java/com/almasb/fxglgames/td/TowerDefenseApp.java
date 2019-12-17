@@ -28,6 +28,7 @@ import com.almasb.fxglgames.td.components.TowerComponent;
 import com.almasb.fxglgames.td.enemy.EnemyDataComponent;
 import com.almasb.fxglgames.td.event.BulletHitEnemy;
 import com.almasb.fxglgames.td.event.EnemyReachedGoalEvent;
+import com.almasb.fxglgames.td.tower.FireTowerComponent;
 import com.almasb.fxglgames.td.tower.TowerDataComponent;
 import com.almasb.fxglgames.td.tower.TowerIcon;
 import com.almasb.fxglgames.td.tower.TowerLocationInfo;
@@ -66,12 +67,15 @@ import static com.almasb.fxgl.dsl.FXGL.*;
 
 public class TowerDefenseApp extends GameApplication {
 
-    private int numEnemies = 6;
-    private double player_gold = 4000;
+    private int numEnemies = 10;
+    private int numEnemiesPerWave = 8;
+    private double player_gold = 10000;
     private int score=0;
     private int selectedIndex = 1;
     private int enemyLevel = 1;
     private int enemyIndex = random(1,2);
+    private boolean spawnBoss=false;
+    private int enemiesOnMap=0;
     private Text gold= new Text(Double.toString(player_gold));
     private Text highscore=new Text(Integer.toString(score));
 
@@ -129,22 +133,26 @@ public class TowerDefenseApp extends GameApplication {
                         List<Entity> tower_chosen = getGameWorld().getEntitiesAt(new Point2D(x_coor - 32, y_coor - 60)); //Get the list of towers in the given area
                         if(!tower_chosen.isEmpty()){ //If there is tower in the area
                             Entity tower=tower_chosen.get(0); //Get the tower
-
+                            TowerDataComponent towerComponent;
+                            if(tower.hasComponent(FireTowerComponent.class))
+                                towerComponent = tower.getComponent(FireTowerComponent.class);
+                            else
+                                towerComponent = tower.getComponent(TowerDataComponent.class);
                             /*
                             Check if the selected tower's level is less than 3, allows the upgrade if its level is less than 3
                             and the amount of the gold is sufficient
                             */
-                            if(tower.getComponent(TowerDataComponent.class).getLevel()<3){
+                            if(tower.getComponent(towerComponent.getClass()).getLevel()<3){
                                 getDisplay().showConfirmationBox("Do you want to upgrade the tower to level " +
-                                        (tower.getComponent(TowerDataComponent.class).getLevel()+1) + "?"+'\n'+"Cost: "+
-                                        tower.getComponent(TowerDataComponent.class).getUpgradeCost()+" gold", yes -> {
+                                        (tower.getComponent(towerComponent.getClass()).getLevel()+1) + "?"+'\n'+"Cost: "+
+                                        tower.getComponent(towerComponent.getClass()).getUpgradeCost()+" gold", yes -> {
                                             if(yes) {
-                                                if(getGameState().getDouble("playerGold")>=tower.getComponent(TowerDataComponent.class).getUpgradeCost()) {
-                                                    player_gold = getGameState().getDouble("playerGold") - tower.getComponent(TowerDataComponent.class).getUpgradeCost();
+                                                if(getGameState().getDouble("playerGold")>=tower.getComponent(towerComponent.getClass()).getUpgradeCost()) {
+                                                    player_gold = getGameState().getDouble("playerGold") - tower.getComponent(towerComponent.getClass()).getUpgradeCost();
                                                     getGameState().setValue("playerGold", player_gold);
                                                     gold.setText(Double.toString(player_gold));
                                                     Text text = FXGL.getUIFactory().
-                                                            newText("-" + tower.getComponent(TowerDataComponent.class).getUpgradeCost(), Color.BLACK, 10);
+                                                            newText("-" + tower.getComponent(towerComponent.getClass()).getUpgradeCost(), Color.BLACK, 10);
                                                     text.setTranslateX(20);
                                                     text.setTranslateY(30);
                                                     FadeTransition fade = new FadeTransition(Duration.millis(3000), text);
@@ -152,10 +160,10 @@ public class TowerDefenseApp extends GameApplication {
                                                     fade.setToValue(0);
                                                     fade.play();
                                                     FXGL.getGameScene().addUINode(text);
-                                                    tower.getComponent(TowerDataComponent.class).upgradeTower();
-                                                    tower.getComponent(TowerDataComponent.class).setLabel();
+                                                    tower.getComponent(towerComponent.getClass()).upgradeTower();
+                                                    tower.getComponent(towerComponent.getClass()).setLabel();
                                                     showMessage("The tower is upgraded to level " +
-                                                            tower.getComponent(TowerDataComponent.class).getLevel());
+                                                            tower.getComponent(towerComponent.getClass()).getLevel());
                                                 }
                                                 else
                                                     trgInsufficientFunds();
@@ -172,21 +180,30 @@ public class TowerDefenseApp extends GameApplication {
             @Override
             protected void onAction() {
                 int index;
-                Rectangle2D tempRect=getWorldBoundOnPoint(input.getMousePositionWorld());
-                if(tempRect!=null) {
-                    double x_coor = tempRect.getMinX() + tempRect.getWidth() / 2.0;
-                    double y_coor = tempRect.getHeight() / 2.0 + tempRect.getMinY();
-                    List<Entity> tower_chosen = getGameWorld().getEntitiesAt(new Point2D(x_coor - 32, y_coor - 60));
-                    index = getObjIndexOnPoint(input.getMousePositionWorld());
-                    list.get(index).setOccupied(false);
+                Rectangle2D tempRect=getWorldBoundOnPoint(input.getMousePositionWorld()); //Get the area upon the click
+                if(tempRect!=null) { //Area found
+                    double x_coor = tempRect.getMinX() + tempRect.getWidth() / 2.0; //Get the horizontal midpoint of the area
+                    double y_coor = tempRect.getHeight() / 2.0 + tempRect.getMinY(); //Get the vertical midpoint of the area
+                    List<Entity> tower_chosen = getGameWorld().getEntitiesAt(new Point2D(x_coor - 32, y_coor - 60)); //Get list of towers in the area
+                    index = getObjIndexOnPoint(input.getMousePositionWorld()); //Get the area's index from the list of area
+                    list.get(index).setOccupied(false);//Update the status of the area to not occupied
+                    /*
+                    If there is a tower in the area, remove it and add half of its cost as the gold
+                     */
                     if (!tower_chosen.isEmpty()) {
-                            CoinMusic = getAssetLoader().loadMusic("coin.mp3");
-                            getAudioPlayer().stopMusic(CoinMusic);
-                            getAudioPlayer().playMusic(CoinMusic);
-                            player_gold += tower_chosen.get(0).getComponent(TowerDataComponent.class).getPrice() / 2.0;
-                            getGameState().setValue("playerGold", player_gold);
-                            gold.setText(getGameState().getDouble("playerGold").toString());
-                            tower_chosen.get(0).removeFromWorld();
+                        Entity tower=tower_chosen.get(0);
+                        TowerDataComponent towerComponent;
+                        if(tower.hasComponent(FireTowerComponent.class))
+                            towerComponent = tower.getComponent(FireTowerComponent.class);
+                        else
+                            towerComponent = tower.getComponent(TowerDataComponent.class);
+                        CoinMusic = getAssetLoader().loadMusic("coin.mp3");
+                        getAudioPlayer().stopMusic(CoinMusic);
+                        getAudioPlayer().playMusic(CoinMusic);
+                        player_gold += tower_chosen.get(0).getComponent(towerComponent.getClass()).getPrice() / 2.0;
+                        getGameState().setValue("playerGold", player_gold);
+                        gold.setText(getGameState().getDouble("playerGold").toString());
+                        tower_chosen.get(0).removeFromWorld();
                     }
                 }
             }
@@ -255,6 +272,10 @@ public class TowerDefenseApp extends GameApplication {
         getPhysicsWorld().addCollisionHandler(a);
     }
 
+    /*
+    Set the tower selection bar at bottom of the screen, label the tower name and its price.
+    Set the score and gold display
+     */
     @Override
     protected void initUI() {
         Rectangle uiBG = new Rectangle(getAppWidth(), 70);
@@ -325,9 +346,9 @@ public class TowerDefenseApp extends GameApplication {
         //adjust enemy type and spawn enemy
         //
         if(getGameState().getInt("numEnemies")==1 && getGameState().getInt("numEnemies")!=numEnemies) {
-            enemyIndex = 3;
+            spawnBoss=true;
         }
-        else if(getGameState().getInt("numEnemies")%5==0 && getGameState().getInt("numEnemies")!=numEnemies) {
+        else if(getGameState().getInt("numEnemies")%numEnemiesPerWave==0 && getGameState().getInt("numEnemies")!=numEnemies) {
             enemyIndex=random(1,2);
             if(enemyIndex==1)
                 enemyLevel=random(1,3);
@@ -335,7 +356,8 @@ public class TowerDefenseApp extends GameApplication {
                 enemyLevel=random(1,2);
         }
         else {
-            if(enemyIndex==3) {
+            if(spawnBoss && numEnemies==1) { //Final boss
+                enemyIndex=3;
                 if(BGM==getAssetLoader().loadMusic("Epic Battle.mp3")) {
                     getAudioPlayer().stopMusic(BGM);
                     BGM = getAssetLoader().loadMusic("Boss.mp3");
@@ -377,6 +399,7 @@ public class TowerDefenseApp extends GameApplication {
              * note that number of enemies left in the game is different from
              * number of enemies waiting to be spawn
              */
+            enemiesOnMap--;
             numEnemies--;
             if (numEnemies == 0)
                 gameCleared();
@@ -391,6 +414,7 @@ public class TowerDefenseApp extends GameApplication {
         }
     }
 
+    //Game over screen
     private void gameOver() {
         LoseMusic=getAssetLoader().loadMusic("game-lose.mp3");
         getAudioPlayer().stopMusic(BGM);
@@ -398,6 +422,7 @@ public class TowerDefenseApp extends GameApplication {
         getDisplay().showMessageBox("Game Over. Thanks for playing!"+'\n'+"Score: "+score, getGameController()::exit);
     }
 
+    //Game clear screen
     private void gameCleared(){
         SuccessMusic=getAssetLoader().loadMusic("Victory!.wav");
         getAudioPlayer().stopMusic(BGM);
@@ -425,7 +450,8 @@ public class TowerDefenseApp extends GameApplication {
         textures.add(texture);
     }
 
-    public void addListofWorldBound(LinkedList<TowerLocationInfo> linkedList){ //add a list of location for tower placement
+    //add a list of location for tower placement
+    public void addListofWorldBound(LinkedList<TowerLocationInfo> linkedList){
         linkedList.add(new TowerLocationInfo(new Rectangle2D(32,96,64,64)));
         linkedList.add(new TowerLocationInfo(new Rectangle2D(128,96,64,64)));
         linkedList.add(new TowerLocationInfo(new Rectangle2D(224,96,64,64)));
@@ -445,6 +471,8 @@ public class TowerDefenseApp extends GameApplication {
         linkedList.add(new TowerLocationInfo(new Rectangle2D(544,384,64,64)));
     }
 
+
+   //Check if the mouse click location is inside any defined area for tower placement
     public boolean checkValidTowerLocation(Point2D point){
         boolean validLocation=false;
         TowerDataComponent tower = TowerDataComponent.makeTower(selectedIndex);
@@ -465,6 +493,7 @@ public class TowerDefenseApp extends GameApplication {
         return validLocation;
     }
 
+    //Get the area for tower placement according to mouse click location
     public Rectangle2D getWorldBoundOnPoint(Point2D point){
         Rectangle2D rect=null;
         for (TowerLocationInfo towerLocationInfo : list) {
@@ -476,6 +505,7 @@ public class TowerDefenseApp extends GameApplication {
         return rect;
     }
 
+    //Get the index of the area in the list of area
     public int getObjIndexOnPoint(Point2D point){
         int index=0;
         for(int j=0;j<list.size();j++){

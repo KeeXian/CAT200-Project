@@ -1,8 +1,6 @@
 package com.almasb.fxglgames.td;
 
-/**
- * @author Almas Baimagambetov (almaslvl@gmail.com)
- */
+//Set the bullet speed
 public class Config {
 
     public static final double BULLET_SPEED = 5 * 60;

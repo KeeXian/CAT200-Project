@@ -6,8 +6,6 @@ import javafx.event.EventType;
 
 /**
  * Occurs when an enemy is killed.
- *
- * @author Almas Baimagambetov (almaslvl@gmail.com)
  */
 public class EnemyKilledEvent extends Event {
 

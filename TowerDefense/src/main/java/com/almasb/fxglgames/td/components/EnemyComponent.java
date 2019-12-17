@@ -18,9 +18,6 @@ import javafx.util.Duration;
 import java.sql.SQLOutput;
 import java.util.List;
 
-/**
- * @author Almas Baimagambetov (almaslvl@gmail.com)
- */
 public class EnemyComponent extends Component{
 
     private List<Point2D> waypoints;
@@ -32,6 +29,7 @@ public class EnemyComponent extends Component{
 
     private double speed;
 
+    //Initialise the speed and texture of the enemy entity
     public EnemyComponent(double speed,int index,int level){
         this.speed=speed*60*2;
         setTexture(index, level);
@@ -40,33 +38,33 @@ public class EnemyComponent extends Component{
 
     @Override
     public void onAdded() {
-        entity.getViewComponent().addChild(texture);
-        waypoints = ((TowerDefenseApp) FXGL.getApp()).getWaypoints();
-        nextWaypoint = waypoints.remove(0);
+        entity.getViewComponent().addChild(texture); //Set the texture to be viewed in the game
+        waypoints = ((TowerDefenseApp) FXGL.getApp()).getWaypoints(); //Get list of waypoints
+        nextWaypoint = waypoints.remove(0); //Get the next waypoint an remove it from the list
     }
 
     @Override
     public void onUpdate(double tpf) {
 
-        if(nextWaypoint.equals(new Point2D(700,300))){
+        if(nextWaypoint.equals(new Point2D(700,300))){ //Change enemy animation direction
             texture.loopAnimationChannel(animwalk_left);
         }
-        else if(nextWaypoint.equals(new Point2D(50,450))){
+        else if(nextWaypoint.equals(new Point2D(50,450))){ //Change enemy animation direction
             texture.loopAnimationChannel(animwalk);
         }
 
-        if (texture.getAnimationChannel() == animidle) {
+        if (texture.getAnimationChannel() == animidle) { //Loop the animation
             texture.loopAnimationChannel(animwalk);
         }
-        else if(texture.getAnimationChannel()==animidle_left)
+        else if(texture.getAnimationChannel()==animidle_left) //Loop the animation
             texture.loopAnimationChannel(animwalk_left);
 
-
+        //Calculate the speed of enemy at each waypoint
         Point2D velocity = nextWaypoint.subtract(entity.getPosition())
                 .normalize()
                 .multiply(speed);
 
-        entity.translate(velocity);
+        entity.translate(velocity); //Enemy move with the calculated speed
 
         if (nextWaypoint.distance(entity.getPosition()) < speed) {
             entity.setPosition(nextWaypoint);
@@ -74,12 +72,12 @@ public class EnemyComponent extends Component{
             if (!waypoints.isEmpty()) {
                 nextWaypoint = waypoints.remove(0);
             } else {
-
-                FXGL.getEventBus().fireEvent(new EnemyReachedGoalEvent());
+                FXGL.getEventBus().fireEvent(new EnemyReachedGoalEvent()); //Trigger the event when enemy reach the goal
             }
         }
     }
 
+    //Set the texture of the enemy according to the type of enemy and its level
     public void setTexture(int index,int level){
         String img1="",img2="";
         boolean valid=true;

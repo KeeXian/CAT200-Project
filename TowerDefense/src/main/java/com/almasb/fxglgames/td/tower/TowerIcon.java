@@ -8,9 +8,7 @@ import javafx.scene.shape.Rectangle;
 
 import static com.almasb.fxgl.dsl.FXGL.getAssetLoader;
 
-/**
- * @author Almas Baimagambetov (almaslvl@gmail.com)
- */
+//Set the texture of the tower
 public class TowerIcon extends Pane {
 
     public TowerIcon(Texture texture) {
