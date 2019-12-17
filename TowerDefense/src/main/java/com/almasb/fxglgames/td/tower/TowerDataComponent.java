@@ -100,15 +100,15 @@ public class TowerDataComponent extends Component {
     public static TowerDataComponent makeTower(int type) {
         TowerDataComponent newTower;
         if (type == 1) {  //small rock tower
-            newTower = new TowerDataComponent(2, 1000,0.8,5*60,400);
+            newTower = new TowerDataComponent(2, 1000,0.8,5*80,700);
             newTower.createShootingRange(getInput().getMouseXWorld()-300,getInput().getMouseYWorld()-300, 600,600);
         }
         else if (type == 2) { //big rock tower
-            newTower = new TowerDataComponent(3, 2000, 1.0, 5 * 50, 1000);
+            newTower = new TowerDataComponent(3, 2000, 1.0, 5 * 50, 1600);
             newTower.createShootingRange(getInput().getMouseXWorld()-250,getInput().getMouseYWorld()-250, 500,500);
         }
         else if (type == 3) { //metal ball tower
-            newTower = new TowerDataComponent(6, 4000, 1.2, 5 * 40, 2200);
+            newTower = new TowerDataComponent(6, 4000, 1.2, 5 * 40, 2550);
             newTower.createShootingRange(getInput().getMouseXWorld()-200,getInput().getMouseYWorld()-200, 400,400);
         }
         else { //fire tower

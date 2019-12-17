@@ -57,6 +57,7 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -67,13 +68,13 @@ import static com.almasb.fxgl.dsl.FXGL.*;
 
 public class TowerDefenseApp extends GameApplication {
 
-    private int numEnemies = 10;
+    private int numEnemies = 60;
     private int numEnemiesPerWave = 8;
-    private double player_gold = 10000;
+    private double player_gold = 3000;
     private int score=0;
     private int selectedIndex = 1;
-    private int enemyLevel = 1;
-    private int enemyIndex = random(1,2);
+    private int enemyLevel = 2;
+    private int enemyIndex = 2;
     private boolean spawnBoss=false;
     private int enemiesOnMap=0;
     private Text gold= new Text(Double.toString(player_gold));
@@ -128,9 +129,8 @@ public class TowerDefenseApp extends GameApplication {
                 else { //Upgrade tower
                     Rectangle2D tempRect=getWorldBoundOnPoint(input.getMousePositionWorld()); //Get the area upon the click
                     if(tempRect!=null){ //Area found
-                        double x_coor = tempRect.getMinX() + tempRect.getWidth() / 2.0; //Get horizontal midpoint of the area
-                        double y_coor = tempRect.getHeight() / 2.0 + tempRect.getMinY(); //Get vertical midpoint of the area
-                        List<Entity> tower_chosen = getGameWorld().getEntitiesAt(new Point2D(x_coor - 32, y_coor - 60)); //Get the list of towers in the given area
+                        double[] coor=get_center(tempRect); //Get the center of the area
+                        List<Entity> tower_chosen = getGameWorld().getEntitiesAt(new Point2D(coor[0] - 32, coor[1] - 60)); //Get the list of towers in the given area
                         if(!tower_chosen.isEmpty()){ //If there is tower in the area
                             Entity tower=tower_chosen.get(0); //Get the tower
                             TowerDataComponent towerComponent;
@@ -182,9 +182,8 @@ public class TowerDefenseApp extends GameApplication {
                 int index;
                 Rectangle2D tempRect=getWorldBoundOnPoint(input.getMousePositionWorld()); //Get the area upon the click
                 if(tempRect!=null) { //Area found
-                    double x_coor = tempRect.getMinX() + tempRect.getWidth() / 2.0; //Get the horizontal midpoint of the area
-                    double y_coor = tempRect.getHeight() / 2.0 + tempRect.getMinY(); //Get the vertical midpoint of the area
-                    List<Entity> tower_chosen = getGameWorld().getEntitiesAt(new Point2D(x_coor - 32, y_coor - 60)); //Get list of towers in the area
+                    double[] coor=get_center(tempRect); //Get the center of the area
+                    List<Entity> tower_chosen = getGameWorld().getEntitiesAt(new Point2D(coor[0] - 32, coor[1]- 60)); //Get list of towers in the area
                     index = getObjIndexOnPoint(input.getMousePositionWorld()); //Get the area's index from the list of area
                     list.get(index).setOccupied(false);//Update the status of the area to not occupied
                     /*
@@ -200,8 +199,8 @@ public class TowerDefenseApp extends GameApplication {
                         CoinMusic = getAssetLoader().loadMusic("coin.mp3");
                         getAudioPlayer().stopMusic(CoinMusic);
                         getAudioPlayer().playMusic(CoinMusic);
-                        player_gold += tower_chosen.get(0).getComponent(towerComponent.getClass()).getPrice() / 2.0;
-                        getGameState().setValue("playerGold", player_gold);
+                        getGameState().increment("playerGold",
+                                tower_chosen.get(0).getComponent(towerComponent.getClass()).getPrice() / 2.0);
                         gold.setText(getGameState().getDouble("playerGold").toString());
                         tower_chosen.get(0).removeFromWorld();
                     }
@@ -295,49 +294,23 @@ public class TowerDefenseApp extends GameApplication {
         highscore.setTranslateY(40);
         getGameScene().addUINode(highscore);
         addIntoTextureList();
+        String[] tower_name_array ={"Small Stone Tower","Big Stone Tower","Metal Ball Tower","Fireball Tower"};
         for (int i = 0; i < 4; i++) {
             int index = i + 1;
             TowerIcon icon = new TowerIcon(textures.get(i));
             icon.setTranslateX(10 + i * 120);
             icon.setTranslateY(545);
-            icon.setOnMouseClicked(e -> {
-                selectedIndex = index;
-            });
-            getGameScene().addUINode(icon);
+            icon.setOnMouseClicked(e -> selectedIndex = index);
+            Label Tower_Price = new Label(Double.toString(TowerDataComponent.makeTower(i+1).getPrice()));
+            Tower_Price.setTranslateX(70+i*120);
+            Tower_Price.setTranslateY(570);
+            Tower_Price.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,8));
+            Label Tower_Name = new Label(tower_name_array[i]);
+            Tower_Name.setTranslateX(2+i*120);
+            Tower_Name.setTranslateY(530);
+            Tower_Name.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,10));
+            getGameScene().addUINodes(icon,Tower_Price,Tower_Name);
         }
-        Label smallStonePrice = new Label("Gold: 1000");
-        smallStonePrice.setTranslateX(70);
-        smallStonePrice.setTranslateY(570);
-        smallStonePrice.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,8));
-        Label bigStonePrice=new Label("Gold: 2000");
-        bigStonePrice.setTranslateX(185);
-        bigStonePrice.setTranslateY(570);
-        bigStonePrice.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,8));
-        Label metalBallPrice=new Label("Gold: 4000");
-        metalBallPrice.setTranslateX(305);
-        metalBallPrice.setTranslateY(570);
-        metalBallPrice.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,8));
-        Label fireTowerPrice=new Label("Gold: 7800");
-        fireTowerPrice.setTranslateX(425);
-        fireTowerPrice.setTranslateY(570);
-        fireTowerPrice.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,8));
-        Label smallStoneName=new Label("Small Stone Tower");
-        smallStoneName.setTranslateX(2);
-        smallStoneName.setTranslateY(530);
-        smallStoneName.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,10));
-        Label bigStoneName=new Label("Big Stone Tower");
-        bigStoneName.setTranslateX(122);
-        bigStoneName.setTranslateY(530);
-        bigStoneName.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,10));
-        Label metalBallName=new Label("Metal Ball Tower");
-        metalBallName.setTranslateX(242);
-        metalBallName.setTranslateY(530);
-        metalBallName.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,10));
-        Label fireTowerName=new Label("Fireball Tower");
-        fireTowerName.setTranslateX(362);
-        fireTowerName.setTranslateY(530);
-        fireTowerName.setFont(Font.font("Verdana",FontWeight.BOLD,FontPosture.REGULAR,10));
-        getGameScene().addUINodes(smallStonePrice,bigStonePrice,metalBallPrice,fireTowerPrice,smallStoneName,bigStoneName,metalBallName,fireTowerName);
     }
 
     //spawn enemies from the spawning point
@@ -345,9 +318,18 @@ public class TowerDefenseApp extends GameApplication {
         //
         //adjust enemy type and spawn enemy
         //
-        if(getGameState().getInt("numEnemies")==1 && getGameState().getInt("numEnemies")!=numEnemies) {
-            spawnBoss=true;
+        if(numEnemies==1)
+            enemyIndex=3;
+        else if(numEnemies%numEnemiesPerWave==0){
+            enemyIndex=random(1,2);
+            if(enemyIndex==1)
+                enemyLevel=random(1,3);
+            else
+                enemyLevel=random(1,2);
         }
+
+        if(getGameState().getInt("numEnemies")==1 && getGameState().getInt("numEnemies")!=numEnemies)
+            enemyIndex=3;
         else if(getGameState().getInt("numEnemies")%numEnemiesPerWave==0 && getGameState().getInt("numEnemies")!=numEnemies) {
             enemyIndex=random(1,2);
             if(enemyIndex==1)
@@ -356,8 +338,7 @@ public class TowerDefenseApp extends GameApplication {
                 enemyLevel=random(1,2);
         }
         else {
-            if(spawnBoss && numEnemies==1) { //Final boss
-                enemyIndex=3;
+            if(enemyIndex==3) { //Final boss
                 if(BGM==getAssetLoader().loadMusic("Epic Battle.mp3")) {
                     getAudioPlayer().stopMusic(BGM);
                     BGM = getAssetLoader().loadMusic("Boss.mp3");
@@ -403,9 +384,12 @@ public class TowerDefenseApp extends GameApplication {
             numEnemies--;
             if (numEnemies == 0)
                 gameCleared();
-            double money = getGameState().getDouble("playerGold");
+
+            /*
+            Update the number of gold available and the current score
+             */
             getGameState().setValue("playerGold",
-                    (money+enemy.getComponent(EnemyDataComponent.class).getGold()));
+                    (getGameState().getDouble("playerGold")+enemy.getComponent(EnemyDataComponent.class).getGold()));
             gold.setText(getGameState().getDouble("playerGold").toString());
             score+=enemy.getComponent(EnemyDataComponent.class).getScore();
             getGameState().setValue("HighScore",score);
@@ -561,6 +545,14 @@ public class TowerDefenseApp extends GameApplication {
         fade.setToValue(0);
         fade.play();
         FXGL.getGameScene().addUINode(text);
+    }
+
+    //Get the center of the area if it is not null
+    private  double[] get_center(@NotNull Rectangle2D tempRect){
+        return new double[]{
+                tempRect.getMinX() + tempRect.getWidth() / 2.0,
+                tempRect.getHeight() / 2.0 + tempRect.getMinY()
+        };
     }
 
     public static void main(String[] args) {
