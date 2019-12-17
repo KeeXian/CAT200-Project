@@ -1,38 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a71e80b-2474-49a8-b2ec-7efc105b51e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mapPack_tilesheet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapPack_tilesheet_2X.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/kv/Tower1.kv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/kv/Tower2.kv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/kv/Tower3.kv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/kv/Tower4.kv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/music/Epic Battle.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/music/coin.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/music/game-lose.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/Level1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/Level1Idle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/Level1Run.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/big rock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/big_stone_tower.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/coin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/fire_ball.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/fire_tower.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/level1sheet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/level1sheet_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/level1sheet_left_small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/level1sheet_small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/metal_ball.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/metal_ball_tower.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/newdude.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/small stone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/small_stone_tower.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/tower.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.tmx" afterDir="false" />
-    </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="7a71e80b-2474-49a8-b2ec-7efc105b51e4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,7 +18,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -75,18 +44,6 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="TowerDefenseApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.almasb.fxglgames.td.TowerDefenseApp" />
@@ -107,6 +64,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -125,32 +94,43 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="611" y="321" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576418118097">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="275" y="41" key="#Notifications" timestamp="1576602653218">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
+    <state x="275" y="41" key="#Notifications/0.0.1366.768@0.0.1366.768" timestamp="1576602653218" />
+    <state x="543" y="285" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576602665116">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="543" y="285" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.768@0.0.1366.768" timestamp="1576602665116" />
     <state x="611" y="321" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.864@0.0.1536.864" timestamp="1576418118097" />
-    <state width="1493" height="203" key="GridCell.Tab.0.bottom" timestamp="1576456595379">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1323" height="183" key="GridCell.Tab.0.bottom" timestamp="1576608338232">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
+    <state width="1323" height="183" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1576608338232" />
     <state width="1493" height="203" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576456595379" />
-    <state width="1493" height="203" key="GridCell.Tab.0.center" timestamp="1576456595379">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1323" height="183" key="GridCell.Tab.0.center" timestamp="1576608338231">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
+    <state width="1323" height="183" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1576608338231" />
     <state width="1493" height="203" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1576456595379" />
-    <state width="1493" height="203" key="GridCell.Tab.0.left" timestamp="1576456595379">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1323" height="183" key="GridCell.Tab.0.left" timestamp="1576608338231">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
+    <state width="1323" height="183" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1576608338231" />
     <state width="1493" height="203" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1576456595379" />
-    <state width="1493" height="203" key="GridCell.Tab.0.right" timestamp="1576456595379">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1323" height="183" key="GridCell.Tab.0.right" timestamp="1576608338231">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
+    <state width="1323" height="183" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1576608338231" />
     <state width="1493" height="203" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1576456595379" />
     <state x="277" y="74" key="SettingsEditor" timestamp="1576445426447">
       <screen x="0" y="0" width="1536" height="864" />
