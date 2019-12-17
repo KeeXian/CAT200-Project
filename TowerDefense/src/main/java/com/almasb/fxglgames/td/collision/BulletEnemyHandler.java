@@ -21,7 +21,8 @@ import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author Almas Baimagambetov (almaslvl@gmail.com)
+ * when the BulletHitEnemy event is fired, the following
+ * function in this class will be called
  */
 public class BulletEnemyHandler extends CollisionHandler {
 
@@ -34,39 +35,25 @@ public class BulletEnemyHandler extends CollisionHandler {
     protected void onCollisionBegin(Entity bullet, Entity enemy) {
         // TODO: add HP/Damage system
         bullet.removeFromWorld();
+        //assigns the enemy entity to the one that is involved in the
+        //BulletHitEnemy event
         FXGL.getEventBus().fireEvent(new BulletHitEnemy(enemy));
-        Music music = FXGL.getAssetLoader().loadMusic("coin.mp3");
-        if(enemy.getComponent(EnemyDataComponent.class).getHp()<=0) {
-            FXGL.getAudioPlayer().stopMusic(music);
-            FXGL.getAudioPlayer().playMusic(music);
-            enemy.removeFromWorld();
-            Text text = FXGL.getUIFactory().
-                    newText("+"+enemy.getComponent(EnemyDataComponent.class).getGold(), Color.BLACK, 10);
-            text.setTranslateX(20);
-            text.setTranslateY(30);
-            FadeTransition fade = new FadeTransition(Duration.millis(3000),text);
-            fade.setFromValue(1.0);
-            fade.setToValue(0);
-            fade.play();
-            FXGL.getGameScene().addUINode(text);
+        //reduces the hp of the enemy
+        enemy.getComponent(EnemyDataComponent.class).updateHp(bullet.getComponent(BulletComponent.class).getDamage());
+        //checks whether the bullet is shot from a fire tower
+        if (bullet.getComponent(BulletComponent.class).getLingerDamage() > 0) {
+            int x = bullet.getComponent(BulletComponent.class).getLingerDamage();
+            TimerAction action=FXGL.getGameTimer().runAtInterval(() -> {
+                if (enemy.hasComponent(EnemyDataComponent.class))
+                    enemy.getComponent(EnemyDataComponent.class).updateHp(x);
+                }
+                , Duration.millis(1000), 3);
         }
-        else {
-            enemy.getComponent(EnemyDataComponent.class).updateHp(bullet.getComponent(BulletComponent.class).getDamage());
-            if(bullet.getComponent(BulletComponent.class).getLingerDamage()>0) {
-                int x = bullet.getComponent(BulletComponent.class).getLingerDamage();
-                FXGL.getGameTimer().runAtInterval(()-> {
-                            if(enemy.hasComponent(EnemyDataComponent.class))
-                                enemy.getComponent(EnemyDataComponent.class).updateHp(x);
-                            else
-                                enemy.removeFromWorld();
-                        }
-                        ,Duration.millis(1000),3);
-            }
-        }
-
     }
 
     public void setIndex(int index) {
         this.index=index;
     }
+
+
 }

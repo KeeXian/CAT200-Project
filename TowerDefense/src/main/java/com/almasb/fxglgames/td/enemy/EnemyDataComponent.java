@@ -4,6 +4,9 @@ import com.almasb.fxgl.entity.component.Component;
 import com.almasb.fxgl.ui.ProgressBar;
 import javafx.scene.paint.Color;
 
+/**
+ * contains information for each type of enemy
+ */
 public class EnemyDataComponent extends Component {
     protected int hp;
     protected ProgressBar hpBar;
@@ -53,8 +56,10 @@ public class EnemyDataComponent extends Component {
         enemy.type=index;
         if(index==1)
             enemy.setStat(10*lvl, 0.01, 300*lvl,lvl*300);
-        else
+        else if(index==2)
             enemy.setStat(5*lvl, 0.02, 100*lvl,lvl*150);
+        else if(index==3)
+            enemy.setStat(1400,0.005,8000,10000);
         return enemy;
     }
 }

@@ -1,5 +1,7 @@
 package com.almasb.fxglgames.td;
 
+import com.almasb.fxgl.app.AssetLoader;
+import com.almasb.fxgl.dsl.EntityBuilder;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.dsl.components.OffscreenCleanComponent;
 import com.almasb.fxgl.entity.*;
@@ -12,28 +14,40 @@ import com.almasb.fxglgames.td.components.TowerComponent;
 import com.almasb.fxglgames.td.enemy.EnemyDataComponent;
 import com.almasb.fxglgames.td.tower.BulletComponent;
 import com.almasb.fxglgames.td.tower.TowerDataComponent;
+import com.almasb.fxglgames.td.tower.TowerLocationInfo;
 import javafx.animation.FadeTransition;
 import javafx.geometry.Point2D;
+import javafx.geometry.Pos;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
 
 /**
- * @author Almas Baimagambetov (almaslvl@gmail.com)
+ * this class acts as a factory
+ * it manages the creation of the in-game items
+ * these include the enemy, tower and bullet
  */
 public class TowerDefenseFactory implements EntityFactory {
 
-    public static ArrayList<CollidableComponent> collidableComponents = new ArrayList<CollidableComponent>();
     @Spawns("Enemy")
     public Entity spawnEnemy(SpawnData data) {
         EnemyDataComponent enemyDataComponent = EnemyDataComponent.makeEnemy(data.get("index"), data.get("level"));
         VBox vBox = new VBox();
         vBox.getChildren().addAll(enemyDataComponent.getHpBar());
+        /**
+         * the following expression creates an enemy type
+         * with the data provided by the game world
+         * in a vBox attached with components that provide different functionalities to the entity
+         */
         Entity newEntity = entityBuilder()
                 .type(TowerDefenseType.ENEMY)
                 .from(data)
@@ -41,22 +55,22 @@ public class TowerDefenseFactory implements EntityFactory {
                 .with(new CollidableComponent(true), enemyDataComponent)
                 .with(new EnemyComponent(enemyDataComponent.getSpeed(),data.get("index"),data.get("level")))
                 .build();
-        newEntity.getBoundingBoxComponent().addHitBox(new HitBox("BODY", new Point2D(0, 0), BoundingShape.box(30, 40)));
+        /**
+         * adjusts the size of hitbox
+         * this hitbox will return a true boolean value when a bullet hits the hitbox
+         * then the collision handler will take over
+         */
+        if(data.get("index").equals(3))
+            newEntity.getBoundingBoxComponent().addHitBox(new HitBox("BODY", new Point2D(20, 20), BoundingShape.box(40, 40)));
+        else
+            newEntity.getBoundingBoxComponent().addHitBox(new HitBox("BODY", new Point2D(20, 20), BoundingShape.box(30, 30)));
         return newEntity;
     }
 
     @Spawns("Tower")
     public Entity spawnTower(SpawnData data) {
         TowerDataComponent towerComponent = TowerDataComponent.makeTower(data.get("index"));
-//        try {
-//            towerComponent = getAssetLoader()
-//                    .loadKV("Tower" + data.get("index") + ".kv")
-//                    .to(TowerDataComponent.class);
-//
-//        } catch (Exception e) {
-//            throw new RuntimeException("Failed to parse KV file: " + e);
-//        }
-        Entity tower = new Entity();
+        //assigns the texture of towers
             Texture texture = null;
             if(data.get("index").equals(1))
                 texture = new Texture(getAssetLoader().loadImage("small_stone_tower.png"));
@@ -70,14 +84,15 @@ public class TowerDefenseFactory implements EntityFactory {
             texture.setFitWidth(60);
             VBox vBox = new VBox();
             vBox.getChildren().addAll(towerComponent.levelLabel,texture);
-            tower = entityBuilder()
+            Entity tower = entityBuilder()
                     .type(TowerDefenseType.TOWER)
                     .at((Point2D)data.get("Position"))
                     .from(data)
                     .viewWithBBox(vBox)
                     .with(new CollidableComponent(true), towerComponent)
-                    .with(new TowerComponent(towerComponent.getAttackDelay(),towerComponent.getSpeed()))
+                    .with(new TowerComponent(towerComponent.getAttackDelay(),towerComponent.getSpeed(),towerComponent.shootRange))
                     .build();
+            //decreases the player's gold when spawn a new tower
             FXGL.getGameState().increment("playerGold",-(towerComponent.getPrice()));
             Text text = FXGL.getUIFactory().
                     newText("-"+towerComponent.getPrice(), Color.BLACK, 10);
@@ -93,6 +108,7 @@ public class TowerDefenseFactory implements EntityFactory {
 
     @Spawns("Bullet")
     public Entity spawnBullet(SpawnData data) {
+        //sets texture of bullet based on which type of tower spawn it
         Texture texture=null;
         if(data.get("type").equals(1))
             texture=new Texture(getAssetLoader().loadImage("small stone.png"));
@@ -108,9 +124,10 @@ public class TowerDefenseFactory implements EntityFactory {
                     .type(TowerDefenseType.BULLET)
                     .from(data)
                     .viewWithBBox(texture)
-                    .with(new CollidableComponent(true))
+                    .with(new CollidableComponent(true))  //turns on the ability to collide with other entities
                     .with(new OffscreenCleanComponent(), new BulletComponent(data.get("damage"),data.get("delay")))
                     .build();
+            //if the bullet is spawn from a fireball tower
             if (data.hasKey("burn damage")){
                 bullet.removeComponent(BulletComponent.class);
                 bullet.addComponent(new BulletComponent(data.get("damage"),data.get("burn damage"),data.get("delay")));

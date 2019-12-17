@@ -2,30 +2,84 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a71e80b-2474-49a8-b2ec-7efc105b51e4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_11_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_11_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_achievement_11_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_achievement_11_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_animation_11_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_animation_11_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_core_11_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_core_11_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_cutscene_11_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_cutscene_11_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_effects_11_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_effects_11_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_entity_11_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_entity_11_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_events_11_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_events_11_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_input_11_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_input_11_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_io_11_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_io_11_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_media_11_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_media_11_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_minigames_11_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_minigames_11_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_notification_11_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_notification_11_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_scene_11_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_scene_11_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_time_11_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_time_11_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_ui_11_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_fxgl_ui_11_5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_sslogger_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_almasb_sslogger_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_gluonhq_attach_storage_4_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_gluonhq_attach_storage_4_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_gluonhq_attach_util_4_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_gluonhq_attach_util_4_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_13_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_13_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_41.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_41.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_modular_1_3_41.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_modular_1_3_41.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_12_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_12_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_12_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_12_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_12_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_12_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_12_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_12_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_12_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_12_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_12_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_12_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_12_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_12_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_12_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_12_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_12_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_12_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_win_12_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_win_12_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_swing_12_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_swing_12_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_swing_win_12_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_swing_win_12_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-17-Dec-2019-20.45.22.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-17-Dec-2019-20.46.28.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-17-Dec-2019-20.47.12.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-17-Dec-2019-20.48.44.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-17-Dec-2019-20.54.59.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-17-Dec-2019-20.55.34.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-17-Dec-2019-20.56.02.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-17-Dec-2019-20.56.27.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-17-Dec-2019-20.59.09.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TowerDefense.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TowerDefense.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-17-Dec-2019-21.00.10.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-17-Dec-2019-21.09.40.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/map.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/map.tmx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/TowerDefenseApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/TowerDefenseApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/TowerDefenseFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/TowerDefenseFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/tower/TowerLocationInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/TowerLocationInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/TowerDefense.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/TowerDefense.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/collision/BulletEnemyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/collision/BulletEnemyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/components/EnemyComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/components/EnemyComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/components/TowerComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/components/TowerComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/enemy/EnemyDataComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/enemy/EnemyDataComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/event/BulletHitEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/event/BulletHitEnemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/event/EnemyReachedGoalEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/event/EnemyReachedGoalEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/tower/BulletComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/tower/BulletComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/tower/FireTowerComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/tower/FireTowerComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/tower/TowerDataComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td/tower/TowerDataComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/TileMap/test.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/TileMap/test.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TileMap/test.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TileMap/test.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/TowerDefenseApp$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/TowerDefenseApp$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/TowerDefenseApp$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/TowerDefenseApp$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/TowerDefenseApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/TowerDefenseApp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/TowerDefenseFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/TowerDefenseFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/tower/TowerLocationInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/collision/BulletEnemyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/collision/BulletEnemyHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/components/EnemyComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/components/EnemyComponent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/components/TowerComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/components/TowerComponent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/enemy/EnemyDataComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/enemy/EnemyDataComponent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/event/BulletHitEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/event/BulletHitEnemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/tower/BulletComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/tower/BulletComponent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/tower/FireTowerComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/tower/FireTowerComponent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/tower/TowerDataComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/fxglgames/td/tower/TowerDataComponent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.json" beforeDir="false" afterPath="$PROJECT_DIR$/test.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/test.tmx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -44,6 +98,9 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
   <component name="ProjectId" id="1UL7zMoKo2fpmPDQsbn6ymyrEt2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -52,11 +109,16 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/almasb/fxglgames/td" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager">
     <configuration name="TowerDefenseApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11.0.5" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.almasb.fxglgames.td.TowerDefenseApp" />
       <module name="TowerDefense" />
       <extension name="coverage">
@@ -101,38 +163,34 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="611" y="321" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576418118097">
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576601657037">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="611" y="321" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.864@0.0.1536.864" timestamp="1576418118097" />
-    <state x="561" y="302" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1576588596456">
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1576601657037" />
+    <state x="611" y="321" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576601624719">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="561" y="302" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.864@0.0.1536.864" timestamp="1576588596456" />
+    <state x="611" y="321" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.864@0.0.1536.864" timestamp="1576601624719" />
     <state x="351" y="0" key="CommitChangelistDialog2" timestamp="1576516411270">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="351" y="0" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1576516411270" />
-    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1576588614604">
+    <state width="1493" height="200" key="GridCell.Tab.0.bottom" timestamp="1576601800042">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1576588614604" />
-    <state width="724" height="203" key="GridCell.Tab.0.bottom" timestamp="1576590883896">
+    <state width="1493" height="200" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576601800042" />
+    <state width="1493" height="200" key="GridCell.Tab.0.center" timestamp="1576601800042">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="724" height="203" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1576590883896" />
-    <state width="724" height="203" key="GridCell.Tab.0.center" timestamp="1576590883896">
+    <state width="1493" height="200" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1576601800042" />
+    <state width="1493" height="200" key="GridCell.Tab.0.left" timestamp="1576601800042">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="724" height="203" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1576590883896" />
-    <state width="724" height="203" key="GridCell.Tab.0.left" timestamp="1576590883896">
+    <state width="1493" height="200" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1576601800042" />
+    <state width="1493" height="200" key="GridCell.Tab.0.right" timestamp="1576601800042">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="724" height="203" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1576590883896" />
-    <state width="724" height="203" key="GridCell.Tab.0.right" timestamp="1576590883896">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state width="724" height="203" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1576590883896" />
+    <state width="1493" height="200" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1576601800042" />
     <state width="1493" height="255" key="GridCell.Tab.1.bottom" timestamp="1576519098633">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

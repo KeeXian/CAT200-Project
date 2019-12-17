@@ -2,6 +2,9 @@ package com.almasb.fxglgames.td.tower;
 
 import com.almasb.fxgl.entity.component.Component;
 
+/**
+ * contains information regarding the bullet spawn
+ */
 public class BulletComponent extends Component {
     private int damage;
     private int lingerDamage;

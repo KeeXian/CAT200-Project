@@ -113,14 +113,26 @@ public class EnemyComponent extends Component{
                 default: valid=false;
             }
         }
+        else if(index==3){
+            img1="level2sheet_big.png";
+            img2="level2sheet2_left_big.png";
+        }
         else
             valid=false;
 
         if(valid){
-            animidle=new AnimationChannel(new AssetLoader().loadImage(img1),4,40,40, Duration.seconds(1),1,1);
-            animwalk=new AnimationChannel(new AssetLoader().loadImage(img1),4,40,40,Duration.seconds(1),0,3);
-            animidle_left=new AnimationChannel(new AssetLoader().loadImage(img2),4,40,40, Duration.seconds(1),1,1);
-            animwalk_left=new AnimationChannel(new AssetLoader().loadImage(img2),4,40,40,Duration.seconds(1),0,3);
+            if(index==3){
+                animidle=new AnimationChannel(new AssetLoader().loadImage(img1),4,75,80, Duration.seconds(1),1,1);
+                animwalk=new AnimationChannel(new AssetLoader().loadImage(img1),4,75,80,Duration.seconds(1),0,3);
+                animidle_left=new AnimationChannel(new AssetLoader().loadImage(img2),4,80,80, Duration.seconds(1),1,1);
+                animwalk_left=new AnimationChannel(new AssetLoader().loadImage(img2),4,78,80,Duration.seconds(1),0,3);
+            }
+            else {
+                animidle = new AnimationChannel(new AssetLoader().loadImage(img1), 4, 40, 40, Duration.seconds(1), 1, 1);
+                animwalk = new AnimationChannel(new AssetLoader().loadImage(img1), 4, 40, 40, Duration.seconds(1), 0, 3);
+                animidle_left = new AnimationChannel(new AssetLoader().loadImage(img2), 4, 40, 40, Duration.seconds(1), 1, 1);
+                animwalk_left = new AnimationChannel(new AssetLoader().loadImage(img2), 4, 40, 40, Duration.seconds(1), 0, 3);
+            }
         }
         else{
             System.out.println("Invalid index and level");
