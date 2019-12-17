@@ -4,13 +4,7 @@ import com.almasb.fxgl.app.ApplicationMode;
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.app.GameView;
-import com.almasb.fxgl.audio.Audio;
-import com.almasb.fxgl.audio.AudioPlayer;
 import com.almasb.fxgl.audio.Music;
-import com.almasb.fxgl.audio.Sound;
-import com.almasb.fxgl.core.math.FXGLMath;
-import com.almasb.fxgl.core.util.BiConsumer;
-import com.almasb.fxgl.core.util.Consumer;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.SpawnData;
@@ -18,37 +12,21 @@ import com.almasb.fxgl.entity.level.Level;
 import com.almasb.fxgl.entity.level.tiled.TMXLevelLoader;
 import com.almasb.fxgl.input.Input;
 import com.almasb.fxgl.input.UserAction;
-import com.almasb.fxgl.physics.CollisionHandler;
-import com.almasb.fxgl.texture.AnimatedTexture;
-import com.almasb.fxgl.texture.AnimationChannel;
 import com.almasb.fxgl.texture.Texture;
-import com.almasb.fxgl.time.TimerAction;
 import com.almasb.fxglgames.td.collision.BulletEnemyHandler;
-import com.almasb.fxglgames.td.components.TowerComponent;
 import com.almasb.fxglgames.td.enemy.EnemyDataComponent;
 import com.almasb.fxglgames.td.event.BulletHitEnemy;
 import com.almasb.fxglgames.td.event.EnemyReachedGoalEvent;
 import com.almasb.fxglgames.td.tower.TowerDataComponent;
 import com.almasb.fxglgames.td.tower.TowerIcon;
-import com.almasb.fxglgames.td.tower.TowerLocationInfo;
-import javafx.animation.AnimationTimer;
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.Insets;
 import javafx.geometry.Point2D;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
@@ -60,7 +38,6 @@ import javafx.util.Duration;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
 
@@ -107,14 +84,14 @@ public class TowerDefenseApp extends GameApplication {
 
     @Override
     protected void initSettings(GameSettings settings) {
-        settings.setTitle("Tower Defense");
-        settings.setVersion("0.2");
+        settings.setTitle("Minimalist Tower Defense");
+        settings.setVersion("2.0");
         settings.setWidth(768);
         settings.setHeight(600);
         settings.setManualResizeEnabled(true);
         settings.setIntroEnabled(false);
         settings.setMenuEnabled(true);
-        settings.setProfilingEnabled(false);
+        settings.setProfilingEnabled(true);
         settings.setCloseConfirmation(true);
         settings.setApplicationMode(ApplicationMode.DEVELOPER);
     }
@@ -123,7 +100,7 @@ public class TowerDefenseApp extends GameApplication {
     protected void initInput() {
         Input input = getInput();
         addListofWorldBound(list);
-        input.addAction(new UserAction("Place Tower") {
+        input.addAction(new UserAction("Place/Upgrade Tower") {
             @Override
             protected void onActionBegin() {
                 if (checkValidTowerLocation(input.getMousePositionWorld())) {
@@ -171,7 +148,7 @@ public class TowerDefenseApp extends GameApplication {
             }
         }, MouseButton.PRIMARY);
 
-        input.addAction(new UserAction("remove tower") {
+        input.addAction(new UserAction("Remove Tower") {
             @Override
             protected void onAction() {
                 int index;
@@ -393,14 +370,14 @@ public class TowerDefenseApp extends GameApplication {
         LoseMusic=getAssetLoader().loadMusic("game-lose.mp3");
         getAudioPlayer().stopMusic(BGM);
         getAudioPlayer().playMusic(LoseMusic);
-        getDisplay().showMessageBox("Game Over. Thanks for playing!"+'\n'+"Score: "+score, getGameController()::gotoMainMenu);
+        getDisplay().showMessageBox("Game Over. Thanks for playing!"+'\n'+"Score: "+score, getGameController()::exit);
     }
 
     private void gameCleared(){
         SuccessMusic=getAssetLoader().loadMusic("Victory!.wav");
         getAudioPlayer().stopMusic(BGM);
         getAudioPlayer().playMusic(SuccessMusic);
-        getDisplay().showMessageBox("Game Cleared!!! Thanks for playing!"+'\n'+"Score: "+score, getGameController()::gotoMainMenu);
+        getDisplay().showMessageBox("Game Cleared!!! Thanks for playing!"+'\n'+"Score: "+score, getGameController()::exit);
     }
 
     private void addIntoTextureList(){

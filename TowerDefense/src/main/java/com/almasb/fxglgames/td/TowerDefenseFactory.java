@@ -1,7 +1,5 @@
 package com.almasb.fxglgames.td;
 
-import com.almasb.fxgl.app.AssetLoader;
-import com.almasb.fxgl.dsl.EntityBuilder;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.dsl.components.OffscreenCleanComponent;
 import com.almasb.fxgl.entity.*;
@@ -14,20 +12,14 @@ import com.almasb.fxglgames.td.components.TowerComponent;
 import com.almasb.fxglgames.td.enemy.EnemyDataComponent;
 import com.almasb.fxglgames.td.tower.BulletComponent;
 import com.almasb.fxglgames.td.tower.TowerDataComponent;
-import com.almasb.fxglgames.td.tower.TowerLocationInfo;
 import javafx.animation.FadeTransition;
 import javafx.geometry.Point2D;
-import javafx.geometry.Pos;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
 

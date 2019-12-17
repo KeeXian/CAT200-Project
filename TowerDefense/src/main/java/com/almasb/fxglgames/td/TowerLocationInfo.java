@@ -1,4 +1,4 @@
-package com.almasb.fxglgames.td.tower;
+package com.almasb.fxglgames.td;
 
 import javafx.geometry.Rectangle2D;
 
